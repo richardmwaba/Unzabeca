@@ -41,7 +41,7 @@
                 <li><a href="#events">Events</a></li>
                 <li><a href="#resources">Resources</a></li>
                 <li><a href="#" data-target="#login" data-toggle="modal">Sign in</a></li>
-                <li class="btn-trial"><a href="#footer">Join us</a></li>
+                <li class="btn-trial"><a href="#join">Join us</a></li>
             </ul>
         </div>
     </div>
@@ -101,12 +101,12 @@
             <div class="row">
                 <div class="banner-text text-center">
                     <div class="text-border">
-                        <h2 class="text-dec">Trust & Quality</h2>
+                        <h2 class="text-dec">You Are Safe With Us</h2>
                     </div>
                     <div class="intro-para text-center quote">
-                        <p class="big-text">Learning Today . . . Leading Tomorrow.</p>
-                        <p class="small-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium enim repellat sapiente quos architecto<br>Laudantium enim repellat sapiente quos architecto</p>
-                        <a href="#." class="btn">GET A QUOTE</a>
+                        <p class="big-text">Here Is What You Are Assured Of...</p>
+                        <p class="small-text">Getting listed for Internship, Up close representation with management and<br>Well set up interface with the Student Union</p>
+                        <a href="#footer" class="btn">Contact Us</a>
                     </div>
                     <a href="#latest" class="mouse-hover"><div class="mouse"></div></a>
                 </div>
@@ -121,14 +121,14 @@
         <div class="row">
             <div class="header-section text-center">
                 <h2>Latest</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+                <p>Here is our latest news, features and updates</p>
                 <hr class="bottom-line">
             </div>
             <div class="feature-info">
                 <div class="fea">
                     <div class="col-md-4">
                         <div class="heading pull-right">
-                            <h4>Latest Technologies</h4>
+                            <h4>News</h4>
                             <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
                         </div>
                         <div class="fea-img pull-left">
@@ -139,7 +139,7 @@
                 <div class="fea">
                     <div class="col-md-4">
                         <div class="heading pull-right">
-                            <h4>Toons Background</h4>
+                            <h4>Features</h4>
                             <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
                         </div>
                         <div class="fea-img pull-left">
@@ -150,7 +150,7 @@
                 <div class="fea">
                     <div class="col-md-4">
                         <div class="heading pull-right">
-                            <h4>Award Winning Design</h4>
+                            <h4>Updates</h4>
                             <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
                         </div>
                         <div class="fea-img pull-left">
@@ -480,12 +480,12 @@
 </section>
 <!--/ Pricing-->
 <!--Contact-->
-<section id ="contact" class="section-padding">
+<section id ="join" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="header-section text-center">
-                <h2>Contact Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+                <h2>Join Us</h2>
+                <p>Be a part of us and together we'll make The University of Zambia Business and Economics<br>Association a better association.</p>
                 <hr class="bottom-line">
             </div>
             <div id="sendmessage">Your message has been sent. Thank you!</div>
@@ -493,7 +493,11 @@
             <form action="" method="post" role="form" class="contactForm">
                 <div class="col-md-6 col-sm-6 col-xs-12 left">
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control form" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <input type="text" name="firstName" class="form-control form" id="firstName" placeholder="Your First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="surname" class="form-control form" id="surname" placeholder="Your Surname" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                         <div class="validation"></div>
                     </div>
                     <div class="form-group">
@@ -501,21 +505,25 @@
                         <div class="validation"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                        <input type="text" class="form-control" name="program" id="phone" placeholder="Your Program Of Study Or Job Title" data-rule="minlen:5" data-msg="Please enter at least 5 chars of subject" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" data-rule="minlen:8" data-msg="Please enter at least 8 chars of subject" />
                         <div class="validation"></div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-sm-6 col-xs-12 right">
                     <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Tell us why you want to join us"></textarea>
                         <div class="validation"></div>
                     </div>
                 </div>
 
                 <div class="col-xs-12">
                     <!-- Button -->
-                    <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">SEND EMAIL</button>
+                    <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">Submit Application</button>
                 </div>
             </form>
 
@@ -527,34 +535,41 @@
 <footer id="footer" class="footer">
     <div class="container text-center">
 
-        <h3>Start Your Free Trial Now!</h3>
-
-        <form class="mc-trial row">
-            <div class="form-group col-md-3 col-md-offset-2 col-sm-4">
-                <div class=" controls">
-                    <input name="name" placeholder="Enter Your Name" class="form-control" type="text">
-                </div>
-            </div><!-- End email input -->
-            <div class="form-group col-md-3 col-sm-4">
-                <div class=" controls">
-                    <input name="EMAIL" placeholder="Enter Your email" class="form-control" type="email">
-                </div>
-            </div><!-- End email input -->
-            <div class="col-md-2 col-sm-4">
+        <h2>Contact Us</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12 left">
                 <p>
-                    <button name="submit" type="submit" class="btn btn-block btn-submit">
-                        Submit <i class="fa fa-arrow-right"></i></button>
+                    <h4>Address</h4>
+
+                        The University of Zambia, <br>School of Humanities,<br>Department of Economics,<br>Third Floor,<br>Room 123.
+
                 </p>
             </div>
-        </form><!-- End newsletter-form -->
+            <div class="col-md-4 col-sm-6 col-xs-12 middle">
+                <P>
+                    <h4>Contacts</h4>
+                Fax: +260211123456 <br>
+                Phone: +2094412345678 <br>
+                Phone 2: +26093387654321
+
+                </P>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 right">
+                <p>
+                    <h4>Emails</h4>
+                    E-mail: abc@unzabeca.com
+                </p>
+            </div>
+        </div>
+
+
         <ul class="social-links">
             <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
             <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
             <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
-            <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
             <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
         </ul>
-        ©2016 Mentor Theme. All rights reserved
+        ©2012-{{date('Y')}} University Of Zambia Business and Economics Association<br> All rights reserved
         <div class="credits">
             <!--
                 All the links in the footer should remain intact.
@@ -562,7 +577,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Mentor
             -->
-            Designed by <a href="https://bootstrapmade.com/">Free Bootstrap Themes</a>
+            Designed by <a href="#">Code4cus</a>
         </div>
     </div>
 </footer>
