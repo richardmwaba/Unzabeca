@@ -227,7 +227,7 @@
         <div class="row">
             <div class="header-section text-center">
                 <h2>Upcoming Events</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+                <p>Check out some of our soon coming events. You can be a part of any of these,<br> as we'll always keep you updated.</p>
                 <hr class="bottom-line">
             </div>
             <div class="col-md-4 col-sm-6">
@@ -270,7 +270,7 @@
         <div class="row">
             <div class="header-section text-center">
                 <h2>Meet Our Top Executive</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+                <p>This is our hardworking delightful team of shot callers. Their everyday message,<br>is working together to achieve our goals</p>
                 <hr class="bottom-line">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
@@ -327,20 +327,30 @@
     <div class="container">
         <div class="row">
             <div class="header-section text-center">
-                <h2 class="white">See What Our Customer Are Saying?</h2>
-                <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+                <h2 class="white">Facts About UNZABECA</h2>
+                <p class="white">
+                    We are Students in the School of Humanities and Social Sciences who take pleasure<br>
+                    and treasure in economic matters of the University and the country at large. <br>
+                    Below are some of the core activities we involve ourselves in.
+                </p>
                 <hr class="bottom-line bg-white">
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="text-comment">
-                    <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-                    <p class="text-name">Abraham Doe - Creative Dırector</p>
+                    <p class="text-par">
+                        We offer free advice to the university populace on issues pertaining economic affairs of the nation,
+                        as well as the latest exchange rates every morning in addition a weekly economic gazzet.
+                    </p>
+                    {{--<p class="text-name">Abraham Doe - Creative Dırector</p>--}}
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="text-comment">
-                    <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-                    <p class="text-name">Abraham Doe - Creative Dırector</p>
+                    <p class="text-par">
+                        We offer personalized tutorials in selected courses to our junior students and also
+                        advise them on the best course combinations for programs they wish to pursue after their non-quotas.
+                    </p>
+                    {{--<p class="text-name">Abraham Doe - Creative Dırector</p>--}}
                 </div>
             </div>
         </div>
