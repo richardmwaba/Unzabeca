@@ -139,7 +139,7 @@ Banner
 	margin-top: 30px;
 }
 .quote .btn{
-    background-color: 
+    background-color: transparent;
 }
 .modal-dialog {
     width: 600px;
@@ -776,5 +776,10 @@ Responsive media queries
     }
     .navbar-default .navbar-nav > li > a{
         text-align: center;
+    }
+    .navbar-brand>img {
+        height: auto;
+        padding: 15px;
+        width: auto;
     }
 }

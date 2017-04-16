@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mentor Education Bootstrap Theme</title>
+    <title>University of Zambia Business and Economics Association</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -32,16 +32,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Men<span>tor</span></a>
+            <a class="navbar-brand" href="{{URL::asset('web view/home')}}">UNZA<span>BECA</span></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#feature">Features</a></li>
-                <li><a href="#organisations">Organisations</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#latest">Latest</a></li>
+                <li><a href="#committees">Committees</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#resources">Resources</a></li>
                 <li><a href="#" data-target="#login" data-toggle="modal">Sign in</a></li>
-                <li class="btn-trial"><a href="#footer">Free Trail</a></li>
+                <li class="btn-trial"><a href="#footer">Join us</a></li>
             </ul>
         </div>
     </div>
@@ -108,7 +108,7 @@
                         <p class="small-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium enim repellat sapiente quos architecto<br>Laudantium enim repellat sapiente quos architecto</p>
                         <a href="#." class="btn">GET A QUOTE</a>
                     </div>
-                    <a href="#feature" class="mouse-hover"><div class="mouse"></div></a>
+                    <a href="#latest" class="mouse-hover"><div class="mouse"></div></a>
                 </div>
             </div>
         </div>
@@ -116,11 +116,11 @@
 </div>
 <!--/ Banner-->
 <!--Feature-->
-<section id ="feature" class="section-padding">
+<section id ="latest" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="header-section text-center">
-                <h2>Features</h2>
+                <h2>Latest</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
                 <hr class="bottom-line">
             </div>
@@ -164,7 +164,7 @@
 </section>
 <!--/ feature-->
 <!--Organisations-->
-<section id ="organisations" class="section-padding">
+<section id ="committees" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -204,29 +204,29 @@
 </section>
 <!--/ Organisations-->
 <!--Cta-->
-<section id="cta-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="text-center">Subscribe Now</h2>
-                <p class="cta-2-txt">Sign up for our free weekly software design courses, we’ll send them right to your inbox.</p>
-                <div class="cta-2-form text-center">
-                    <form action="#" method="post" id="workshop-newsletter-form">
-                        <input name="" placeholder="Enter Your Email Address" type="email">
-                        <input class="cta-2-form-submit-btn" value="Subscribe" type="submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--<section id="cta-2">--}}
+    {{--<div class="container">--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-lg-12">--}}
+                {{--<h2 class="text-center">Subscribe Now</h2>--}}
+                {{--<p class="cta-2-txt">Sign up for our free weekly software design courses, we’ll send them right to your inbox.</p>--}}
+                {{--<div class="cta-2-form text-center">--}}
+                    {{--<form action="#" method="post" id="workshop-newsletter-form">--}}
+                        {{--<input name="" placeholder="Enter Your Email Address" type="email">--}}
+                        {{--<input class="cta-2-form-submit-btn" value="Subscribe" type="submit">--}}
+                    {{--</form>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
 <!--/ Cta-->
 <!--work-shop-->
 <section id="work-shop" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="header-section text-center">
-                <h2>Upcoming Workshop</h2>
+                <h2>Upcoming Events</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
                 <hr class="bottom-line">
             </div>
@@ -236,7 +236,7 @@
                         <i class="fa fa-html5 color-green"></i>
                     </div>
                     <div class="icon-text">
-                        <h4 class="ser-text">Mentor HTML5 Workshop</h4>
+                        <h4 class="ser-text">EVent 1</h4>
                     </div>
                 </div>
             </div>
@@ -246,7 +246,7 @@
                         <i class="fa fa-css3 color-green"></i>
                     </div>
                     <div class="icon-text">
-                        <h4 class="ser-text">Mentor CSS3 Workshop</h4>
+                        <h4 class="ser-text">Event 2</h4>
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@
                         <i class="fa fa-joomla color-green"></i>
                     </div>
                     <div class="icon-text">
-                        <h4 class="ser-text">Mentor Joomla Workshop</h4>
+                        <h4 class="ser-text">Event 3</h4>
                     </div>
                 </div>
             </div>
@@ -269,7 +269,7 @@
     <div class="container">
         <div class="row">
             <div class="header-section text-center">
-                <h2>Meet Our Faculty Member</h2>
+                <h2>Meet Our Top Executive</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
                 <hr class="bottom-line">
             </div>
@@ -277,12 +277,12 @@
                 <div class="pm-staff-profile-container" >
                     <div class="pm-staff-profile-image-wrapper text-center">
                         <div class="pm-staff-profile-image">
-                            <img src="img/mentor.jpg" alt="" class="img-thumbnail img-circle" />
+                            <img src="{{URL::asset('../webview/img/mentor.jpg')}}" alt="" class="img-thumbnail img-circle" />
                         </div>
                     </div>
                     <div class="pm-staff-profile-details text-center">
                         <p class="pm-staff-profile-name">Bryan Johnson</p>
-                        <p class="pm-staff-profile-title">Lead Software Engineer</p>
+                        <p class="pm-staff-profile-title">President</p>
 
                         <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
                     </div>
@@ -292,12 +292,12 @@
                 <div class="pm-staff-profile-container" >
                     <div class="pm-staff-profile-image-wrapper text-center">
                         <div class="pm-staff-profile-image">
-                            <img src="img/mentor.jpg" alt="" class="img-thumbnail img-circle" />
+                            <img src="{{URL::asset('../webview/img/mentor.jpg')}}" alt="" class="img-thumbnail img-circle" />
                         </div>
                     </div>
                     <div class="pm-staff-profile-details text-center">
                         <p class="pm-staff-profile-name">Bryan Johnson</p>
-                        <p class="pm-staff-profile-title">Lead Software Engineer</p>
+                        <p class="pm-staff-profile-title">Vice President</p>
 
                         <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
                     </div>
@@ -307,12 +307,12 @@
                 <div class="pm-staff-profile-container" >
                     <div class="pm-staff-profile-image-wrapper text-center">
                         <div class="pm-staff-profile-image">
-                            <img src="img/mentor.jpg" alt="" class="img-thumbnail img-circle" />
+                            <img src="{{URL::asset('../webview/img/mentor.jpg')}}" alt="" class="img-thumbnail img-circle" />
                         </div>
                     </div>
                     <div class="pm-staff-profile-details text-center">
                         <p class="pm-staff-profile-name">Bryan Johnson</p>
-                        <p class="pm-staff-profile-title">Lead Software Engineer</p>
+                        <p class="pm-staff-profile-title">Secretary General</p>
 
                         <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
                     </div>
@@ -348,11 +348,11 @@
 </section>
 <!--/ Testimonial-->
 <!--Courses-->
-<section id ="courses" class="section-padding">
+<section id ="events" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="header-section text-center">
-                <h2>Courses</h2>
+                <h2>Our Events</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
                 <hr class="bottom-line">
             </div>
@@ -362,7 +362,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-6 padleft-right">
                 <figure class="imghvr-fold-up">
-                    <img src="img/course01.jpg" class="img-responsive">
+                    <img src="{{URL::asset('../webview/img/course01.jpg')}}" class="img-responsive">
                     <figcaption>
                         <h3>Course Name</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
@@ -372,7 +372,7 @@
             </div>
             <div class="col-md-4 col-sm-6 padleft-right">
                 <figure class="imghvr-fold-up">
-                    <img src="img/course02.jpg" class="img-responsive">
+                    <img src="{{URL::asset('../webview/img/course02.jpg')}}" class="img-responsive">
                     <figcaption>
                         <h3>Course Name</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
@@ -382,7 +382,7 @@
             </div>
             <div class="col-md-4 col-sm-6 padleft-right">
                 <figure class="imghvr-fold-up">
-                    <img src="img/course03.jpg" class="img-responsive">
+                    <img src="{{URL::asset('../webview/img/course03.jpg')}}" class="img-responsive">
                     <figcaption>
                         <h3>Course Name</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
@@ -392,7 +392,7 @@
             </div>
             <div class="col-md-4 col-sm-6 padleft-right">
                 <figure class="imghvr-fold-up">
-                    <img src="img/course04.jpg" class="img-responsive">
+                    <img src="{{URL::asset('../webview/img/course04.jpg')}}" class="img-responsive">
                     <figcaption>
                         <h3>Course Name</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
@@ -402,7 +402,7 @@
             </div>
             <div class="col-md-4 col-sm-6 padleft-right">
                 <figure class="imghvr-fold-up">
-                    <img src="img/course05.jpg" class="img-responsive">
+                    <img src="{{URL::asset('../webview/img/course05.jpg')}}" class="img-responsive">
                     <figcaption>
                         <h3>Course Name</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
@@ -412,7 +412,7 @@
             </div>
             <div class="col-md-4 col-sm-6 padleft-right">
                 <figure class="imghvr-fold-up">
-                    <img src="img/course06.jpg" class="img-responsive">
+                    <img src="{{URL::asset('../webview/img/course06.jpg')}}" class="img-responsive">
                     <figcaption>
                         <h3>Course Name</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
@@ -425,11 +425,11 @@
 </section>
 <!--/ Courses-->
 <!--Pricing-->
-<section id ="pricing" class="section-padding">
+<section id ="resources" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="header-section text-center">
-                <h2>Our Pricing</h2>
+                <h2>Resources</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
                 <hr class="bottom-line">
             </div>
@@ -569,7 +569,7 @@
 <!--/ Footer-->
 
 <script src="{{URL::asset('../webview/js/jquery.min.js')}}"></script>
-<script src="{{URL::asset{'../webview/js/jquery.easing.min.js'}}}"></script>
+<script src="{{URL::asset('../webview/js/jquery.easing.min.js')}}"></script>
 <script src="{{URL::asset('../webview/js/bootstrap.min.js')}}"></script>
 <script src="{{URL::asset('../webview/js/custom.js')}}"></script>
 <script src="{{URL::asset('../webview/contactform/contactform.js')}}}"></script>
