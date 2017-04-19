@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'password',
     ];
 
     /**
@@ -26,4 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Relation on user and member. A user is a member
+     * of the system.
+     */
+    public function member(){
+        return $this->hasMany('App\Member', 'email');  // using email as foreign key
+    }
+
+    /**
+     * Relation on user and events. A user can create
+     * many events
+     */
+    public function events(){
+        return $this->hasMany('App\Events', 'email');
+    }
 }
