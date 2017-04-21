@@ -69,7 +69,7 @@
             <div>
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{URL::asset('home')}}">
-                    KUMISHESU REAL ESTATES
+                  UNZABECA
                 </a>
             </div>
         </div>
@@ -80,8 +80,8 @@
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-user fa-fw"></i>
-                    {{ Auth::user()->f_name }} {{ Auth::user()->l_name }}
-                    <b class="caret"></b>
+                    <!-- user names here -->
+                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="{{url('/members/my_profile')}}"><i class="fa fa-user fa-fw"></i>Profile</a>
@@ -101,18 +101,7 @@
                 <ul class="nav" id="side-menu">
                     <li class="active-link">
                         <a href="{{url('/members/overview')}}"><i class="fa fa-desktop "></i>Overview</a>
-                    </li>
-
-
-                    <li>
-                        @if(Auth::user()->user_type_id=="Admin")
-                        <a href="{{url('/members/users/view')}}"><i class="fa fa-table "></i>Users</a>
-                            @elseif(Auth::user()->user_type_id=="Agent")
-                            <a href="{{url('/members/users/view')}}"><i class="fa fa-table "></i>Property owners</a>
-                            @else
-                            <a href="{{url('/members/users/view')}}"><i class="fa fa-table "></i>Agents</a>
-                            @endif
-                    </li>
+                  </li>
                     <li>
                         <a href="{{url('/members/properties')}}"><i class="fa fa-edit "></i>Properties</a>
                     </li>
@@ -136,8 +125,7 @@
             <div class="col-lg-12">
                 {{--<img class="center block  pull-right img-circle img-responsive" src="{{ URL::asset('frontend/img/logo.png') }}">--}}
                 <h4 class="page-header">
-                    <div class="pull-right">@section('departmentName')@yield('department')@show</div>
-                    @section('page_title')@yield('heading')@show
+                    <div class="pull-right"></div>
                     @if(Session::has('flash_message'))
                         <div class="alert alert-success {{session()->has('flash_message_important')? session('flash_message') : ''}}">
                             {{Session::get('flash_message')}}
@@ -165,8 +153,8 @@
 <!-- Footer -->
 <footer class="footer footer-fixed-bottom">
     <div class="container" style="text-align:center">
-        <p class="text-muted"><span class="glyphicon glyphicon-copyright-mark"></span> - {{\Carbon\Carbon::now()->year}} Kumishesu real estates
-            <br> All rights reserved.</p>
+        <p class="text-muted"><span class="glyphicon glyphicon-copyright-mark"></span> - {{\Carbon\Carbon::now()->year}} Unzabeca
+            <br> All rights reserved.</p>Kumishesu
     </div>
 </footer>
 <!-- ./footer -->
