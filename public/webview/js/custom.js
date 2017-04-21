@@ -16,7 +16,7 @@
     });
     
     // Add smooth scrolling to all links in navbar
-    $(".navbar a, a.mouse-hover, .overlay-detail a, .btn").on('click', function(event) {
+    /*$(".navbar a, a.mouse-hover, .overlay-detail a, .btn").on('click', function(event) {
         event.preventDefault();
         var hash = this.hash;
         $('html, body').animate({
@@ -24,5 +24,5 @@
         }, 900, function(){
             window.location.hash = hash;
         });
-    });
+    });*/
 })(jQuery);

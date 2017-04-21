@@ -62,14 +62,15 @@
                 <div class="login-box-body">
                     <p class="login-box-msg">Sign in to start your session</p>
                     <div class="form-group">
-                        <form name="" id="loginForm">
-                            <div class="form-group has-feedback"> <!----- username -------------->
-                                <input class="form-control" placeholder="Username"  id="loginid" type="text" autocomplete="off" />
+                        <form id="loginForm" action="{{url('/login')}}" method="POST">
+                            {{csrf_field()}}
+                            <div id="email-group" class="form-group has-feedback"> <!----- username -------------->
+                                <input class="form-control" placeholder="email" name="email" id="loginid" type="email" autocomplete="off" />
                                 <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
                                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
                             </div>
-                            <div class="form-group has-feedback"><!----- password -------------->
-                                <input class="form-control" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
+                            <div id="password-group" class="form-group has-feedback"><!----- password -------------->
+                                <input class="form-control" name="password" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
                                 <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span><!---Alredy exists  ! -->
                                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                             </div>
@@ -77,12 +78,12 @@
                                 <div class="col-xs-12">
                                     <div class="checkbox icheck">
                                         <label>
-                                            <input type="checkbox" id="loginrem" > Remember Me
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} id="loginrem" > Remember Me
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12">
-                                    <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">Sign In</button>
+                                    <button onclick="login()" class="btn btn-green btn-block btn-flat">Sign In</button>
                                 </div>
                             </div>
                         </form>
@@ -205,20 +206,20 @@
 <!--/ Organisations-->
 <!--Cta-->
 {{--<section id="cta-2">--}}
-    {{--<div class="container">--}}
-        {{--<div class="row">--}}
-            {{--<div class="col-lg-12">--}}
-                {{--<h2 class="text-center">Subscribe Now</h2>--}}
-                {{--<p class="cta-2-txt">Sign up for our free weekly software design courses, we’ll send them right to your inbox.</p>--}}
-                {{--<div class="cta-2-form text-center">--}}
-                    {{--<form action="#" method="post" id="workshop-newsletter-form">--}}
-                        {{--<input name="" placeholder="Enter Your Email Address" type="email">--}}
-                        {{--<input class="cta-2-form-submit-btn" value="Subscribe" type="submit">--}}
-                    {{--</form>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+{{--<div class="container">--}}
+{{--<div class="row">--}}
+{{--<div class="col-lg-12">--}}
+{{--<h2 class="text-center">Subscribe Now</h2>--}}
+{{--<p class="cta-2-txt">Sign up for our free weekly software design courses, we’ll send them right to your inbox.</p>--}}
+{{--<div class="cta-2-form text-center">--}}
+{{--<form action="#" method="post" id="workshop-newsletter-form">--}}
+{{--<input name="" placeholder="Enter Your Email Address" type="email">--}}
+{{--<input class="cta-2-form-submit-btn" value="Subscribe" type="submit">--}}
+{{--</form>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
 {{--</section>--}}
 <!--/ Cta-->
 <!--work-shop-->
@@ -549,15 +550,15 @@
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12 left">
                 <p>
-                    <h4>Address</h4>
+                <h4>Address</h4>
 
-                        The University of Zambia, <br>School of Humanities,<br>Department of Economics,<br>Third Floor,<br>Room 123.
+                The University of Zambia, <br>School of Humanities,<br>Department of Economics,<br>Third Floor,<br>Room 123.
 
                 </p>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12 middle">
                 <P>
-                    <h4>Contacts</h4>
+                <h4>Contacts</h4>
                 Fax: +260211123456 <br>
                 Phone: +2094412345678 <br>
                 Phone 2: +26093387654321
@@ -566,8 +567,8 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12 right">
                 <p>
-                    <h4>Emails</h4>
-                    E-mail: abc@unzabeca.com
+                <h4>Emails</h4>
+                E-mail: abc@unzabeca.com
                 </p>
             </div>
         </div>
@@ -597,7 +598,82 @@
 <script src="{{URL::asset('../webview/js/jquery.easing.min.js')}}"></script>
 <script src="{{URL::asset('../webview/js/bootstrap.min.js')}}"></script>
 <script src="{{URL::asset('../webview/js/custom.js')}}"></script>
-<script src="{{URL::asset('../webview/contactform/contactform.js')}}}"></script>
+<script src="{{URL::asset('../webview/contactform/contactform.js')}}"></script>
+<script>
+    function login() {
+
+        $(document).ready(function () {
+
+            $("#button").click(function () {
+                $("#demo").toggle();
+            });
+            // process the form
+            $('#loginForm').submit(function (event) {
+
+                event.preventDefault();
+
+
+
+
+                var formData = {
+                    'email': $('input[name=email]').val(),
+                    'password': $('input[name=password]').val(),
+                    '_token': $('input[name=_token]').val()
+                };
+                // process the form
+
+                $.ajax({
+                    type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                    url: '{{ url('/login')}}', // the url where we want to POST
+                    data: formData, // our data object
+                    dataType: 'json', // what type of data do we expect back from the server
+                    encode: true
+                })
+                // using the done promise callback
+                        .done(function (data) {
+
+                            // log data to the console so we can see
+                            console.log(data);
+                            // here we will handle errors and validation messages
+                            // here we will handle errors and validation messages
+                            if (!data.success) {
+
+                                // handle errors for name ---------------
+                                if (data.errors.email) {
+                                    //$('#current_password-group').removeClass('has-error');
+                                    $('#email-group').addClass('has-error'); // add the error class to show red input
+                                    $('#email-group').children('#error').remove();
+                                    $('#email-group').append('<div id="error" class="help-block">' + data.errors.email + '</div>'); // add the actual error message under our input
+                                }
+
+
+                                // handle errors for email ---------------
+                                if (data.errors.password) {
+                                    $('#password-group').addClass('has-error'); // add the error class to show red input
+                                    $('#password-group').children('#error').remove();
+                                    $('#password-group').append('<div id="error" class="help-block">' + data.errors.password + '</div>'); // add the actual error message under our input
+                                }
+
+                            } else {
+
+                                // ALL GOOD! just show the success message!
+                                //$('div.alert').append('<div class="alert alert-success">' + data.message + '</div>');
+                                $("#close").trigger('click');
+                                $("html, body").animate({ scrollTop: 0 }, 5);
+                                window.location = '{{url('/home')}}';
+                                // usually after form submission, you'll want to redirect
+                                // window.location = '/thank-you'; // redirect a user to another page
+                                // for now we'll just alert the user
+
+                            }
+                        });
+
+            });
+        });
+
+
+    }
+</script>
 
 </body>
 </html>
