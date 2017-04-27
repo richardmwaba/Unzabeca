@@ -4377,7 +4377,7 @@ module.exports = Runner;
 /**
  * Initialize a `Runner` for the given `suite`.
  *
- * Events:
+ * events:
  *
  *   - `start`  execution started
  *   - `end`  execution complete

@@ -19,6 +19,7 @@ Route::get('/', function () {
 //these pages are accessible only to authenticated users
 Route::group(['middleware' => 'auth'], function () {
 
+    //user routes
 Route::get('/members/my_profile', 'users_controller@my_profile');
 Route::get('/members/profile/{id}', 'users_controller@profile');
 Route::get('/members/my_profile/edit', 'users_controller@edit_form');
@@ -26,8 +27,16 @@ Route::get('/members/profile/edit/{id}', 'users_controller@form');
 Route::post('members/profile/update', 'users_controller@update');
 Route::post('members/change_password', 'PasswordController@change_password');
 
+//events routes
+Route::get('members/events', 'EventsController@allEvents');
+Route::post('/members/events/create', 'EventsController@create');
+Route::get('/members/events/edit/{id}', 'EventsController@editForm');
+Route::post('/members/events/update', 'EventsController@update');
+Route::get('/members/events/delete/{id}', 'EventsController@delete');
+
 });
 
 Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');

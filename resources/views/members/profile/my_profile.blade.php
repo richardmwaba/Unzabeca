@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{$user->f_name}}</div>
+                    <div class="panel-heading">{{$user->first_name}}</div>
 
                     <div class="panel-body">
                         <div class="col-md-9">
@@ -11,14 +11,21 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 col-md-3 col-xs-4" for="first-name">First Name:</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="first_name_value">{{$user->f_name}}</label>
+                                        <label class="text-primary" for="first_name_value">{{$user->member->first_name}}</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 col-md-3 col-xs-4" for="last-name"> Middle Name:</label>
+                                    <div class="col-sm-6 col-md-6 col-xs-5">
+                                        <label class="text-primary" for="last_name_value">{{$user->member->middle_name}}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-3 col-md-3 col-xs-4" for="last-name"> Last Name:</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="last_name_value">{{$user->l_name}}</label>
+                                        <label class="text-primary" for="last_name_value">{{$user->member->last_name}}</label>
                                     </div>
                                 </div>
 
@@ -30,44 +37,30 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="man-number"> User id:</label>
+                                    <label class="col-sm-3 col-md-3 col-xs-4" for="man-number"> Member id:</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="man-number_value">{{$user->user_id}}</label>
+                                        <label class="text-primary" for="man-number_value">{{$user->member->member_id}}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="NRC"> NRC Number:</label>
+                                    <label class="col-sm-3 col-md-3 col-xs-4" for="residential-address"> Position</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="NRC_value">{{$user->user_type_id}}</label>
+                                        <label class="text-primary" for="residential_address_value">{{$user->member->position}}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="nationality"> Nationality:</label>
+                                    <label class="col-sm-3 col-md-3 col-xs-4" for="phone-number">Comment</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="nationality_value">{{$user->nationality}}</label>
+                                        <label class="text-primary" for="phone_number_value"></label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="residential-address"> Residential Address:</label>
+                                    <label class="col-sm-3 col-md-3 col-xs-4" for="contract-expiry-date">Year</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="residential_address_value">{{$user->address}}</label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="phone-number"> Phone Number:</label>
-                                    <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="phone_number_value">{{$user->phoneNumber}}</label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="contract-expiry-date">Registered on</label>
-                                    <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="contract_expiry_date_value">{{\Carbon\Carbon::parse($user->cretated_at)->toFormattedDateString()}}</label>
+                                        <label class="text-primary" for="contract_expiry_date_value">{{\Carbon\Carbon::parse($user->member->year)->toFormattedDateString()}}</label>
                                     </div>
                                 </div>
 
