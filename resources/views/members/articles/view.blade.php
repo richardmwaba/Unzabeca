@@ -2,6 +2,15 @@
 @section('title', 'Article View')
 @section('content')
 
+    <style>
+        .banner {
+            padding: 180px 0;
+            color: #f8f8f8;
+            background: url( {{URL::asset('../storage/'.$article->articlePhoto->filename)}} ) no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -12,9 +21,9 @@
                         {{ $article->articleTitle }} <br>
                         <small>By - {{$article->author}} . {{ \Carbon\Carbon::parse($article->created_at )->diffForHumans() }}</small>
                     </h3>
-                    <div>
-                        <img src="{{ URL::asset('../storage/'.$article->articlePhoto->filename) }}" alt="article image"
-                             class="img-responsive center-block" width="460" height="345">
+                    <div class="banner">
+                        {{--<img src="{{ URL::asset('../storage/'.$article->articlePhoto->filename) }}" alt="article image"--}}
+                             {{--class="img-responsive center-block" width="460" height="345">--}}
                     </div>
                     <div>
                         {!! $article->articleBody !!}  <!-- decodes the html entities -->
