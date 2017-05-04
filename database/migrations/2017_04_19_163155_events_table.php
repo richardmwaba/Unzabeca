@@ -19,7 +19,7 @@ class EventsTable extends Migration
             $table->boolean('status');
             $table->date('date_of_event');
             $table->string('committee_id'); //foreign key on committees_table
-            $table->string('email'); // foreign key on users table
+            $table->string('email', 50); // foreign key on users table
             $table->timestamps();
         });
     }

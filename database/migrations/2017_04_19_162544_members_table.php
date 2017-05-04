@@ -15,10 +15,10 @@ class MembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('member_id');
-            $table->string('first_name');
-            $table->string('middle_name');
+            $table->string('first_name', 45);
+            $table->string('middle_name', 45);
             $table->string('last_name');
-            $table->string('email')->unique();
+            $table->string('email', 50)->unique();
             $table->string('year');
             $table->string('position');
             $table->string('status_id'); // foreign key from status_table
