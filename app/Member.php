@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
+    //Table associated with model
+    protected $table = 'members';
+    protected $primaryKey = 'member_id';
+
     // for mass assignment
     protected $fillable = [
-        'first_name', 'middle_name','last_name', 'email', 'year', 'status_id', 'position', 'approved'
+        'first_name', 'middle_name','last_name', 'email', 'year', 'status_id', 'role', 'phone_number','approved'
     ];
 
     /**

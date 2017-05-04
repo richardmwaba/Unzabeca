@@ -20,8 +20,9 @@ class MembersTable extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('year');
-            $table->string('position');
+            $table->string('role');
             $table->string('status_id'); // foreign key from status_table
+            $table->String('phone_number');
             $table->integer('approved');
             $table->timestamps();
         });

@@ -103,7 +103,7 @@
                         <a href="{{url('/members/overview')}}"><i class="fa fa-desktop "></i>  Overview</a>
                   </li>
                     <li>
-                        <a href="#"><i class="fa fa- "></i>  Alumni</a>
+                        <a href="{{url('/alumni/viewAlumni')}}"><i class="fa fa- "></i>  Alumni</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-file "></i>  Articles</a>
@@ -112,7 +112,7 @@
                         <a href="#"><i class="fa fa- "></i>  Events</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-group "></i>  Members</a>
+                        <a href="{{url('/members/viewMembers')}}"><i class="fa fa-group "></i>  Members</a>
                     </li>
                     {{--<li>--}}
                         {{--<a href="{{url('/members/reports/auto')}}"><i class="fa fa-qrcode "></i>Auto reports</a>--}}
