@@ -80,10 +80,10 @@
                             <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }}">
 
                                 <label>Status</label>
-                                <select id="status" onchange="dropdown()" class="form-control" name="status_id">
+                                <select id="status" class="form-control" name="status_id">
                                     <option value="">-- select one --</option>
                                     @foreach($status as $status_id)
-                                        <option>{{$status_id->status_description}}</option>
+                                        <option value="{{$status_id->status_description}}">{{$status_id->status_description}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('status_id'))
@@ -92,10 +92,10 @@
                                             </span>
                                 @endif
                             </div>
-                            <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
+                            <div id="approval_status" style="display: none" class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
 
-                                <label id="role_label" class="hidden">Position</label>
-                                <input id="role_field" class="form-control hidden" placeholder="Enter the position of member" name="role" type="text"
+                                <label id="role_label">Position</label>
+                                <input id="role_field" class="form-control" placeholder="Enter the position of member" name="role" type="text"
                                        value="{{ old('role') }}">
                                 @if ($errors->has('role'))
                                     <span class="help-block">
@@ -104,7 +104,7 @@
                                 @endif
                             </div>
                             <div>
-                                <input id="" class="form-control hidden" value="1" name="approved" type="number">
+                                <input class="form-control" style="display: none" value="1" name="approved" type="number">
                             </div>
                             {{--<div class="form-group{{ $errors->has('issuer') ? ' has-error' : '' }}">--}}
 
@@ -125,16 +125,27 @@
                                 </div>
                             </div>
 
-                            <!--- Calculating the auto fill values-->
+                            <!-- Showing the input field after status Id chosen on drop dropdown is Executive Member-->
                             <script>
+                                $(document).ready(function(){
+                                    $('#status').on('change', function() {
 
-                                function dropdown(status) {
-                                    switch(status.value) {
-                                        case 'Executive Member':
-                                            $("#role_field, #role_label").removeClass("hidden");
-                                        break;
-                                    }
-                                }
+//                                        switch (this.value){
+//                                            case 'Executive Member':
+//                                                $('#approval_status').show();
+//                                                break;
+//
+//                                        }
+                                        if ( this.value == 'Executive Member')
+                                        {
+                                            $('#approval_status').show();
+                                        }
+////                                        else
+////                                        {
+////                                            $("#business").hide();
+////                                        }
+                                    });
+                                });
                             </script>
 
                         </form>
