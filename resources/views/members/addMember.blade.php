@@ -27,7 +27,7 @@
                             <div class="form-group{{ $errors->has('middle_name') ? ' has-error' : '' }}">
 
                                 <label>Middle Name</label>
-                                <input class="form-control" id="middle_name" placeholder="Enter middle name" name="interest_rate" type="text">
+                                <input class="form-control" id="middle_name" placeholder="Enter middle name" name="middle_name" type="text">
                                 @if ($errors->has('middle_name'))
                                     <span class="help-block">
                                                 <strong>{{ $errors->first('middle_name') }}</strong>
@@ -92,7 +92,7 @@
                                             </span>
                                 @endif
                             </div>
-                            <div id="approval_status" style="display: none" class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
+                            <div id="approval_status" style="" class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
 
                                 <label id="role_label">Position</label>
                                 <input id="role_field" class="form-control" placeholder="Enter the position of member" name="role" type="text"

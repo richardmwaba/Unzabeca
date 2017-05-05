@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Redirect;
 use App\Member;
 use App\Status;
 
@@ -37,7 +38,7 @@ class MembersController extends Controller
             'year' => 'required|max:255',
             'role' => 'max:255',
             'status_id' => 'required|max:255',
-            'phone-number' => 'required|max:255',
+            'phone_number' => 'required|max:255',
             'approved' => 'max:255'
         ]);
 
@@ -47,11 +48,19 @@ class MembersController extends Controller
             'last_name' => $data -> last_name,
             'email' => $data -> email,
             'year' => $data -> year,
-            'role' => ucwords($data) -> role,
+            'role' => ucwords($data -> role),
             'status_id' => $data -> status_id,
+            'phone_number' => $data -> phone_number,
             'approved' => $data -> approved
         ]);
 
         return Redirect::action('MembersController@viewMembers');
+    }
+
+    public function deleteMember($member_id)
+    {
+        $user = Member::firstOrNew(array('member' => $member_id));
+        $user->delete();
+        return Redirect::action('MemberController@viewMembers');
     }
 }

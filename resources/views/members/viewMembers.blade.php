@@ -28,12 +28,12 @@
                             <tr>
                                 <td>
                                     @if(isset($members))
-                                        {{$member->firstName}}
+                                        {{$member->first_name}}
                                     @endif
                                 </td>
                                 <td>
                                     @if(isset($members))
-                                        {{$member->lastName}}
+                                        {{$member->last_name}}
                                     @endif
                                 </td>
                                 <td>
@@ -63,9 +63,9 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-default btn-xs" href="#"
-                                           type="button" name="toggle" title="delete"><i class="glyphicon glyphicon glyphicon-trash"></i>
-                                        </a>
+                                        <button class="btn btn-default btn-xs" onclick="deleteMember('{{$members->member_id}}')" type="button" name="toggle" title="delete">
+                                            <i class="glyphicon glyphicon glyphicon-trash"></i>
+                                        </button>
 
                                         <a href="#" class="btn btn-sm btn-link">Edit</a>
                                     </div>
@@ -116,7 +116,7 @@
                                 xhttp = new ActiveXObject("Microsoft.XMLHTTP");
                             }
                             if (confirm("Are you sure you want to delete " + user + "?")) {
-                                xhttp.open("GET", "{{url('delete_user')}}/" + man, false);
+                                xhttp.open("GET", "{{url('/members/deleteMember')}}/" + man, false);
                                 xhttp.send();
                                 alert(user + " has been deleted!");
                                 location.reload();
