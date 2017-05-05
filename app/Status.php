@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Status extends Model
 {
+    protected $table = 'status';
+    protected $primaryKey = '';
+
     protected $fillable = [
         'status_id', 'status_description'
     ];
