@@ -14,12 +14,14 @@ class EventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->increments('event_id');
-            $table->longText('event_description');
-            $table->boolean('status');
+            $table->string('event_id', 10)->unique();
+            $table->string('event_description', 255);
+            $table->string('status');
             $table->date('date_of_event');
             $table->string('committee_id'); //foreign key on committees_table
-            $table->string('email', 50); // foreign key on users table
+            $table->string('email'); // foreign key on users table
+            $table->string('location'); // foreign key on users table
+            $table->string('added_by'); // foreign key on users table
             $table->timestamps();
         });
     }

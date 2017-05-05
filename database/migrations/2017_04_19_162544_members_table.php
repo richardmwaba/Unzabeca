@@ -14,15 +14,14 @@ class MembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->increments('member_id');
-            $table->string('first_name', 45);
-            $table->string('middle_name', 45);
+            $table->string('member_id', 10)->unique();
+            $table->string('first_name');
+            $table->string('middle_name');
             $table->string('last_name');
-            $table->string('email', 50)->unique();
+            $table->string('email')->unique();
             $table->string('year');
-            $table->string('role');
+            $table->string('position');
             $table->string('status_id'); // foreign key from status_table
-            $table->String('phone_number');
             $table->integer('approved');
             $table->timestamps();
         });

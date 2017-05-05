@@ -14,9 +14,10 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'email';
+    public $incrementing = false;
     protected $fillable = [
-        'email', 'password',
+        'email', 'password','remeber_token'
     ];
 
     /**
@@ -33,7 +34,7 @@ class User extends Authenticatable
      * of the system.
      */
     public function member(){
-        return $this->hasMany('App\Member', 'email');  // using email as foreign key
+        return $this->hasOne('App\Member', 'email', 'email');  // using email as foreign key
     }
 
     /**

@@ -2825,7 +2825,7 @@ jQuery.event = {
 		}
 	},
 
-	// Events that are safe to short-circuit if no handlers are attached.
+	// events that are safe to short-circuit if no handlers are attached.
 	// Native DOM events should not be added, they may have inline handlers.
 	customEvent: {
 		"getData": true,
@@ -3249,7 +3249,7 @@ jQuery.Event = function( src, props ) {
 		this.originalEvent = src;
 		this.type = src.type;
 
-		// Events bubbling up the document may have been marked as prevented
+		// events bubbling up the document may have been marked as prevented
 		// by a handler lower down the tree; reflect the correct value.
 		this.isDefaultPrevented = ( src.defaultPrevented || src.returnValue === false ||
 			src.getPreventDefault && src.getPreventDefault() ) ? returnTrue : returnFalse;
@@ -3278,7 +3278,7 @@ function returnTrue() {
 	return true;
 }
 
-// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+// jQuery.Event is based on DOM3 events as specified by the ECMAScript Language Binding
 // http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 jQuery.Event.prototype = {
 	preventDefault: function() {

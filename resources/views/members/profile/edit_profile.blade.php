@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{$user->f_name}} ({{$user->user_id}})</div>
+                    <div class="panel-heading">Editing {{$user->member->first_name}} {{$user->member->middle_name}} {{$user->member->last_name}}</div>
 
                     <div class="panel-body">
                         <div class="col-md-6">
@@ -13,21 +13,32 @@
                                 {!! csrf_field() !!}
 
                                 <div class="form-group">
+                                    <label>Member id</label>
+                                    <input class="form-control" value="{{$user->member->member_id}}" name="member_id" type="text" readonly>
+                                </div>
+
+                                <div class="form-group">
                                     <label>First Name</label>
 
-                                    <input class="form-control" name="f_name" placeholder="{{$user->f_name}}" value="{{$user->f_name}}" required autofocus>
+                                    <input class="form-control" name="first_name" value="{{$user->member->first_name}}" required autofocus>
                                 </div>
+
+                                <div class="form-group">
+                                    <label>Middle Name</label>
+
+                                    <input class="form-control" name="middle_name" value="{{$user->member->middle_name}}" required autofocus>
+                                    </div>
 
                                 <div class="form-group">
                                     <label>Last Name</label>
 
-                                    <input class="form-control" name="l_name" placeholder="{{$user->l_name}}" value="{{$user->l_name}}" required autofocus>
-                                    </div>
+                                    <input class="form-control" name="last_name" value="{{$user->member->last_name}}" required autofocus>
+                                </div>
 
                                     <div class="form-group{{$errors->has('email') ? ' has-error' : '' }}">
                                     <label>E-mail Address</label>
 
-                                    <input class="form-control" placeholder="{{$user->email}}" name="email" type="email">
+                                    <input class="form-control" value="{{$user->email}}" name="email" type="email">
                                         @if ($errors->has('email'))
                                             <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -36,30 +47,10 @@
                                         </div>
 
                                 <div class="form-group">
-                                    <label>NRC Number</label>
-                                    <input class="form-control" placeholder="{{$user->NRC}}" value="{{$user->NRC}}" name="nrc_number" type="number" required autofocus>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Residential Address</label>
+                                    <label>Position</label>
 
 
-                                    <input class="form-control" placeholder="address" name="address" value="{{$user->address}}" required autofocus>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Contact</label>
-
-
-                                    <input class="form-control" placeholder="phone number" name="contact" value="{{$user->contact}}" required autofocus>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label>User type id</label>
-
-                                    <input class="form-control" placeholder="+260" name="phone_number" value="{{$user->user_type_id}}" required autofocus>
-
+                                    <input class="form-control" placeholder="address" name="address" value="{{$user->member->position}}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <a href="#" class="btn btn-link" role="button" data-toggle="modal"
@@ -68,8 +59,6 @@
                                 <div id="demo" class="collapse">
 
                                 </div>
-
-                                <input type="hidden" name="user_id" value="{{$user->user_id}}">
 
                                 <!--Research on how to compare passwords entered in these fields-->
 

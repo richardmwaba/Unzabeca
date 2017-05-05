@@ -15,6 +15,9 @@ class Member extends Model
         'first_name', 'middle_name','last_name', 'email', 'year', 'status_id', 'role', 'phone_number','approved'
     ];
 
+    public $primaryKey = 'member_id';
+    public $incrementing = false;
+
     /**
      * Relation on member and user tables. A member can be
      * a user.
