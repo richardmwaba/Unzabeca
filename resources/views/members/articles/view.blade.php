@@ -34,7 +34,7 @@
                     <hr>
                     <ul>
                         @foreach($others as $other)
-                            <li><a href="{{url('/members/viewArticle/'. $other->article_id)}}">{{ $other->articleTitle }}</a></li>
+                            <li><a href="{{url('/members/article/view/'. $other->article_id)}}">{{ $other->articleTitle }}</a></li>
                         @endforeach
                     </ul>
                 </aside>
