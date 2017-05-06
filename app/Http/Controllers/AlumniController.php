@@ -7,12 +7,57 @@ use App\Member;
 
 class AlumniController extends Controller
 {
+    //Update Alumni details
+    public function update(Request $data, $member_id)
+    {
+        //Validate
+        $this->validate($data, [
+            'first_name' => 'required|max:255',
+            'middle_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email'=> 'required|max:255|email',
+            'year' => 'required|max:255',
+            'role' => 'required|max:255',
+            'phone_number' => 'required|max:255'
+        ]);
+
+        $members = Member::findOrFail($member_id);
+
+        $members->update($data->all());
+
+        return redirect()->back()
+            ->with('status', 'Executive Alumni has been updated successfully!!');
+    }
+
+
     //Add new alumni
     public function addAlumni(Request $data)
     {
         $this->validate($data, [
-
+            'first_name' => 'required|max:255',
+            'middle_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email'=> 'required|max:255|email|unique:members',
+            'year' => 'required|max:255',
+            'role' => 'required|max:255',
+            'status_id' => 'required|max:255',
+            'phone_number' => 'required|max:255',
+            'approved' => 'max:255'
             ]);
+
+        Member::create([
+            'first_name' => $data -> first_name,
+            'middle_name' => $data -> middle_name,
+            'last_name' => $data -> last_name,
+            'email' => $data -> email,
+            'year' => $data -> year,
+            'role' => ucwords($data -> role),
+            'status_id' => $data -> status_id,
+            'phone_number' => $data -> phone_number,
+            'approved' => $data -> approved
+        ]);
+
+        return redirect()->back()->with('status', 'Executive Alumni has been added successfully!!');
 
     }
 
@@ -22,13 +67,20 @@ class AlumniController extends Controller
         return view('members.addMember');
     }
 
-    //Retrieve and view all alumni
+    //Retrieve and view all executive alumni
     public function viewAlumni()
     {
-        $alumni = Member::where('status_id', 'alumni')
+        $alumni = Member::where('status_id', 'Executive Alumni')
             ->orderBy('first_name', 'desc')
             ->take(10)
             ->get();
         return view('alumni.viewAlumni')->with('alumni', $alumni);
+    }
+
+    public function delete($member_id)
+    {
+        $user = Member::findOrFail($member_id);
+        $user->delete();
+        return redirect()->back()->with('status', 'Executive Alumni has been deleted successfully!!');
     }
 }

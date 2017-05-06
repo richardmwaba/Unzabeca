@@ -12,8 +12,10 @@ class Member extends Model
 
     // for mass assignment
     protected $fillable = [
-        'first_name', 'middle_name','last_name', 'email', 'year', 'status_id', 'role', 'phone_number','approved'
+        'member_id', 'first_name', 'middle_name','last_name', 'email', 'year', 'status_id', 'role', 'phone_number','approved'
     ];
+
+    public $incrementing = false;
 
     /**
      * Relation on member and user tables. A member can be

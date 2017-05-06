@@ -13,7 +13,7 @@ class MembersController extends Controller
     //Retrieve users and view them
     public function viewMembers()
     {
-        $members = Member::where('approved', 1)
+        $members = Member::where('approved', 'Approved Member')
                     ->orderBy('first_name', 'desc')
                     ->take(10)
                     ->get();
@@ -26,6 +26,36 @@ class MembersController extends Controller
         $status = Status::all();
         return view('members.addMember')->with('status', $status);
     }
+
+    public function viewEditMember($member_id)
+    {
+        $members = Member::findOrFail($member_id);
+        return view('members.viewMembers')->with('members', $members);
+    }
+
+    //Update member details
+    public function update(Request $data, $member_id)
+    {
+        // validation
+        $this->validate($data, [
+            'first_name' => 'required|max:255',
+            'middle_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email'=> 'required|max:255|email',
+            'year' => 'required|max:255',
+            'role' => 'max:255',
+            'status_id' => 'required|max:255',
+            'phone_number' => 'required|max:255'
+        ]);
+
+        $members = Member::findOrFail($member_id);
+
+        $members->update($data->all());
+
+        return redirect()->back()
+            ->with('status', 'Member has been updated successfully!!');
+    }
+
 
     //Add a new member
     public function addMember(Request $data)
@@ -54,13 +84,13 @@ class MembersController extends Controller
             'approved' => $data -> approved
         ]);
 
-        return Redirect::action('MembersController@viewMembers');
+        return redirect()->back()->with('status', 'Member has been added successfully!!');
     }
 
-    public function deleteMember($member_id)
+    public function delete($member_id)
     {
-        $user = Member::firstOrNew(array('member' => $member_id));
+        $user = Member::findOrFail($member_id);
         $user->delete();
-        return Redirect::action('MemberController@viewMembers');
+        return redirect()->back()->with('status', 'Member has been deleted successfully!!');
     }
 }

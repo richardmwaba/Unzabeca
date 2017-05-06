@@ -32,7 +32,6 @@
     <!-- Custom CSS -->
     <link href="{{URL::asset('../frontend/css/authorized.css')}}" rel="stylesheet">
 
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
@@ -46,6 +45,9 @@
 @section('page_css')
     @yield('css')
 @show
+
+    <!-- ckeditor JavaScript -->
+    <script src="{{URL::asset('../frontend/ckeditor/ckeditor.js')}}"></script>
 
 <!--[if lt IE 9] >
              <script src="http://html5shiv.googlecode/svn/trunk/html5.js"></script>
@@ -87,7 +89,7 @@
                     <li><a href="{{url('/members/my_profile')}}"><i class="fa fa-user fa-fw"></i>Profile</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="{{ url('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -103,13 +105,13 @@
                         <a href="{{url('/members/overview')}}"><i class="fa fa-desktop "></i>  Overview</a>
                   </li>
                     <li>
-                        <a href="{{url('/alumni/viewAlumni')}}"><i class="fa fa- "></i>  Alumni</a>
+                        <a href="{{url('/members/articles')}}"><i class="fa fa-file "></i>  Articles</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-file "></i>  Articles</a>
+                        <a href="{{url('/members/events')}}"><i class="fa fa-calendar "></i>  Events</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa- "></i>  Events</a>
+                        <a href="{{url('/alumni/viewAlumni')}}"><i class="fa fa- "></i> Executive Alumni</a>
                     </li>
                     <li>
                         <a href="{{url('/members/viewMembers')}}"><i class="fa fa-group "></i>  Members</a>
@@ -146,9 +148,16 @@
                 </h4>
             </div>
             <!-- /.col-lg-12 -->
-        </div>
+        </div><!-- /.row -->
     @section('main_content')
-        <!-- /.row -->
+
+        <!-- success flash message -->
+        @if(session('status'))
+            <div class="alert alert-success col-md-10">
+                {{ session('status') }}
+            </div>
+        @endif
+
             <!-- content injected here -->
             @yield('content')
     </div>
@@ -161,7 +170,7 @@
 <footer class="footer footer-fixed-bottom">
     <div class="container" style="text-align:center">
         <p class="text-muted"><span class="glyphicon glyphicon-copyright-mark"></span> - {{\Carbon\Carbon::now()->year}} Unzabeca
-            <br> All rights reserved.</p>Kumishesu
+            <br> All rights reserved.</p>
     </div>
 </footer>
 <!-- ./footer -->

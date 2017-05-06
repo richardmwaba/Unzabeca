@@ -11,9 +11,7 @@ class users_controller extends Controller
     //view current user profile
     public function my_profile()
     {
-
-        $user = Auth::User();
-        return view('members.profile.my_profile')->with('user', $user);
+        return view('members.profile.my_profile')->with('user', Auth::User());
 
     }
 
@@ -21,8 +19,7 @@ class users_controller extends Controller
     //load the edit form with data
     public function edit_form()
     {
-        $user = Auth::user();
-        return view('members.profile.edit_profile')->with('user', $user);
+        return view('members.profile.edit_profile')->with('user', Auth::user());
 
 
     }
@@ -30,8 +27,7 @@ class users_controller extends Controller
     //load the edit form with data for user
     public function form($id)
     {
-        $user = User::findOrFail($id);
-        return view('members.profile.edit_profile')->with('user', $user);
+        return view('members.profile.edit_profile')->with('user',  User::findOrFail($id));
 
 
     }
