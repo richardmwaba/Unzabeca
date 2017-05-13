@@ -28,8 +28,7 @@
                             <th data-field="articleTitle" data-sortable="true">Article title</th>
                             <th data-field="author" data-sortable="true">Author</th>
                             <th data-field="datePosted" data-sortable="true">Date posted</th>
-                            <th data-field="edit">Edit</th>
-                            <th data-field="delete">Delete</th>
+                            <th data-field="delete">Delete/Edit</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -39,15 +38,16 @@
                                 <td><a href="{{url('/members/article/view/'. $article->article_id)}}">{{ $article->articleTitle }}</a></td>
                                 <td>{{ $article->author }}</td>
                                 <td>{{ \Carbon\Carbon::parse($article->created_at )->toFormattedDateString() }}</td>
-                                <td><a href=" {{url('/members/article/edit/'. $article->article_id)}}" class="btn btn-default">
-                                        <i class="glyphicon glyphicon-edit"></i>
-                                    </a>
-                                </td>
                                 <td>
                                     <!-- delete article -->
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal">
                                         <i class="glyphicon glyphicon-trash"></i>
                                     </button>
+
+                                    <a href=" {{url('/members/article/edit/'. $article->article_id)}}" class="btn btn-xs btn-success">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
+
                                     <form role="form" method="post" action="{{url('/members/article/delete/'.$article->article_id)}}">
                                         {{csrf_field()}}<!--delete confirmation Modal -->
                                         <div class="modal fade" id="deleteModal" role="dialog">
