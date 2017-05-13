@@ -79,7 +79,9 @@
                 </div>
             </div> <!-- ./ panel -->
             @else
-                <h3 style="color:darkgoldenrod; text-align: center;">Well, it look like there aren't any article to manage... :'(</h3>
+                <h3 style="color:darkgoldenrod; text-align: center;">Well, it look like there aren't any article to manage... :'( <br>
+                    Click the <em>Create New article</em> button to add articles...
+                </h3>
             @endif
         </div>
 

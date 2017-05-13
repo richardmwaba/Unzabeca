@@ -43,7 +43,28 @@ Route::post('/members/events/update', 'EventsController@update');
 Route::get('/members/events/delete/{id}', 'EventsController@delete');
 
 
+//article routes
+    /* -- routes for everything article related -- */
+// route to display article section main page
+    Route::get('/members/articles', 'ArticleController@index');
 
+// route to get articleForm page
+    Route::get('/members/article/create', 'ArticleController@createArticle');
+
+// posts article form
+    Route::post('/members/article/create', 'ArticleController@store');
+
+// route to view particular article
+    Route::get('/members/article/view/{id}', 'ArticleController@view');
+
+// edit article route
+    Route::get('/members/article/edit/{id}', 'ArticleController@edit');
+
+// update route
+    Route::post('/members/article/update/{id}', 'ArticleController@update');
+
+// detele route
+    Route::post('/members/article/delete/{id}', 'ArticleController@delete');
 
 
 });
@@ -53,25 +74,3 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
 
-//article routes
-/* -- routes for everything article related -- */
-// route to display article section main page
-Route::get('/members/articles', 'ArticleController@index');
-
-// route to get articleForm page
-Route::get('/members/article/create', 'ArticleController@createArticle');
-
-// posts article form
-Route::post('/members/article/create', 'ArticleController@store');
-
-// route to view particular article
-Route::get('/members/article/view/{id}', 'ArticleController@view');
-
-// edit article route
-Route::get('/members/article/edit/{id}', 'ArticleController@edit');
-
-// update route
-Route::post('/members/article/update/{id}', 'ArticleController@update');
-
-// detele route
-Route::post('/members/article/delete/{id}', 'ArticleController@delete');
