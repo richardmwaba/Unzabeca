@@ -67,13 +67,13 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <div class="btn-group">
-                                        <button class="btn btn-default btn-xs btn-danger" type="button" data-toggle="modal" title="Delete" data-target="#deleteModal-{{$member->member_id}}">
-                                            <i class="glyphicon glyphicon glyphicon-trash"></i>
-                                        </button>
 
-                                        <button class="btn btn-default btn-xs btn-success" type="button" title="Edit" data-toggle="modal" data-target="#editMemberModal-{{$member->member_id}}"><i class="glyphicon glyphicon glyphicon-edit"></i></button>
-                                    </div>
+                                    <button class="btn btn-default btn-xs btn-danger" type="button" data-toggle="modal" title="Delete" data-target="#deleteModal-{{$member->member_id}}">
+                                        <i class="glyphicon glyphicon glyphicon-trash"></i>
+                                    </button>
+
+                                    <button class="btn btn-default btn-xs btn-success" type="button" title="Edit" data-toggle="modal" data-target="#editMemberModal-{{$member->member_id}}"><i class="glyphicon glyphicon glyphicon-edit"></i></button>
+
                                     <form role="form" method="post" action="{{url('/members/deleteMember/'.$member->member_id)}}">
                                     {{csrf_field()}}<!--delete confirmation Modal -->
                                         <div class="modal fade" id="deleteModal-{{$member->member_id}}" role="dialog">
