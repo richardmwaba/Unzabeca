@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -8,18 +8,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <!-- alumni -->
+    <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
 
-    <title>@yield('title')</title>
     <!-- jquerry -->
     <script src="{{URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')}}"></script>
+
+    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"> </script>
+    <script>
+        $(function(){
+            $().timelinr({
+                arrowKeys: 'true'
+            })
+        });
+    </script>
+
+    <!-- jquerry -->
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('../webview/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Web Fonts -->
     <link href='{{URL::asset('http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300')}}' rel='stylesheet' type='text/css'>
     <!-- Flaticon CSS -->
     <link href="{{URL::asset('../webview/fonts/flaticon/flaticon.css')}}" rel="stylesheet">
-    <!-- alumni -->
-    <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
     <!-- font-awesome CSS -->
     <link href="{{URL::asset('../webview/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- owl.carousel CSS -->
@@ -31,7 +41,6 @@
     <link href="{{URL::asset('../webview/css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{URL::asset('../webview/css/style.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('../webview/css/alumni/style.css')}}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{URL::asset('../webview/css/responsive.css')}}" rel="stylesheet">
 
@@ -39,18 +48,9 @@
     <!-- HTML5 Shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]-->
-
-
     <script src="{{URL::asset('../webview/js/vendor/html5shim.js')}}"></script>
     <script src="{{URL::asset('../webview/js/vendor/respond.min.js')}}"></script>
-
-    <script>
-        $(function(){
-            $().timelinr({
-                arrowKeys: 'true'
-            })
-        });
-    </script>
+    <!--[endif]-->
 
 
 
@@ -129,27 +129,28 @@
                     </nav>
                 </header>
 
-        <section class="page-header-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="page-header">
-                            <h1>Executive</h1>
-                        </div>
-                        <ol class="breadcrumb">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Alumni</a></li>
-                            <li class="active">Executive</li>
-                        </ol>
-                    </div>
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
+                <section class="page-header-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="page-header">
+                                    <h1>Executive</h1>
+                                </div>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Alumni</a></li>
+                                    <li class="active">Executive</li>
+                                </ol>
+                            </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                </section>
+
+                <div class="container">
+                    <div class="content-wrapper">
+                        <section class="about-us-wrapper">
 
 
-        <div class="container">
-            <div class="content-wrapper">
-                <section class="about-us-wrapper">
                     <div id="timeline">
                         <ul id="dates">
                             <li ><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1900">1900</a></li>
@@ -159,12 +160,9 @@
                             <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1971">1971</a></li>
                             <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1977">1977</a></li>
                             <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1989">1989</a></li>
-                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1889">1889</a></li>
-                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1789">1789</a></li>
-                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1689">1689</a></li>
-                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1589">1589</a></li>
-                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1489">1489</a></li>
-                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1389">1389</a></li>
+                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#1999">1999</a></li>
+                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2001">2001</a></li>
+                            <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2011">2011</a></li>
                         </ul>
                         <ul id="issues">
                             <li id="1900">
@@ -174,47 +172,47 @@
                             </li>
                             <li id="1930">
                                 <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/2.png')}}" width="256" height="310" />
-                                <h1 style="font-size: 18px;">1930</h1>
+                                <h1 style="font-size: 48px;">1930</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="1944">
-                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/3')}}" width="256" height="310" />
-                                <h1 style="font-size: 18px;">1944</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/3.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">1944</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="1950">
-                                <img src="images/4.png" width="256" height="256" />
-                                <h1 style="font-size: 18px;">1950</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/4.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">1950</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="1971">
-                                <img src="images/5.png" width="256" height="256" />
-                                <h1 style="font-size: 18px;">1971</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/5.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">1971</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="1977">
-                                <img src="images/6.png" width="256" height="256" />
-                                <h1 style="font-size: 18px;">1977</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/6.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">1977</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="1989">
-                                <img src="images/7.png" width="256" height="256" />
-                                <h1 style="font-size: 18px;">1989</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/7.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">1989</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="1999">
-                                <img src="images/8.png" width="256" height="256" />
-                                <h1 style="font-size: 18px;">1999</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/8.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">1999</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="2001">
-                                <img src="images/9.png" width="256" height="256" />
-                                <h1 style="font-size: 18px;">2001</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/9.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">2001</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                             <li id="2011">
-                                <img src="images/10.png" width="256" height="256" />
-                                <h1 style="font-size: 18px;">2011</h1>
+                                <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/10.png')}}" width="256" height="310" />
+                                <h1 style="font-size: 48px;">2011</h1>
                                 <p>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum malesuada non vel leo. Sed fringilla porta ligula.</p>
                             </li>
                         </ul>
@@ -243,9 +241,10 @@
             overflow: hidden;"
                                 href="#" id="prev">-</a>
                     </div>
-                </section><!-- /.about-us-wrapper -->
-            </div><!-- /.content-wrapper -->
-        </div><!-- /.container -->
+
+                        </section><!-- /.about-us-wrapper -->
+                    </div><!-- /.content-wrapper -->
+                </div><!-- /.container -->
 
                 <section class="footer-widget-wrapper">
                     <div class="container">
@@ -396,34 +395,6 @@
 </div><!-- /st-container -->
 
 
-<!-- Preloader -->
-<div id="preloader">
-    <div id="status">
-        <div class="status-mes"></div>
-    </div>
-</div>
 
-<!-- jQuery -->
-<script src="{{URL::asset('../webview/js/jquery.js')}}"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="{{URL::asset('../webview/js/bootstrap.min.js')}}"></script>
-<!-- wow.min.js -->
-<script src="{{URL::asset('../webview/js/wow.min.js')}}"></script>
-<!-- owl-carousel -->
-<script src="{{URL::asset('../webview/owl-carousel/owl.carousel.min.js')}}"></script>
-<!-- smoothscroll -->
-<script src="{{URL::asset('../webview/js/smoothscroll.js')}}"></script>
-<!-- Offcanvas Menu -->
-<script src="{{URL::asset('../webview/js/hippo-offcanvas.js')}}"></script>
-<!-- easypiechart -->
-<script src="{{URL::asset('../webview/js/jquery.easypiechart.min.js')}}"></script>
-<!-- Scrolling Nav JavaScript -->
-<script src="{{URL::asset('../webview/js/jquery.easing.min.js')}}"></script>
-<!-- Magnific-popup -->
-<script src="{{URL::asset('../webview/js/jquery.magnific-popup.min.js')}}"></script>
-<!-- Shuffle.min js -->
-<script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
-<!-- Custom Script -->
-<script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
 </body>
 </html>
