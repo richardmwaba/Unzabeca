@@ -10,12 +10,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>@yield('title')</title>
+    <!-- jquerry -->
+    <script src="{{URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')}}"></script>
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('../webview/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Web Fonts -->
     <link href='{{URL::asset('http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300')}}' rel='stylesheet' type='text/css'>
     <!-- Flaticon CSS -->
     <link href="{{URL::asset('../webview/fonts/flaticon/flaticon.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
     <!-- font-awesome CSS -->
     <link href="{{URL::asset('../webview/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- owl.carousel CSS -->
@@ -27,6 +30,7 @@
     <link href="{{URL::asset('../webview/css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{URL::asset('../webview/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('../webview/css/alumni/style.css')}}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{URL::asset('../webview/css/responsive.css')}}" rel="stylesheet">
 
@@ -38,9 +42,9 @@
     <script src="{{URL::asset('../webview/js/vendor/respond.min.js')}}"></script>
     <!--[endif]-->
 
-    <!-- for the alumni timeline -->
-    <script src="{{URL::asset('webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>
-    
+    <!-- alumni -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>
     <script>
         $(function(){
             $().timelinr({
@@ -48,6 +52,8 @@
             })
         });
     </script>
+
+
 
 </head>
 
@@ -284,7 +290,7 @@
 </div>
 
 
-@section('scripts')
+@yield('scripts')
     <!-- jQuery -->
     <script src="{{URL::asset('../webview/js/jquery.js')}}"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -307,6 +313,5 @@
     <script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
     <!-- Custom Script -->
     <script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
-@show
 </body>
 </html>
