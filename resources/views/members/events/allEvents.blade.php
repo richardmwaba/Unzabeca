@@ -44,20 +44,20 @@
                                     <td>{{$event->committee->committee_description}}</td>
                                     <td>{{$event->email}}</td>
                                     <td>{{$event->location}}</td>
-                                    <td>{{$event->addedBy->first_name}} {{$event->addedBy->last_name}}</td>
+                                    <td>@if(isset($event->addedBy)){{$event->addedBy->first_name}} {{$event->addedBy->last_name}}@endif</td>
                                     <td>
-                                        <div class="btn-group">
-                                            <a class="btn btn-link btn-xs" href="{{url('/members/events/edit/'.$event->event_id)}}"
-                                               type="button" name="toggle" title="edit">
-                                                <i class="glyphicon glyphicon glyphicon-edit"></i>
-                                            </a>
-                                            <a class="btn btn-link btn-xs"
-                                               onclick="delete_event('{{$event->event_description}}', '{{$event->event_id}}')"
-                                               type="button" name="toggle" title="delete">
-                                                <i class="glyphicon glyphicon glyphicon-trash"></i>
-                                            </a>
 
-                                        </div>
+                                        <a class="btn btn-link btn-xs" href="{{url('/members/events/edit/'.$event->event_id)}}"
+                                           type="button" name="toggle" title="edit">
+                                            <i class="glyphicon glyphicon glyphicon-edit"></i>
+                                        </a>
+                                        <a class="btn btn-link btn-xs"
+                                           onclick="delete_event('{{$event->event_description}}', '{{$event->event_id}}')"
+                                           type="button" name="toggle" title="delete">
+                                            <i class="glyphicon glyphicon glyphicon-trash"></i>
+                                        </a>
+
+
                                     </td>
                                 </tr>
                             @endforeach

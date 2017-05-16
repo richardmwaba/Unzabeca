@@ -111,7 +111,7 @@
                         <a href="{{url('/members/events')}}"><i class="fa fa-calendar "></i>  Events</a>
                     </li>
                     <li>
-                        <a href="{{url('/alumni/viewAlumni')}}"><i class="fa fa- "></i> Executive Alumni</a>
+                        <a href="{{url('/alumni/viewAlumni')}}"><i class="fa fa-users "></i> Executive Alumni</a>
                     </li>
                     <li>
                         <a href="{{url('/members/viewMembers')}}"><i class="fa fa-group "></i>  Members</a>

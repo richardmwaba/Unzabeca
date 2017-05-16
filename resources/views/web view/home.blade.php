@@ -1,679 +1,508 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>University of Zambia Business and Economics Association</title>
-    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+@extends('layouts.webview')
 
-    <!-- Font family-->
-    <link href="{{URL::asset('https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans')}}" rel="stylesheet">
+@section('content')
 
-    <!-- Font Awesome-->
-    <link href="{{URL::asset('../webview/css/font-awesome.min.css')}}" rel="stylesheet">
+    <div id="x-corp-carousel" class="carousel slide hero-slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#x-corp-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#x-corp-carousel" data-slide-to="1"></li>
+        </ol>
 
-    <!-- Bootstrap-->
-    <link href="{{URL::asset('../webview/css/bootstrap.min.css')}}" rel="stylesheet">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="{{URL::asset('../webview/img/img_1.jpg')}}" alt="Hero Slide">
+                <!--Slide Image-->
 
-    <!-- Image Hover-->
-    <link href="{{URL::asset('../webview/css/imagehover.min.css')}}" rel="stylesheet">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <small class="animated fadeIn">CALL US TODAY</small>
+                        <div class="phone animated lightSpeedIn">1-800-1234-567</div>
+                        <h1 class="animated lightSpeedIn">Title of Your Product <br>Service or Event</h1>
 
-    <!-- Custom Styling-->
-    <link href="{{URL::asset('../webview/css/style.css')}}" rel="stylesheet">
-</head>
-<body>
-<!--Navigation bar-->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{URL::asset('web view/home')}}">UNZA<span>BECA</span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#latest">Latest</a></li>
-                <li><a href="#committees">Committees</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#" data-target="#login" data-toggle="modal">Sign in</a></li>
-                <li class="btn-trial"><a href="#join">Join us</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!--/ Navigation bar-->
-<!--Modal box-->
-<div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog modal-sm">
+                        <p class="lead animated lightSpeedIn">It's a tag line, where you can write a key point of your idea.
+                            It is a long
+                            established fact that a reader will be distracted.</p>
 
-        <!-- Modal content no 1-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center form-title">Login</h4>
+                        <a class="btn btn-primary animated lightSpeedIn" href="#">Work With Us Today</a>
+                    </div>
+                    <!--.carousel-caption-->
+                </div>
+                <!--.container-->
             </div>
-            <div class="modal-body padtrbl">
+            <!--.item-->
 
-                <div class="login-box-body">
-                    <p class="login-box-msg">Sign in to start your session</p>
-                    <div class="form-group">
-                        <form id="loginForm" action="{{url('/login')}}" method="POST">
-                            {{csrf_field()}}
-                            <div id="email-group" class="form-group has-feedback"> <!----- username -------------->
-                                <input class="form-control" placeholder="email" name="email" id="loginid" type="email" autocomplete="off" />
-                                <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
-                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                            </div>
-                            <div id="password-group" class="form-group has-feedback"><!----- password -------------->
-                                <input class="form-control" name="password" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
-                                <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span><!---Alredy exists  ! -->
-                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                            </div>
+            <div class="item">
+                <img src="{{URL::asset('../webview/img/img_1.jpg')}}" alt="Hero Slide">
+                <!--Slide Image-->
+
+                <div class="container">
+                    <div class="carousel-caption">
+
+                        <h1 class="animated bounceIn">Title of Your Product <br>Service or Event</h1>
+
+                        <p class="lead animated bounceIn">It's a tag line, where you can write a key point of your idea. It
+                            is a long
+                            established fact that a reader will be distracted.</p>
+                        <a class="btn btn-primary animated bounceIn" href="#">Work With Us Today</a>
+                    </div>
+                    <!--.carousel-caption-->
+                </div>
+                <!--.container-->
+            </div>
+            <!--.item-->
+
+        </div>
+        <!--.carousel-inner-->
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#x-corp-carousel" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#x-corp-carousel" role="button" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- #x-corp-carousel-->
+
+
+    <div class="container-fluid">
+        <div class="content-wrapper">
+            <section class="intro-wrapper">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8">
+                        <h2 class="wow fadeInDown">Welcome to UNZABECA</h2>
+                        <p class="wow fadeInDown">
+                            Thank you for taking time to visit the <strong>University of Zambia Business and Economics Association</strong> (UNZABECA) website,
+                            they are various advantages of joining the assocaition, amoung them are:
+                            <ol style="list-style-type: disc">
+                                <li>Getting listed for Internship</li>
+                                <li>Up close representation</li>
+                                <li>Platform for interacting with the Students Union</li>
+                            </ol>
+                        </p>
+
+                        <h3 class="wow fadeInDown">About Us</h3>
+                        <p class="wow fadeInDown">
+                            The University of Zambia Business and Economics Association (UNZABECA) is a
+                            student driven association whose members are interested in the acquisition,
+                            research/evaluation, sharing and dissemination of information on the global and
+                            domestic economy, business and corporate organization. Our mission statement is
+                            <i>“bringing economic and business issues closer to the university and wider community”</i>.
+                        </p>
+
+                        <h3 class="wow fadeInDown">Our Mission</h3>
+                        <p class="wow fadeInDown">Bringing economic issues closer to the university and the wider community.</p>
+
+                        <a class="btn btn-primary wow fadeInDown" href="#" role="button">Read More</a>
+                    </div>
+
+                    <div class="col-lg-6 col-md-4"></div>
+                </div><!-- /.row -->
+            </section><!-- /.intro-wrapper -->
+
+
+            <section class="service-wrapper">
+                <h2 class="section-title wow fadeInDown">Our Services</h2>
+                <div class="row">
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg1 flaticon-increasing5"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Global business</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg2 flaticon-syncing"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Fast online support</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg3 flaticon-file24"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Pro Services &amp; Advice</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg4 flaticon-royalty"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Fresh business ideas</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+                </div> <!-- /.row -->
+            </section>
+
+            <section class="advantages-wrapper">
+                <h2 class="section-title wow fadeInDown">Our advantages</h2>
+                <div class="css-tab text-center">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#experiance" aria-controls="experiance" role="tab" data-toggle="tab">Experiance</a></li>
+                        <li><a href="#skills" aria-controls="skills" role="tab" data-toggle="tab">Skills</a></li>
+                        <li><a href="#capabilities" aria-controls="capabilities" role="tab" data-toggle="tab">Capabilities</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="experiance">
                             <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="checkbox icheck">
-                                        <label>
-                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} id="loginrem" > Remember Me
-                                        </label>
+                                <div class="col-sm-6 text-left experiance-tab-content wow fadeInLeft">
+                                    <h3>20 Years of Experience</h3>
+                                    <p>Seamlessly strategize empowered action items via adaptive web services. Competently leverage existing just in time mindshare and equity invested information. Holisticly expedite progressive e-markets with cross-platform deliverables. Dramatically orchestrate ethical intellectual capital rather than principle-centered functionalities. Distinctively innovate go forward paradigms with empowered internal or "organic" sources. Distinctively reinvent exceptional intellectual capital whereas client-centric web-readiness.</p>
+                                </div><!--/.col-sm-6 -->
+
+                                <div class="col-sm-6 text-left experiance-tab-content wow fadeInRight">
+                                    <h3>More than 50 Successful Projects</h3>
+                                    <p>Seamlessly strategize empowered action items via adaptive web services. Competently leverage existing just in time mindshare and equity invested information. Holisticly expedite progressive e-markets with cross-platform deliverables. Dramatically orchestrate ethical intellectual capital rather than principle-centered functionalities. Distinctively innovate go forward paradigms with empowered internal or "organic" sources. Distinctively reinvent exceptional intellectual capital whereas client-centric web-readiness.</p>
+                                </div><!--/.col-sm-6 -->
+                            </div><!-- /.row -->
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade" id="skills">
+                            <div class="our-skill">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="our-progress">
+                                            <div class="chart" data-percent="73">
+                                                <span class="percent">73</span>
+                                            </div>
+
+                                            <p>Lorem ipsum dolor consectetuer</p>
+                                        </div><!-- /.our-progress -->
+                                    </div><!-- /.col-md-3 -->
+
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="our-progress">
+                                            <div class="chart" data-percent="80">
+                                                <span class="percent">80</span>
+                                            </div>
+
+                                            <p>Lorem ipsum dolor consectetuer</p>
+                                        </div><!-- /.our-progress -->
+                                    </div><!-- /.col-md-3 -->
+
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="our-progress">
+                                            <div class="chart" data-percent="90">
+                                                <span class="percent">90</span>
+                                            </div>
+
+                                            <p>Lorem ipsum dolor consectetuer</p>
+                                        </div><!-- /.our-progress -->
+                                    </div><!-- /.col-md-3 -->
+
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="our-progress">
+                                            <div class="chart" data-percent="70">
+                                                <span class="percent">70</span>
+                                            </div>
+
+                                            <p>Lorem ipsum dolor consectetuer</p>
+                                        </div><!-- /.our-progress -->
+                                    </div><!-- /.col-md-3 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.our-skill -->
+                        </div><!--/#skills -->
+
+                        <div role="tabpanel" class="tab-pane fade" id="capabilities">
+                            <div class="row ">
+                                <div class="col-md-6 col-xs-12 capability-tab-content">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="img/tab-capa-1.jpg" alt="">
+                                        </div>
+
+                                        <div class="media-body text-left">
+                                            <h3 class="media-heading">Building your business growth &amp; prosperity</h3>
+                                            <p>Holisticly mesh granular bandwidth without seamless manufactured products. Monotonectally productize team building e-commerce before global bandwidth. Uniquely mesh resource sucking content and robust portals.</p>
+                                        </div><!-- /.media-body -->
+                                    </div><!-- /.media -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 col-xs-12 capability-tab-content">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="img/tab-capa-2.jpg" alt="">
+                                        </div>
+
+                                        <div class="media-body text-left">
+                                            <h3 class="media-heading">Building your business growth &amp; prosperity</h3>
+                                            <p>Holisticly mesh granular bandwidth without seamless manufactured products. Monotonectally productize team building e-commerce before global bandwidth. Uniquely mesh resource sucking content and robust portals.</p>
+                                        </div><!-- /.media-body -->
+                                    </div><!-- /.media -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.tab-pane -->
+                    </div><!-- /.tab-content -->
+                </div><!-- /.css-tab -->
+            </section>
+
+            <section class="handover-wrapper">
+                <h2 class="section-title wow fadeInDown">Our Handover Project</h2>
+                <div id="css-handover-carousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#css-handover-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#css-handover-carousel" data-slide-to="1"></li>
+                        <li data-target="#css-handover-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-md-6 col-md-push-6 wow fadeRight">
+                                    <div class="handover-work-thumb">
+                                        <img src="img/pr2.png" alt="">
+                                    </div><!-- /.client-thumb -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 col-md-pull-6 wow fadeInLeft">
+                                    <div class="handover-project">
+                                        <h3>Proactively productivate e-business e-commerce</h3>
+                                        <p>Efficiently communicate installed base leadership skills with extensible testing procedures. Enthusiastically evolve leading-edge scenarios.</p>
+
+                                        <ul class="check-square">
+                                            <li>Globally exploit interoperable infrastructures</li>
+                                            <li>Collaboratively initiate customer directed manufactured</li>
+                                            <li>Competently whiteboard backend information rather</li>
+                                            <li>Efficiently empower next-generation sources</li>
+                                            <li>Uniquely expedite sticky e-markets via orthogonal</li>
+                                            <li>Professionally strategize orthogonal core competency</li>
+                                        </ul>
+
+                                        <a class="btn btn-primary" href="portfolio-single.html" role="button">Read More</a>
+                                    </div><!-- /.handover-project -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6 col-md-push-6">
+                                    <div class="handover-work-thumb">
+                                        <img src="img/pr2.png" alt="">
+                                    </div><!-- /.client-thumb -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 col-md-pull-6">
+                                    <div class="handover-project">
+                                        <h3>Proactively productivate e-business e-commerce</h3>
+                                        <p>Efficiently communicate installed base leadership skills with extensible testing procedures. Enthusiastically evolve leading-edge scenarios.</p>
+
+                                        <ul class="check-square">
+                                            <li>Globally exploit interoperable infrastructures</li>
+                                            <li>Collaboratively initiate customer directed manufactured</li>
+                                            <li>Competently whiteboard backend information rather</li>
+                                            <li>Efficiently empower next-generation sources</li>
+                                            <li>Uniquely expedite sticky e-markets via orthogonal</li>
+                                            <li>Professionally strategize orthogonal core competency</li>
+                                        </ul>
+
+                                        <a class="btn btn-primary" href="portfolio-single.html" role="button">Read More</a>
+                                    </div><!-- /.handover-project -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6 col-md-push-6">
+                                    <div class="handover-work-thumb">
+                                        <img src="img/pr2.png" alt="">
+                                    </div><!-- /.client-thumb -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 col-md-pull-6">
+                                    <div class="handover-project">
+                                        <h3>Proactively productivate e-business e-commerce</h3>
+                                        <p>Efficiently communicate installed base leadership skills with extensible testing procedures. Enthusiastically evolve leading-edge scenarios.</p>
+
+                                        <ul class="check-square">
+                                            <li>Globally exploit interoperable infrastructures</li>
+                                            <li>Collaboratively initiate customer directed manufactured</li>
+                                            <li>Competently whiteboard backend information rather</li>
+                                            <li>Efficiently empower next-generation sources</li>
+                                            <li>Uniquely expedite sticky e-markets via orthogonal</li>
+                                            <li>Professionally strategize orthogonal core competency</li>
+                                        </ul>
+
+                                        <a class="btn btn-primary" href="portfolio-single.html" role="button">Read More</a>
+                                    </div><!-- /.handover-project -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.item -->
+                    </div><!-- /.carousel-inner -->
+                </div><!-- /.carousel -->
+            </section>
+
+
+            <section class="testimonial-wrapper">
+                <h2 class="section-title wow fadeInDown">What our Clients Say</h2>
+                <div id="css-testimonial-carousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#css-testimonial-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#css-testimonial-carousel" data-slide-to="1"></li>
+                        <li data-target="#css-testimonial-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-7 wow fadeInLeft">
+                                    <div class="client-testimonial">
+                                        <p>Enthusiastically envisioneer state of the art quality vectors without robust materials. Conveniently coordinate error-free ideas and.sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                        <span class="client-name">John Doe</span>, <span class="client-org">Themehippo</span>
                                     </div>
+                                </div><!-- /.col-md-8 -->
+                                <div class="col-md-4 col-sm-5 wow fadeInRight">
+                                    <div class="client-thumb">
+                                        <img src="img/tm-4.jpg" alt="">
+                                    </div><!-- /.client-thumb -->
+                                </div><!-- /.col-md-4 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-7">
+                                    <div class="client-testimonial">
+                                        <p>Enthusiastically envisioneer state of the art quality vectors without robust materials. Conveniently coordinate error-free ideas and.sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                        <span class="client-name">John Doe</span>, <span class="client-org">Themehippo</span>
+                                    </div>
+                                </div><!-- /.col-md-8 -->
+                                <div class="col-md-4 col-sm-5">
+                                    <div class="client-thumb">
+                                        <img src="img/tm-4.jpg" alt="">
+                                    </div><!-- /.client-thumb -->
+                                </div><!-- /.col-md-4 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-7">
+                                    <div class="client-testimonial">
+                                        <p>Enthusiastically envisioneer state of the art quality vectors without robust materials. Conveniently coordinate error-free ideas and.sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                        <span class="client-name">John Doe</span>, <span class="client-org">Themehippo</span>
+                                    </div>
+                                </div><!-- /.col-md-8 -->
+                                <div class="col-md-4 col-sm-5">
+                                    <div class="client-thumb">
+                                        <img src="img/tm-4.jpg" alt="">
+                                    </div><!-- /.client-thumb -->
+                                </div><!-- /.col-md-4 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.item -->
+                    </div><!-- /.carousel-inner -->
+                </div><!-- /.carousel -->
+            </section><!-- /.testimonial-wrapper -->
+
+
+            <section class="trusted-client-wrapper">
+                <h2 class="section-title wow fadeInDown">We are Trusted by</h2>
+                <ul class="partner-logo">
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-1.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-2.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-3.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-4.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-5.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-6.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-7.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-8.png" alt=""></a></li>
+                    <li class="wow zoomIn"><a href="#"><img src="img/partner/partner-logo-9.png" alt=""></a></li>
+                </ul>
+            </section>
+
+            <section class="subscription-wrapper text-center">
+                <h2 class="wow fadeInDown">Take into our subscription plans</h2>
+                <h3 class="pricing-sub wow fadeInDown">Choose the one which fits your organization (don't worry, you will be able to upgrade <br> or downgrade or cancel it anytime)</h3>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-lg-offset-2 text-left wow fadeInLeft">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h2>Basic <small>Dynamically morph focused</small></h2>
+                                <p>Objectively empowers <br> Clicks and morter schemas <br> whereas plug and play testing</p>
+                            </div><!-- /.panel-heading -->
+
+                            <div class="panel-body">
+                                <ul class="check-square-o">
+                                    <li>Compellingly myocardinate</li>
+                                    <li>Stand alone value</li>
+                                    <li>Uniquely strategize superior</li>
+                                </ul>
+
+                                <span class="price">$47 <small>/ Per month</small></span>
+
+                                <div class="pricing-btn">
+                                    <a class="btn btn-success" href="#">Get Started</a> <span>30 days trial included</span>
                                 </div>
-                                <div class="col-xs-12">
-                                    <button onclick="login()" class="btn btn-green btn-block btn-flat">Sign In</button>
+                            </div><!-- /.panel-body -->
+                        </div><!-- /.panel -->
+                    </div><!-- /.col-md-6 -->
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 text-left wow fadeInRight">
+                        <div class="panel panel-default featured-price">
+                            <div class="panel-heading">
+                                <h2>Enterprise <small>Dynamically morph focused</small></h2>
+                                <p>Objectively empowers <br> Clicks and morter schemas <br> whereas plug and play testing</p>
+                            </div><!-- /.panel-heading -->
+
+                            <div class="panel-body">
+                                <ul class="check-square-o">
+                                    <li>Compellingly myocardinate</li>
+                                    <li>Stand alone value</li>
+                                    <li>Uniquely strategize superior</li>
+                                </ul>
+
+                                <span class="price">$399 <small>/ Per month</small></span>
+
+                                <div class="pricing-btn">
+                                    <a class="btn btn-success" href="#">Get Started</a> <span>30 days trial included</span>
                                 </div>
-                            </div>
-                        </form>
+
+                            </div><!-- /.panel-body -->
+                        </div><!-- /.panel -->
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+            </section>
+
+            <section class="support-wrapper">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-1">
+                        <h2 class="wow fadeInDown">We have 24/7 dedicated support team</h2>
+                        <p class="wow fadeInDown">Proactively negotiate interdependent quality vectors for cross functional collaboration and idea-sharing. Dynamically myocardinate business quality vectors for web-enabled leadership. Synergistically simplify world-class alignments whereas extensible.</p>
+
+                        <a class="btn btn-primary btn-lg wow fadeInDown" href="#">Get Instant Support</a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </div><!-- /.content-wrapper -->
+    </div><!-- /.container -->
 
-    </div>
-</div>
-<!--/ Modal box-->
-<!--Banner-->
-<div class="banner">
-    <div class="bg-color">
-        <div class="container">
-            <div class="row">
-                <div class="banner-text text-center">
-                    <div class="text-border">
-                        <h2 class="text-dec">You Are Safe With Us</h2>
-                    </div>
-                    <div class="intro-para text-center quote">
-                        <p class="big-text">Here Is What You Are Assured Of...</p>
-                        <p class="small-text">Getting listed for Internship, Up close representation with management and<br>Well set up interface with the Student Union</p>
-                        <a href="#footer" class="btn">Contact Us</a>
-                    </div>
-                    <a href="#latest" class="mouse-hover"><div class="mouse"></div></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--/ Banner-->
-<!--Feature-->
-<section id ="latest" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="header-section text-center">
-                <h2>Latest</h2>
-                <p>Here is our latest news, features and updates</p>
-                <hr class="bottom-line">
-            </div>
-            <div class="feature-info">
-                <div class="fea">
-                    <div class="col-md-4">
-                        <div class="heading pull-right">
-                            <h4>News</h4>
-                            <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
-                        </div>
-                        <div class="fea-img pull-left">
-                            <i class="fa fa-css3"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="fea">
-                    <div class="col-md-4">
-                        <div class="heading pull-right">
-                            <h4>Features</h4>
-                            <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
-                        </div>
-                        <div class="fea-img pull-left">
-                            <i class="fa fa-drupal"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="fea">
-                    <div class="col-md-4">
-                        <div class="heading pull-right">
-                            <h4>Updates</h4>
-                            <p>Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
-                        </div>
-                        <div class="fea-img pull-left">
-                            <i class="fa fa-trophy"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ feature-->
-<!--Organisations-->
-<section id ="committees" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <div class="orga-stru">
-                        <h3>65%</h3>
-                        <p>Say NO!!</p>
-                        <i class="fa fa-male"></i>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <div class="orga-stru">
-                        <h3>20%</h3>
-                        <p>Says Yes!!</p>
-                        <i class="fa fa-male"></i>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <div class="orga-stru">
-                        <h3>15%</h3>
-                        <p>Can't Say!!</p>
-                        <i class="fa fa-male"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="detail-info">
-                    <hgroup>
-                        <h3 class="det-txt"> Is inclusive quality education affordable?</h3>
-                        <h4 class="sm-txt">(Revised and Updated for 2016)</h4>
-                    </hgroup>
-                    <p class="det-p">Donec et lectus bibendum dolor dictum auctor in ac erat. Vestibulum egestas sollicitudin metus non urna in eros tincidunt convallis id id nisi in interdum.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ Organisations-->
-<!--Cta-->
-{{--<section id="cta-2">--}}
-{{--<div class="container">--}}
-{{--<div class="row">--}}
-{{--<div class="col-lg-12">--}}
-{{--<h2 class="text-center">Subscribe Now</h2>--}}
-{{--<p class="cta-2-txt">Sign up for our free weekly software design courses, we’ll send them right to your inbox.</p>--}}
-{{--<div class="cta-2-form text-center">--}}
-{{--<form action="#" method="post" id="workshop-newsletter-form">--}}
-{{--<input name="" placeholder="Enter Your Email Address" type="email">--}}
-{{--<input class="cta-2-form-submit-btn" value="Subscribe" type="submit">--}}
-{{--</form>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</section>--}}
-<!--/ Cta-->
-<!--work-shop-->
-<section id="work-shop" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="header-section text-center">
-                <h2>Upcoming Events</h2>
-                <p>Check out some of our soon coming events. You can be a part of any of these,<br> as we'll always keep you updated.</p>
-                <hr class="bottom-line">
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="service-box text-center">
-                    <div class="icon-box">
-                        <i class="fa fa-html5 color-green"></i>
-                    </div>
-                    <div class="icon-text">
-                        <h4 class="ser-text">EVent 1</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="service-box text-center">
-                    <div class="icon-box">
-                        <i class="fa fa-css3 color-green"></i>
-                    </div>
-                    <div class="icon-text">
-                        <h4 class="ser-text">Event 2</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="service-box text-center">
-                    <div class="icon-box">
-                        <i class="fa fa-joomla color-green"></i>
-                    </div>
-                    <div class="icon-text">
-                        <h4 class="ser-text">Event 3</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ work-shop-->
-<!--Faculity member-->
-<section id="faculity-member" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="header-section text-center">
-                <h2>Meet Our Top Executive</h2>
-                <p>This is our hardworking delightful team of shot callers. Their everyday message,<br>is working together to achieve our goals</p>
-                <hr class="bottom-line">
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="pm-staff-profile-container" >
-                    <div class="pm-staff-profile-image-wrapper text-center">
-                        <div class="pm-staff-profile-image">
-                            <img src="{{URL::asset('../webview/img/mentor.jpg')}}" alt="" class="img-thumbnail img-circle" />
-                        </div>
-                    </div>
-                    <div class="pm-staff-profile-details text-center">
-                        <p class="pm-staff-profile-name">Bryan Johnson</p>
-                        <p class="pm-staff-profile-title">President</p>
-
-                        <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="pm-staff-profile-container" >
-                    <div class="pm-staff-profile-image-wrapper text-center">
-                        <div class="pm-staff-profile-image">
-                            <img src="{{URL::asset('../webview/img/mentor.jpg')}}" alt="" class="img-thumbnail img-circle" />
-                        </div>
-                    </div>
-                    <div class="pm-staff-profile-details text-center">
-                        <p class="pm-staff-profile-name">Bryan Johnson</p>
-                        <p class="pm-staff-profile-title">Vice President</p>
-
-                        <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="pm-staff-profile-container" >
-                    <div class="pm-staff-profile-image-wrapper text-center">
-                        <div class="pm-staff-profile-image">
-                            <img src="{{URL::asset('../webview/img/mentor.jpg')}}" alt="" class="img-thumbnail img-circle" />
-                        </div>
-                    </div>
-                    <div class="pm-staff-profile-details text-center">
-                        <p class="pm-staff-profile-name">Bryan Johnson</p>
-                        <p class="pm-staff-profile-title">Secretary General</p>
-
-                        <p class="pm-staff-profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et placerat dui. In posuere metus et elit placerat tristique. Maecenas eu est in sem ullamcorper tincidunt. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ Faculity member-->
-<!--Testimonial-->
-<section id="testimonial" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="header-section text-center">
-                <h2 class="white">Facts About UNZABECA</h2>
-                <p class="white">
-                    We are Students in the School of Humanities and Social Sciences who take pleasure<br>
-                    and treasure in economic matters of the University and the country at large. <br>
-                    Below are some of the core activities we involve ourselves in.
-                </p>
-                <hr class="bottom-line bg-white">
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="text-comment">
-                    <p class="text-par">
-                        We offer free advice to the university populace on issues pertaining economic affairs of the nation,
-                        as well as the latest exchange rates every morning in addition a weekly economic gazzet.
-                    </p>
-                    {{--<p class="text-name">Abraham Doe - Creative Dırector</p>--}}
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="text-comment">
-                    <p class="text-par">
-                        We offer personalized tutorials in selected courses to our junior students and also
-                        advise them on the best course combinations for programs they wish to pursue after their non-quotas.
-                    </p>
-                    {{--<p class="text-name">Abraham Doe - Creative Dırector</p>--}}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ Testimonial-->
-<!--Courses-->
-<section id ="events" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="header-section text-center">
-                <h2>Our Events</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
-                <hr class="bottom-line">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-6 padleft-right">
-                <figure class="imghvr-fold-up">
-                    <img src="{{URL::asset('../webview/img/course01.jpg')}}" class="img-responsive">
-                    <figcaption>
-                        <h3>Course Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-            </div>
-            <div class="col-md-4 col-sm-6 padleft-right">
-                <figure class="imghvr-fold-up">
-                    <img src="{{URL::asset('../webview/img/course02.jpg')}}" class="img-responsive">
-                    <figcaption>
-                        <h3>Course Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-            </div>
-            <div class="col-md-4 col-sm-6 padleft-right">
-                <figure class="imghvr-fold-up">
-                    <img src="{{URL::asset('../webview/img/course03.jpg')}}" class="img-responsive">
-                    <figcaption>
-                        <h3>Course Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-            </div>
-            <div class="col-md-4 col-sm-6 padleft-right">
-                <figure class="imghvr-fold-up">
-                    <img src="{{URL::asset('../webview/img/course04.jpg')}}" class="img-responsive">
-                    <figcaption>
-                        <h3>Course Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-            </div>
-            <div class="col-md-4 col-sm-6 padleft-right">
-                <figure class="imghvr-fold-up">
-                    <img src="{{URL::asset('../webview/img/course05.jpg')}}" class="img-responsive">
-                    <figcaption>
-                        <h3>Course Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-            </div>
-            <div class="col-md-4 col-sm-6 padleft-right">
-                <figure class="imghvr-fold-up">
-                    <img src="{{URL::asset('../webview/img/course06.jpg')}}" class="img-responsive">
-                    <figcaption>
-                        <h3>Course Name</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam atque, nostrum veniam consequatur libero fugiat, similique quis.</p>
-                    </figcaption>
-                    <a href="#"></a>
-                </figure>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ Courses-->
-<!--Pricing-->
-<section id ="resources" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="header-section text-center">
-                <h2>Resources</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
-                <hr class="bottom-line">
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="price-table">
-                    <!-- Plan  -->
-                    <div class="pricing-head">
-                        <h4>Monthly Plan</h4>
-                        <span class="fa fa-usd curency"></span> <span class="amount">200</span>
-                    </div>
-
-                    <!-- Plean Detail -->
-                    <div class="price-in mart-15">
-                        <a href="#" class="btn btn-bg green btn-block">PURCHACE</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="price-table">
-                    <!-- Plan  -->
-                    <div class="pricing-head">
-                        <h4>Quarterly Plan</h4>
-                        <span class="fa fa-usd curency"></span> <span class="amount">800</span>
-                    </div>
-
-                    <!-- Plean Detail -->
-                    <div class="price-in mart-15">
-                        <a href="#" class="btn btn-bg yellow btn-block">PURCHACE</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="price-table">
-                    <!-- Plan  -->
-                    <div class="pricing-head">
-                        <h4>Year Plan</h4>
-                        <span class="fa fa-usd curency"></span> <span class="amount">1200</span>
-                    </div>
-
-                    <!-- Plean Detail -->
-                    <div class="price-in mart-15">
-                        <a href="#" class="btn btn-bg red btn-block">PURCHACE</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ Pricing-->
-<!--Contact-->
-<section id ="join" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="header-section text-center">
-                <h2>Join Us</h2>
-                <p>Be a part of us and together we'll make The University of Zambia Business and Economics<br>Association a better association.</p>
-                <hr class="bottom-line">
-            </div>
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-                <div class="col-md-6 col-sm-6 col-xs-12 left">
-                    <div class="form-group">
-                        <input type="text" name="firstName" class="form-control form" id="firstName" placeholder="Your First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                        <div class="validation"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="surname" class="form-control form" id="surname" placeholder="Your Surname" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                        <div class="validation"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                        <div class="validation"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="program" id="phone" placeholder="Your Program Of Study Or Job Title" data-rule="minlen:5" data-msg="Please enter at least 5 chars of subject" />
-                        <div class="validation"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" data-rule="minlen:8" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6 col-xs-12 right">
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Tell us why you want to join us"></textarea>
-                        <div class="validation"></div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <!-- Button -->
-                    <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">Submit Application</button>
-                </div>
-            </form>
-
-        </div>
-    </div>
-</section>
-<!--/ Contact-->
-<!--Footer-->
-<footer id="footer" class="footer">
-    <div class="container text-center">
-
-        <h2>Contact Us</h2>
-        <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12 left">
-                <p>
-                <h4>Address</h4>
-
-                The University of Zambia, <br>School of Humanities,<br>Department of Economics,<br>Third Floor,<br>Room 123.
-
-                </p>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 middle">
-                <P>
-                <h4>Contacts</h4>
-                Fax: +260211123456 <br>
-                Phone: +2094412345678 <br>
-                Phone 2: +26093387654321
-
-                </P>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 right">
-                <p>
-                <h4>Emails</h4>
-                E-mail: abc@unzabeca.com
-                </p>
-            </div>
-        </div>
-
-
-        <ul class="social-links">
-            <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-            <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-            <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
-            <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
-        </ul>
-        ©2012-{{date('Y')}} University Of Zambia Business and Economics Association<br> All rights reserved
-        <div class="credits">
-            <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Mentor
-            -->
-            Designed by <a href="#">Code4cus</a>
-        </div>
-    </div>
-</footer>
-<!--/ Footer-->
-
-<script src="{{URL::asset('../webview/js/jquery.min.js')}}"></script>
-<script src="{{URL::asset('../webview/js/jquery.easing.min.js')}}"></script>
-<script src="{{URL::asset('../webview/js/bootstrap.min.js')}}"></script>
-<script src="{{URL::asset('../webview/js/custom.js')}}"></script>
-<script src="{{URL::asset('../webview/contactform/contactform.js')}}"></script>
-<script>
-    function login() {
-
-        $(document).ready(function () {
-
-            $("#button").click(function () {
-                $("#demo").toggle();
-            });
-            // process the form
-            $('#loginForm').submit(function (event) {
-
-                event.preventDefault();
-
-
-
-
-                var formData = {
-                    'email': $('input[name=email]').val(),
-                    'password': $('input[name=password]').val(),
-                    '_token': $('input[name=_token]').val()
-                };
-                // process the form
-
-                $.ajax({
-                    type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-                    url: '{{ url('/login')}}', // the url where we want to POST
-                    data: formData, // our data object
-                    dataType: 'json', // what type of data do we expect back from the server
-                    encode: true
-                })
-                // using the done promise callback
-                        .done(function (data) {
-
-                            // log data to the console so we can see
-                            console.log(data);
-                            // here we will handle errors and validation messages
-                            // here we will handle errors and validation messages
-                            if (!data.success) {
-
-                                // handle errors for name ---------------
-                                if (data.errors.email) {
-                                    //$('#current_password-group').removeClass('has-error');
-                                    $('#email-group').addClass('has-error'); // add the error class to show red input
-                                    $('#email-group').children('#error').remove();
-                                    $('#email-group').append('<div id="error" class="help-block">' + data.errors.email + '</div>'); // add the actual error message under our input
-                                }
-
-
-                                // handle errors for email ---------------
-                                if (data.errors.password) {
-                                    $('#password-group').addClass('has-error'); // add the error class to show red input
-                                    $('#password-group').children('#error').remove();
-                                    $('#password-group').append('<div id="error" class="help-block">' + data.errors.password + '</div>'); // add the actual error message under our input
-                                }
-
-                            } else {
-
-                                // ALL GOOD! just show the success message!
-                                //$('div.alert').append('<div class="alert alert-success">' + data.message + '</div>');
-                                $("#close").trigger('click');
-                                $("html, body").animate({ scrollTop: 0 }, 5);
-                                window.location = '{{url('/home')}}';
-                                // usually after form submission, you'll want to redirect
-                                // window.location = '/thank-you'; // redirect a user to another page
-                                // for now we'll just alert the user
-
-                            }
-                        });
-
-            });
-        });
-
-
-    }
-</script>
-
-</body>
-</html>
+@endsection
