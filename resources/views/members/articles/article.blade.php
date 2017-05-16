@@ -15,7 +15,7 @@
                 <div class="panel-heading">Manage your Articles</div>
                 <div class="panel-body">
 
-                    <a href="{{ url('/members/article/create') }}" class="btn btn-md btn-primary">Create New Article</a>
+                    <a href="{{ url('/members/article/create') }}" class="btn btn-md btn-link">Create New Article</a>
 
                     <table class="table table-striped responsive-utilities" data-toggle="table" data-show-refresh="false"
                            data-show-toggle="true" data-show-columns="true" data-search="true"
