@@ -11,8 +11,14 @@
 |
 */
 
+
+//routes for unauthenticated pages
 Route::get('/', function () {
     return view('web view/home');
+});
+
+Route::get('executive/alumni/timeline', function (){
+    return view('web view.executiveAlumniTimeline');
 });
 
 //these are member pages for authenticated users

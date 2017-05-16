@@ -38,6 +38,17 @@
     <script src="{{URL::asset('../webview/js/vendor/respond.min.js')}}"></script>
     <!--[endif]-->
 
+    <!-- for the alumni timeline -->
+    <script src="{{URL::asset('webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>
+    
+    <script>
+        $(function(){
+            $().timelinr({
+                arrowKeys: 'true'
+            })
+        });
+    </script>
+
 </head>
 
 
@@ -83,7 +94,7 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#">Executive</a></li>
+                                                    <li><a href="{{url('executive/alumni/timeline')}}">Executive</a></li>
                                                     <li><a href="#">Ordinary Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
