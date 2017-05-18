@@ -104,7 +104,6 @@ Route::group(['middleware' => 'auth'], function () {
 // detele route
     Route::post('/members/article/delete/{id}', 'ArticleController@delete');
 
-
 });
 
 Auth::routes();
@@ -112,3 +111,9 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
 
+/* Routes for everything webview related */
+Route::get('/webview/general_about', 'WebviewController@viewGeneralAboutUs');
+
+Route::get('/webview/committees', 'WebviewController@viewCommittees');
+
+Route::get('/webview/executive', 'WebviewController@viewExecutive');
