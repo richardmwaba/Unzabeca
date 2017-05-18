@@ -55,7 +55,7 @@
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                            @elseif(')
+                            @elseif($exec -> role == 'Secretary General')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -64,10 +64,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">Morgen Mwaala<br> <small>Secretary General</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Secretary General</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
+                            @elseif($exec -> role == 'Vice Secretary General')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -76,13 +77,14 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">Choolwe Sikasamba<br> <small>Vice Secretary General</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Vice Secretary General</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
 
                             <div class="row>">
+                                @elseif($exec -> role == 'Publicity Secretary')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -91,10 +93,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">Kawama Banda<br> <small>Publicity Secretary</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Publicity Secretary</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
+                                @elseif($exec -> role == 'Treasurer')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -103,10 +106,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">Webby Chishala<br> <small>Treasurer</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Treasurer</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
+                                @elseif($exec -> role == 'Projects Coordinator')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -115,10 +119,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">Peter Musangu<br> <small>Projects Coordinator</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Projects Coordinator</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
+                                @elseif($exec -> role == 'First Committee Member')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -127,13 +132,14 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">Ephraim Kaumba<br> <small>Committee Member</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Committee Member</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
 
                             <div class="row">
+                                @elseif($exec -> role == 'Second Committee Member')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -142,10 +148,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">George Banda<br> <small>Committee Member</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Committee Member</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
+                                @elseif($exec -> role == 'Third Committee Member')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -154,7 +161,7 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">Kennan Mwanza<br> <small>Committee Member</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Committee Member</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
