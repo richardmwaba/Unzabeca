@@ -134,12 +134,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="page-header">
-                                    <h1>Executive</h1>
+                                    <h1>Ordinary</h1>
                                 </div>
                                 <ol class="breadcrumb">
                                     <li><a href="#">Home</a></li>
                                     <li><a href="#">Alumni</a></li>
-                                    <li class="active">Executive</li>
+                                    <li class="active">Ordinary</li>
                                 </ol>
                             </div>
                         </div><!-- /.row -->

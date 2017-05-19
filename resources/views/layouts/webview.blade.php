@@ -101,7 +101,7 @@
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{url('executive/alumni/timeline')}}">Executive</a></li>
-                                                    <li><a href="#">Ordinary Members</a></li>
+                                                    <li><a href="{{url('ordinary/alumni/timeline')}}">Ordinary Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -120,7 +120,7 @@
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
-                                    <li><a href="#">Join Us</a></li>
+                                    <li><a href="{{url('members/join/form')}}">Join Us</a></li>
 
                                     <li><a href="#">Contact Us</a></li>
 
@@ -129,7 +129,25 @@
                         </div><!-- /.container -->
                     </nav>
                 </header>
+                <div class="row">
+                    <div class="col-lg-12">
+                        {{--<img class="center block  pull-right img-circle img-responsive" src="{{ URL::asset('frontend/img/logo.png') }}">--}}
+                        <h4 class="page-header">
+                            <div class="pull-right"></div>
+                            @if(Session::has('flash_message'))
+                                <div class="alert alert-success {{session()->has('flash_message_important')? session('flash_message') : ''}}">
+                                    {{Session::get('flash_message')}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    @if(session()->has('flash_message_important'))
 
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    @endif
+                                </div>
+                            @endif
+                        </h4>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div><!-- /.row -->
 
                 @yield('content')
 

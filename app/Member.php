@@ -29,7 +29,7 @@ class Member extends Model
      * Relation between member and status
      */
     public function status(){
-        return $this->hasOne('App\Status', 'status_id');
+        return $this->hasOne('App\Status', 'status_id', 'status_id');
     }
 
 }

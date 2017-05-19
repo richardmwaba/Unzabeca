@@ -53,7 +53,7 @@
                                 </td>
                                 <td>
                                     @if(isset($members))
-                                        {{$member->status_id}}
+                                        {{$member->status->status_description}}
                                     @endif
                                 </td>
                                 <td>
@@ -311,9 +311,10 @@
                                                 <label>Status</label>
                                                 <select id="status" class="form-control" name="status_id">
                                                     <option value="">-- select one --</option>
-                                                    <option name="Alumni" value="Alumni Member"> Alumni Member</option>
-                                                    <option name="Executive" value="Executive Member"> Executive Member</option>
-                                                    <option name="Ordinary" value="Ordinary Member"> Ordinary Member</option>
+                                                    <option name="status_id" value="1">Executive Member</option>
+                                                    <option name="status_id" value="2">Ordinary Member </option>
+                                                    <option name="status_id" value="3"> Executive Alumni Member</option>
+                                                    <option name="status_id" value="4"> Executive Alumni Member</option>
                                                 </select>
 
                                                 @if ($errors->has('status_id'))
@@ -334,7 +335,7 @@
                                                 @endif
                                             </div>
                                             <div>
-                                                <input class="form-control" style="display: none" value="Approved Member" name="approved" type="text">
+                                                <input class="form-control" style="display: none" value="1" name="approved" type="text">
                                             </div>
                                             {{--<div class="form-group{{ $errors->has('issuer') ? ' has-error' : '' }}">--}}
 
