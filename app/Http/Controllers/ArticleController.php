@@ -41,7 +41,7 @@ class ArticleController extends Controller
 
         // validating image
         $this->validate($request, [
-            'photo' => 'max:5000|mimes:jpeg,png,bmp'
+            'photo' => 'mimes:jpeg,png,bmp|size:5000'
         ]);
 
         // only stores title, author & body to articles table
@@ -70,7 +70,7 @@ class ArticleController extends Controller
         $article = Articles::with('articlePhoto')->find($id);
 
         // gets other articles
-        $others = Articles::orderBy('created_at')->take(5)->get();
+        $others = Articles::orderBy('created_at', 'desc')->take(5)->get();
 
         return view('members.articles.view', compact('article', 'others'));
     }
@@ -111,12 +111,34 @@ class ArticleController extends Controller
             ->with('status', 'Article has been successfully been updated!!');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($id){
-        $article = Articles::with('articlePhoto')->findOrFail($id);
+        $article = Articles::with('articlePhoto')->where('article_id', $id);
 
         $article->delete();
 
         return redirect()->back()->with('status', 'Article has been deleted successfully!!');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function allArticles(){
+        $articles = Articles::with('articlePhoto')->orderBy('created_at', 'desc')->get(); // paginate them
+
+        return view('web view.article', compact('articles'));
+    }
+
+    public function articleView($id){
+        $article = Articles::with('articlePhoto')->find($id);
+
+        // gets other articles
+        $others = Articles::with('articlePhoto')->orderBy('created_at', 'desc')->take(5)->get();
+
+        return view('web view.articleView', compact('article', 'others'));
     }
 
 }

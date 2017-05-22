@@ -9,9 +9,8 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <title>@yield('title')</title>
-    <!-- jquerry -->
-    <script src="{{URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')}}"></script>
+    <title>Unzabeca - @yield('title')</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('../webview/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Web Fonts -->
@@ -114,7 +113,7 @@
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#">Action Plan</a></li>
                                                     <li><a href="#">Research Plan</a></li>
-                                                    <li><a href="#">Articles</a></li>
+                                                    <li><a href="{{url('/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -129,6 +128,7 @@
                         </div><!-- /.container -->
                     </nav>
                 </header>
+
                 <div class="row">
                     <div class="col-lg-12">
                         {{--<img class="center block  pull-right img-circle img-responsive" src="{{ URL::asset('frontend/img/logo.png') }}">--}}
@@ -225,7 +225,6 @@
                     </div><!-- /.container -->
                 </section>
 
-
                 <footer class="footer-wrapper">
                     <div class="container">
                         <div class="row">
@@ -249,48 +248,36 @@
         <div>
             <div>
                 <ul>
-                    <li><a href="#">Home</a>
-                        <ul>
-                            <li class="active"><a href="index.html"><i class="fa fa-home"></i> Home Style One</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
 
                     <li><a href="#">About</a>
                         <ul>
-                            <li><a href="about-us.html"><i class="fa fa-life-ring"></i> About Us</a></li>
-                            <li><a href="about-me.html"><i class="fa fa-user"></i> About me</a></li>
+                            <li><a href="#"><i class="fa fa-life-ring"></i> Committees</a></li>
+                            <li><a href="#"><i class="fa fa-user"></i> Current Executive</a></li>
+                            <li><a href="#"><i class="fa fa-file-o"></i> General Info</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#">Blog</a>
+                    <li><a href="#">Alumni</a>
                         <ul>
-                            <li><a href="blog.html"><i class="fa fa-pencil-square-o"></i> Standard Blog</a></li>
-                            <li><a href="blog-single.html"><i class="fa fa-pencil"></i> Single Article</a></li>
+                            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
+                            <li><a href="#"><i class="fa fa-pencil"></i> Ordinary</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#">Portfolio</a>
+                    <li><a href="#">Resources</a>
                         <ul>
-                            <li><a href="portfolio-four.html"><i class="fa fa-picture-o"></i> Four Column</a></li>
-                            <li><a href="portfolio-three.html"><i class="fa fa-paper-plane-o"></i> Three Column</a></li>
-                            <li><a href="portfolio-two.html"><i class="fa fa-magic"></i> Two Column</a></li>
+                            <li><a href="#"><i class="fa fa-picture-o"></i> Action Plan</a></li>
+                            <li><a href="#"><i class="fa fa-paper-plane-o"></i> Research Plan</a></li>
+                            <li><a href="{{url('/article')}}"><i class="fa fa-file-text-o"></i> Articles</a></li>
                         </ul>
                     </li>
 
-
-                    <li><a href="#">Pages</a>
-                        <ul>
-                            <li><a href="job-page.html"><i class="fa fa-briefcase"></i> Job Page</a></li>
-                            <li><a href="clients-page.html"><i class="fa fa-coffee"></i> Clients Page</a></li>
-                            <li><a href="faq.html"><i class="fa fa-question-circle"></i> FAQ Page</a></li>
-                            <li><a href="typography.html"><i class="fa fa-puzzle-piece"></i> Typography Page</a></li>
-                        </ul>
-                    </li>
-
+                    <li><a href="#">Join Us</a></li>
 
                     <li><a href="#">Contact</a>
                         <ul>
-                            <li><a href="contact.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i> Contact</a></li>
                         </ul>
                     </li>
                 </ul>
