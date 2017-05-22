@@ -79,16 +79,16 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse navbar-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="active"><a href="/">Home</a></li>
+                                    <li class="active"><a href="{{url('/')}}">Home</a></li>
 
-                                    <li class="dropdown"><a href="#" >About <b class="caret"></b></a>
+                                    <li class="dropdown"><a >About <b class="caret"></b></a>
                                         <!-- submenu-wrapper -->
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="/webview/committees">Committees</a></li>
-                                                    <li><a href="/webview/executive">Executive</a></li>
-                                                    <li><a href="/webview/general_about">General Information</a></li>
+                                                    <li><a href="{{url('/webview/committees')}}">Committees</a></li>
+                                                    <li><a href="{{url('/webview/executive')}}">Executive</a></li>
+                                                    <li><a href="{{url('/webview/general_about')}}">General Information</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -99,8 +99,8 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="{{url('executive/alumni/timeline')}}">Executive</a></li>
-                                                    <li><a href="{{url('ordinary/alumni/timeline')}}">Ordinary Members</a></li>
+                                                    <li><a href="{{url('webview/executive/alumni/timeline')}}">Executive</a></li>
+                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Ordinary Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -113,13 +113,13 @@
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#">Action Plan</a></li>
                                                     <li><a href="#">Research Plan</a></li>
-                                                    <li><a href="{{url('/article')}}">Articles</a></li>
+                                                    <li><a href="{{url('/webview/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
-                                    <li><a href="{{url('members/join/form')}}">Join Us</a></li>
+                                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
 
                                     <li><a href="{{url('/webview/contactUs')}}">Contact Us</a></li>
 
@@ -151,88 +151,28 @@
 
                 @yield('content')
 
-                <section class="footer-widget-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="footer-widget">
-                                    <p class="subcsribe-text wow fadeInDown">Quickly utilize installed base channels before premier expertise. Conveniently extend web-enabled niche markets without 2.0 e-markets. Collaboratively incentivize .</p>
-
-                                    <h3 class="wow fadeInDown">Subscribe to newsletter</h3>
-
-                                    <form class="wow fadeInDown">
-                                        <div class="form-group">
-                                            <label class="sr-only" for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                                    </form>
-
-                                    <div class="social-link wow fadeInDown">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-2 col-sm-4 col-xs-4">
-                                <div class="footer-widget">
-                                    <h3 class="wow fadeInDown">Customer Care</h3>
-                                    <ul class="wow fadeInDown">
-                                        <li><a href="#">Customer Support</a></li>
-                                        <li><a href="#">Platinum Support</a></li>
-                                        <li><a href="#">Gold Support</a></li>
-                                        <li><a href="#">Standard Support</a></li>
-                                        <li><a href="#">Training</a></li>
-                                        <li><a href="#">Online Training</a></li>
-                                        <li><a href="#">Custom Training</a></li>
-                                    </ul>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-2 -->
-                            <div class="col-md-2 col-sm-4 col-xs-4">
-                                <div class="footer-widget">
-                                    <h3 class="wow fadeInDown">Information</h3>
-                                    <ul class="wow fadeInDown">
-                                        <li><a href="#">Press</a></li>
-                                        <li><a href="#">Articles</a></li>
-                                        <li><a href="#">Reviews</a></li>
-                                        <li><a href="#">Testimonials</a></li>
-                                        <li><a href="#">Awards</a></li>
-                                        <li><a href="#">Video Clips</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                    </ul>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-2 -->
-                            <div class="col-md-2 col-sm-4 col-xs-4">
-                                <div class="footer-widget">
-                                    <h3 class="wow fadeInDown">Solutions</h3>
-                                    <ul class="wow fadeInDown">
-                                        <li><a href="#">Contact Center</a></li>
-                                        <li><a href="#">Knowledge</a></li>
-                                        <li><a href="#">Management</a></li>
-                                        <li><a href="#">Web Self-Service</a></li>
-                                        <li><a href="#">Performance Metrics</a></li>
-                                    </ul>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-2 -->
-                        </div><!-- /.row -->
-                    </div><!-- /.container -->
-                </section>
-
                 <footer class="footer-wrapper">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="copyright wow fadeInDown">
-                                    <p>Copyright &copy; 2016 primex . All Rights Reserved. Designed by <a href="http://www.uicookies.com/">uicookies.com</a> </p>
+                                <div class="social-link wow fadeInDown pull-right">
+                                    <ul >
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="text-align: center" class="copyright wow fadeInDown">
+
+                                    <p>Copyright &copy; 2012-{{date('Y')}}  UNZABECA . All Rights Reserved. Designed by <a href="#">Code4cus</a> </p>
+
                                 </div><!-- /.copyright -->
-                            </div><!-- /.col-md-12 -->
+                            </div>
                         </div><!-- /.row -->
                     </div><!-- /.container -->
                 </footer>
@@ -269,7 +209,7 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-picture-o"></i> Action Plan</a></li>
                             <li><a href="#"><i class="fa fa-paper-plane-o"></i> Research Plan</a></li>
-                            <li><a href="{{url('/article')}}"><i class="fa fa-file-text-o"></i> Articles</a></li>
+                            <li><a href="{{url('/webview/article')}}"><i class="fa fa-file-text-o"></i> Articles</a></li>
                         </ul>
                     </li>
 
@@ -318,6 +258,8 @@
     <script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
     <!-- Custom Script -->
     <script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
+
+    <script src="{{URL::asset('../frontend/js/custom.js')}}"></script>
 
 </body>
 </html>
