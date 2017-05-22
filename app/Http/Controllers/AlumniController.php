@@ -88,7 +88,7 @@ class AlumniController extends Controller
 
     //return the alumni executive page for visitors
     public function viewExecutives(){
-        $alumni = Member::where('status_id', 3)->where('approved', 1)->where('role', 'Executive')->get();
+        $alumni = Member::where('status_id', 3)->where('approved', 1)->where('position_id', '3')->get();
         $alumni_2016 = $alumni->where('year', 2016);
         $alumni_2015= $alumni->where('year', 2015);
         $alumni_2014 = $alumni->where('year', 2014);
