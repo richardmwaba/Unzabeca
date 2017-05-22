@@ -175,7 +175,7 @@
                                                             <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                                 <label>Status</label>
-                                                                <select id="status_2" class="form-control" name="status_id">
+                                                                <select id="ddl3" onchange="dropdowns(this,document.getElementById('ddl4'))" class="form-control" name="status_id">
                                                                     <option name="currentValue" value="{{$member->status->status_description}}">{{$member->status->status_description}}</option>
                                                                     <option value="">-- select one --</option>
                                                                     <option name="Executive" value="1"> Executive Member</option>
@@ -194,7 +194,7 @@
                                                                 <div id="position" class="form-group{{ $errors->has('position_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                                     <label id="position_label">Position</label>
-                                                                    <select id="ddl2" class="form-control" name="position_id">
+                                                                    <select id="ddl4" class="form-control" name="position_id">
                                                                         //Content is loaded from an external JavaScript file
                                                                     </select>
                                                                     @if ($errors->has('position_id'))

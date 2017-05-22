@@ -27,7 +27,7 @@ class MembersController extends Controller
             'last_name' => 'required|max:255',
             'email'=> 'required|max:255|email|unique:members',
             'year' => 'required|max:255',
-            'role' => 'max:255',
+            'position_id' => 'max:255',
             'status_id' => 'required|max:255',
             'phone_number' => 'required|max:255',
         ]);
@@ -39,7 +39,7 @@ class MembersController extends Controller
             'last_name' => $request -> last_name,
             'email' => $request -> email,
             'year' => $request -> year,
-            'role' => ucwords($request -> role),
+            'position_id' => $request -> position_id,
             'status_id' => $request -> status_id,
             'phone_number' => $request -> phone_number,
         ]);
@@ -51,7 +51,7 @@ class MembersController extends Controller
     //Retrieve users and view them
     public function viewMembers()
     {
-        $members = Member::where('approved', 'Approved Member')
+        $members = Member::where('approved', '1')
                     ->orderBy('first_name', 'desc')
                     ->take(10)
                     ->get();
@@ -82,7 +82,7 @@ class MembersController extends Controller
             'last_name' => 'required|max:255',
             'email'=> 'required|max:255|email',
             'year' => 'required|max:255',
-            'role' => 'max:255',
+            'position_id' => 'max:255',
             'status_id' => 'required|max:255',
             'phone_number' => 'required|max:255'
         ]);
@@ -105,7 +105,7 @@ class MembersController extends Controller
             'last_name' => 'required|max:255',
             'email'=> 'required|max:255|email|unique:members',
             'year' => 'required|max:255',
-            'role' => 'max:255',
+            'position_id' => 'max:255',
             'status_id' => 'required|max:255',
             'phone_number' => 'required|max:255',
            'approved' => 'max:255'
@@ -118,7 +118,7 @@ class MembersController extends Controller
             'last_name' => $data -> last_name,
             'email' => $data -> email,
             'year' => $data -> year,
-            'role' => ucwords($data -> role),
+            'position_id' => $data -> position_id,
             'status_id' => $data -> status_id,
             'phone_number' => $data -> phone_number,
             'approved' => $data -> approved
