@@ -21,7 +21,7 @@
                     </div>
                     <ol class="breadcrumb">
                         <li><a href="{{url('/')}}">Home</a></li>
-                        <li><a href="{{url('/article')}}">Article</a></li>
+                        <li><a href="{{url('webview/article')}}">Article</a></li>
                         <li class="active">Single Article</li>
                     </ol>
                 </div>
@@ -62,19 +62,19 @@
                     <div class="col-xs-12 col-md-3 col-sm-4">
                         <div class="sidebar-wrapper">
 
-                            <aside class="widget widget_search">
-                                <form role="search" method="get" class="search-form" action="getpost">
-                                    <label class="sr-only">Search for:</label>
-                                    <input type="search" class="form-control" placeholder="Search" value="" name="s" title="Search for:">
-                                    <button type="submit" class="search-submit" value=""><i class="fa fa-search"></i></button>
-                                </form>
-                            </aside>
+                            {{--<aside class="widget widget_search">--}}
+                                {{--<form role="search" method="get" class="search-form" action="getpost">--}}
+                                    {{--<label class="sr-only">Search for:</label>--}}
+                                    {{--<input type="search" class="form-control" placeholder="Search" value="" name="s" title="Search for:">--}}
+                                    {{--<button type="submit" class="search-submit" value=""><i class="fa fa-search"></i></button>--}}
+                                {{--</form>--}}
+                            {{--</aside>--}}
                             <!-- recent posts side -->
                             <aside class="widget widget_categories">
                                 <h2 class="widget-title">Recent posts</h2>
                                 <ul>
                                     @foreach($others as $other)
-                                        <li><a href="{{url('/article/article-single/'.$other->article_id)}}">
+                                        <li><a href="{{url('webview/article/article-single/'.$other->article_id)}}">
                                                 {{ $other->articleTitle }}
                                             </a>
                                         </li>
@@ -97,7 +97,7 @@
                             <div class="single-portfolio">
                                 <img src="{{URL::asset('../storage/'.$other->articlePhoto->filename)}}" alt="Article image">
                                 <div class="portfolio-links">
-                                    <a href="{{url('/article/article-single/'.$article->article_id)}}"><i class="fa fa-link"></i></a>
+                                    <a href="{{url('webview/article/article-single/'.$article->article_id)}}"><i class="fa fa-link"></i></a>
                                 </div><!-- /.links -->
                             </div><!-- /.single-portfolio -->
                         </div>

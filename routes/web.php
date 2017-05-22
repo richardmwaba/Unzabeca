@@ -11,7 +11,6 @@
 |
 */
 
-
 //routes for unauthenticated pages
 //Route to add a member
 //Route::post('members/addMember', 'MembersController@addMember');
@@ -19,21 +18,29 @@ Route::get('/', function () {
     return view('web view/home');
 });
 
-Route::get('executive/alumni/timeline', 'AlumniController@viewExecutives');
-Route::get('ordinary/alumni/timeline', 'AlumniController@viewOrdinaries');
 
-//new member join
-Route::get('members/join/form', 'MembersController@joinForm');
-Route::post('members/join/save', 'MembersController@joinSave');
+Route::group(['prefix' => 'webview'], function (){
+    // all routes will have prefix *webview/'routeName'*
 
-/* ========= Resources tab routes =========*/
-// to article page
-Route::get('/article', 'ArticleController@allArticles');
-// to single article page
-Route::get('/article/article-single/{id}', 'ArticleController@articleView');
+    Route::get('executive/alumni/timeline', 'AlumniController@viewExecutives');
+    Route::get('ordinary/alumni/timeline', 'AlumniController@viewOrdinaries');
 
+    //new member join
+    Route::get('members/join/form', 'MembersController@joinForm');
+    Route::post('members/join/save', 'MembersController@joinSave');
 
-/* ========= ./Resource tab routes ======== */
+    /* ========= Resources tab routes =========*/
+    // to article page
+    Route::get('/article', 'ArticleController@allArticles');
+    Route::get('/article/article-single/{id}', 'ArticleController@articleView');
+    /* ========= ./Resource tab routes ======== */
+
+    /* Routes for everything webview related */
+    Route::get('/general_about', 'WebviewController@viewGeneralAboutUs');
+    Route::get('/committees', 'WebviewController@viewCommittees');
+    Route::get('/executive', 'WebviewController@viewExecutive');
+});
+
 
 //these are member pages for authenticated users
 //these pages are accessible only to authenticated users
@@ -112,10 +119,3 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
-
-/* Routes for everything webview related */
-Route::get('/webview/general_about', 'WebviewController@viewGeneralAboutUs');
-
-Route::get('/webview/committees', 'WebviewController@viewCommittees');
-
-Route::get('/webview/executive', 'WebviewController@viewExecutive');
