@@ -23,7 +23,7 @@
                             <th data-field="lastName" data-sortable="true"> Last Name</th>
                             <th data-field="email" data-sortable="true"> Email</th>
                             <th data-field="year" data-sortable="true"> Year Joined</th>
-                            <th data-field="status" data-sortable="true"> Status</th>
+                            <th data-field="status" data-sortable="true"> Membership</th>
                             <th data-field="role" data-sortable="true"> Position</th>
                             <th data-field="phoneNumber" data-sortable="true">Phone Number</th>
                             <th data-field="deleteEdit" data-sortable="true">Delete | Edit</th>
@@ -53,12 +53,12 @@
                                 </td>
                                 <td>
                                     @if(isset($members))
-                                        {{$member->status_id}}
+                                        {{$member->status->status_description}}
                                     @endif
                                 </td>
                                 <td>
                                     @if(isset($members))
-                                        {{$member->role}}
+                                        {{$member->position->position_description}}
                                     @endif
                                 </td>
                                 <td>
@@ -118,8 +118,8 @@
                                                                 <input class="form-control" id="first_name" name="first_name" type="text" value={{$member->first_name}}>
                                                                 @if ($errors->has('first_name'))
                                                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('first_name') }}</strong>
-                                                </span>
+                                                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
                                                             <div class="form-group{{ $errors->has('middle_name') ? ' has-error' : '' }} col-md-12 col-sm-12 col-xs-12">
@@ -128,8 +128,8 @@
                                                                 <input class="form-control" id="middle_name" value="{{$member->middle_name}}" name="middle_name" type="text">
                                                                 @if ($errors->has('middle_name'))
                                                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('middle_name') }}</strong>
-                                                </span>
+                                                                        <strong>{{ $errors->first('middle_name') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
                                                             <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -138,8 +138,8 @@
                                                                 <input class="form-control" id="last_name" name="last_name" type="text" value="{{$member->last_name}}">
                                                                 @if ($errors->has('last_name'))
                                                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('last_name') }}</strong>
-                                                </span>
+                                                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
                                                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -148,8 +148,8 @@
                                                                 <input class="form-control" id="email" name="email" type="email" value="{{$member->email }}">
                                                                 @if ($errors->has('email'))
                                                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                </span>
+                                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
                                                             <div class="form-group{{ $errors->has('year') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -158,8 +158,8 @@
                                                                 <input class="form-control" name="year"  value="{{$member->year}}" type="text">
                                                                 @if ($errors->has('year'))
                                                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('year') }}</strong>
-                                                </span>
+                                                                        <strong>{{ $errors->first('year') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
                                                             <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -168,35 +168,38 @@
                                                                 <input class="form-control" name="phone_number" type="text" value="{{$member->phone_number }}">
                                                                 @if ($errors->has('phone_number'))
                                                                     <span class="help-block">
-                                                            <strong>{{ $errors->first('phone_number') }}</strong>
-                                                        </span>
+                                                                        <strong>{{ $errors->first('phone_number') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
                                                             <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                                 <label>Status</label>
-                                                                <select id="status" class="form-control" name="status_id">
-                                                                    <option name="currentValue" value="{{$member->status_id}}">{{$member->status_id}}</option>
+                                                                <select id="ddl3" onchange="dropdowns(this,document.getElementById('ddl4'))" class="form-control" name="status_id">
+                                                                    <option name="currentValue" value="{{$member->status->status_description}}">{{$member->status->status_description}}</option>
                                                                     <option value="">-- select one --</option>
-                                                                    <option name="Alumni"> Alumni Member</option>
-                                                                    <option name="Executive"> Executive Member</option>
-                                                                    <option name="Ordinary"> Ordinary Member</option>
+                                                                    <option name="Executive" value="1"> Executive Member</option>
+                                                                    <option name="Ordinary" value="2"> Ordinary Member</option>
+                                                                    <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
+                                                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
                                                                 </select>
 
                                                                 @if ($errors->has('status_id'))
                                                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('status_id') }}</strong>
-                                                </span>
+                                                                        <strong>{{ $errors->first('status_id') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
-                                                            @if($member->status_id == 'Executive Member')
-                                                                <div id="approval_status" style="" class="form-group{{ $errors->has('role') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            @if($member->status_id == '1')
+                                                                <div id="position" class="form-group{{ $errors->has('position_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                                                    <label id="role_label">Position</label>
-                                                                    <input id="role_field" class="form-control" name="role" type="text" value="{{ $member->role}}">
-                                                                    @if ($errors->has('role'))
+                                                                    <label id="position_label">Position</label>
+                                                                    <select id="ddl4" class="form-control" name="position_id">
+                                                                        //Content is loaded from an external JavaScript file
+                                                                    </select>
+                                                                    @if ($errors->has('position_id'))
                                                                         <span class="help-block">
-                                                                            <strong>{{ $errors->first('role') }}</strong>
+                                                                            <strong>{{ $errors->first('position_id') }}</strong>
                                                                         </span>
                                                                     @endif
                                                                 </div>
@@ -309,11 +312,12 @@
                                             <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                 <label>Status</label>
-                                                <select id="status" class="form-control" name="status_id">
+                                                <select id="ddl1" onchange="dropdowns(this,document.getElementById('ddl'))" class="form-control" name="status_id">
                                                     <option value="">-- select one --</option>
-                                                    <option name="Alumni" value="Alumni Member"> Alumni Member</option>
-                                                    <option name="Executive" value="Executive Member"> Executive Member</option>
-                                                    <option name="Ordinary" value="Ordinary Member"> Ordinary Member</option>
+                                                    <option name="Executive" value="1"> Executive Member</option>
+                                                    <option name="Ordinary" value="2"> Ordinary Member</option>
+                                                    <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
+                                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
                                                 </select>
 
                                                 @if ($errors->has('status_id'))
@@ -322,19 +326,20 @@
                                                 </span>
                                                 @endif
                                             </div>
-                                            <div id="position" style="" class="form-group{{ $errors->has('role') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group{{ $errors->has('position_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                                <label id="role_label">Position</label>
-                                                <input id="role_field" class="form-control" placeholder="Enter the position of member" name="role" type="text"
-                                                       value="{{ old('role') }}">
-                                                @if ($errors->has('role'))
+                                                <label id="position_label">Position</label>
+                                                <select id="ddl" class="form-control" name="position_id">
+                                                    //Content is loaded from an external JavaScript file
+                                                </select>
+                                                @if ($errors->has('position_id'))
                                                     <span class="help-block">
-                                                            <strong>{{ $errors->first('role') }}</strong>
+                                                            <strong>{{ $errors->first('position_id') }}</strong>
                                                         </span>
                                                 @endif
                                             </div>
                                             <div>
-                                                <input class="form-control" style="display: none" value="Approved Member" name="approved" type="text">
+                                                <input class="form-control" style="display: none" value="1" name="approved" type="text">
                                             </div>
                                             {{--<div class="form-group{{ $errors->has('issuer') ? ' has-error' : '' }}">--}}
 
@@ -354,6 +359,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div> <!-- end modal -->
 
                     <script>
@@ -388,22 +394,6 @@
                     </script>
                     <!--/. script-->
 
-                    <script>
-                        $(document).ready(function(){
-                            $('#position').hide();
-                            $('#status').onChange(function() {
-                                if ( this.value == 'Executive Member')
-                                //.....................^.......
-                                {
-                                    $('#position').show();
-                                }
-                                else
-                                {
-                                    $('#position').hide();
-                                }
-                            });
-                        });
-                    </script>
                 </div>
                 <!-- /.panel-body -->
             </div>

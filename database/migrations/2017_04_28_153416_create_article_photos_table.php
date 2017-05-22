@@ -14,7 +14,7 @@ class CreateArticlePhotosTable extends Migration
     public function up()
     {
         Schema::create('article_photos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->primaryKey();
             $table->integer('article_id'); // foreign key
             $table->string('filename');
             $table->timestamps();

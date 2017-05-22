@@ -11,9 +11,19 @@
 |
 */
 
+
+//routes for unauthenticated pages
+//Route to add a member
+//Route::post('members/addMember', 'MembersController@addMember');
 Route::get('/', function () {
     return view('web view/home');
 });
+Route::get('executive/alumni/timeline', 'AlumniController@viewExecutives');
+Route::get('ordinary/alumni/timeline', 'AlumniController@viewOrdinaries');
+
+//new member join
+Route::get('members/join/form', 'MembersController@joinForm');
+Route::post('members/join/save', 'MembersController@joinSave');
 
 //these are member pages for authenticated users
 //these pages are accessible only to authenticated users
@@ -71,6 +81,12 @@ Route::group(['middleware' => 'auth'], function () {
     //Route to change password
     Route::post('members/change_password', 'PasswordController@change_password');
 
+    //committees
+    Route::get('/members/committees/viewAll', 'CommitteesController@viewAll');
+    Route::post('/members/committees/create', 'CommitteesController@create');
+    Route::post('/members/committees/update', 'CommitteesController@update');
+    Route::post('/members/committees/delete/{id}', 'CommitteesController@delete');
+
 /* Route related to members and alumni end*/
 
 //events routes
@@ -78,7 +94,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/members/events/create', 'EventsController@create');
     Route::get('/members/events/edit/{id}', 'EventsController@editForm');
     Route::post('/members/events/update', 'EventsController@update');
-    Route::get('/members/events/delete/{id}', 'EventsController@delete');
+    Route::post('/members/events/delete/{id}', 'EventsController@delete');
 
 
 //article routes
@@ -104,7 +120,6 @@ Route::group(['middleware' => 'auth'], function () {
 // detele route
     Route::post('/members/article/delete/{id}', 'ArticleController@delete');
 
-
 });
 
 Auth::routes();
@@ -112,3 +127,9 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
 
+/* Routes for everything webview related */
+Route::get('/webview/general_about', 'WebviewController@viewGeneralAboutUs');
+
+Route::get('/webview/committees', 'WebviewController@viewCommittees');
+
+Route::get('/webview/executive', 'WebviewController@viewExecutive');

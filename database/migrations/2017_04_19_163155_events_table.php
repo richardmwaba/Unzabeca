@@ -14,7 +14,7 @@ class EventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->string('event_id', 10)->unique();
+            $table->string('event_id', 10)->unique()->primaryKey();
             $table->string('event_description', 255);
             $table->string('status');
             $table->date('date_of_event');

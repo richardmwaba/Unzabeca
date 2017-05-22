@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     protected $table = 'status';
-    protected $primaryKey = '';
+    protected $primaryKey = 'status_id';
 
     protected $fillable = [
         'status_id', 'status_description'
@@ -18,6 +18,6 @@ class Status extends Model
      * to a particular member
      */
     public function member(){
-        return $this->belongsTo('App\Member');
+        return $this->belongsTo('App\Member', 'status_id', 'status_id');
     }
 }

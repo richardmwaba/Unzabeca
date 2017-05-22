@@ -1,5 +1,7 @@
 @extends('layouts.webview')
 
+@section('title', 'Home')
+
 @section('content')
 
     <div id="x-corp-carousel" class="carousel slide hero-slide" data-ride="carousel">

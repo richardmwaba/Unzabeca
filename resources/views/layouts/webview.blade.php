@@ -10,12 +10,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>@yield('title')</title>
+    <!-- jquerry -->
+    <script src="{{URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')}}"></script>
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('../webview/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Web Fonts -->
     <link href='{{URL::asset('http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300')}}' rel='stylesheet' type='text/css'>
     <!-- Flaticon CSS -->
     <link href="{{URL::asset('../webview/fonts/flaticon/flaticon.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
     <!-- font-awesome CSS -->
     <link href="{{URL::asset('../webview/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- owl.carousel CSS -->
@@ -27,6 +30,7 @@
     <link href="{{URL::asset('../webview/css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{URL::asset('../webview/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('../webview/css/alumni/style.css')}}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{URL::asset('../webview/css/responsive.css')}}" rel="stylesheet">
 
@@ -37,6 +41,19 @@
     <script src="{{URL::asset('../webview/js/vendor/html5shim.js')}}"></script>
     <script src="{{URL::asset('../webview/js/vendor/respond.min.js')}}"></script>
     <!--[endif]-->
+
+    <!-- alumni -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>
+    <script>
+        $(function(){
+            $().timelinr({
+                arrowKeys: 'true'
+            })
+        });
+    </script>
+
+
 
 </head>
 
@@ -70,9 +87,9 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#">Committees</a></li>
-                                                    <li><a href="#">Executive</a></li>
-                                                    <li><a href="#">General Information</a></li>
+                                                    <li><a href="/webview/committees">Committees</a></li>
+                                                    <li><a href="/webview/executive">Executive</a></li>
+                                                    <li><a href="/webview/general_about">General Information</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -83,8 +100,8 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#">Executive</a></li>
-                                                    <li><a href="#">Ordinary Members</a></li>
+                                                    <li><a href="{{url('executive/alumni/timeline')}}">Executive</a></li>
+                                                    <li><a href="{{url('ordinary/alumni/timeline')}}">Ordinary Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -103,7 +120,7 @@
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
-                                    <li><a href="#">Join Us</a></li>
+                                    <li><a href="{{url('members/join/form')}}">Join Us</a></li>
 
                                     <li><a href="#">Contact Us</a></li>
 
@@ -112,7 +129,25 @@
                         </div><!-- /.container -->
                     </nav>
                 </header>
+                <div class="row">
+                    <div class="col-lg-12">
+                        {{--<img class="center block  pull-right img-circle img-responsive" src="{{ URL::asset('frontend/img/logo.png') }}">--}}
+                        <h4 class="page-header">
+                            <div class="pull-right"></div>
+                            @if(Session::has('flash_message'))
+                                <div class="alert alert-success {{session()->has('flash_message_important')? session('flash_message') : ''}}">
+                                    {{Session::get('flash_message')}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    @if(session()->has('flash_message_important'))
 
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    @endif
+                                </div>
+                            @endif
+                        </h4>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div><!-- /.row -->
 
                 @yield('content')
 
@@ -273,7 +308,7 @@
 </div>
 
 
-@section('scripts')
+@yield('scripts')
     <!-- jQuery -->
     <script src="{{URL::asset('../webview/js/jquery.js')}}"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -296,6 +331,5 @@
     <script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
     <!-- Custom Script -->
     <script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
-@show
 </body>
 </html>

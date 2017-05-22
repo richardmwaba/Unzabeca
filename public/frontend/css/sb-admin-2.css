@@ -352,3 +352,10 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+/*
+Custom css for hidding elements
+*/
+#hide{
+    display: none;
+}
