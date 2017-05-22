@@ -40,7 +40,7 @@
                                 <td>{{ \Carbon\Carbon::parse($article->created_at )->toFormattedDateString() }}</td>
                                 <td>
                                     <!-- delete article -->
-                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal">
+                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal{{$article->article_id}}">
                                         <i class="glyphicon glyphicon-trash"></i>
                                     </button>
 
@@ -50,7 +50,7 @@
 
                                     <form role="form" method="post" action="{{url('/members/article/delete/'.$article->article_id)}}">
                                         {{csrf_field()}}<!--delete confirmation Modal -->
-                                        <div class="modal fade" id="deleteModal" role="dialog">
+                                        <div class="modal fade" id="deleteModal{{$article->article_id}}" role="dialog">
                                             <div class="modal-dialog modal-sm">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -59,7 +59,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <p>Are you sure you want to <strong>delete
-                                                                this article</strong> from the system?</p>
+                                                                '{{$article->articleTitle}}'</strong> from the system?</p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-danger">Yes</button>
