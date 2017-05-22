@@ -79,7 +79,7 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse navbar-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="active"><a href="/">Home</a></li>
+                                    <li class="active"><a href="{{url('/')}}">Home</a></li>
 
                                     <li class="dropdown"><a >About <b class="caret"></b></a>
                                         <!-- submenu-wrapper -->
@@ -113,13 +113,13 @@
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#">Action Plan</a></li>
                                                     <li><a href="#">Research Plan</a></li>
-                                                    <li><a href="{{url('/article')}}">Articles</a></li>
+                                                    <li><a href="{{url('/webview/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
-                                    <li><a href="{{url('members/join/form')}}">Join Us</a></li>
+                                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
 
                                     <li><a href="#">Contact Us</a></li>
 
@@ -269,7 +269,7 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-picture-o"></i> Action Plan</a></li>
                             <li><a href="#"><i class="fa fa-paper-plane-o"></i> Research Plan</a></li>
-                            <li><a href="{{url('/article')}}"><i class="fa fa-file-text-o"></i> Articles</a></li>
+                            <li><a href="{{url('/webview/article')}}"><i class="fa fa-file-text-o"></i> Articles</a></li>
                         </ul>
                     </li>
 

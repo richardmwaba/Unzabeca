@@ -79,7 +79,7 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse navbar-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="active"><a href="/">Home</a></li>
+                                    <li class="active"><a href="{{url('/')}}">Home</a></li>
 
                                     <li class="dropdown"><a href="#" >About <b class="caret"></b></a>
                                         <!-- submenu-wrapper -->
@@ -99,8 +99,8 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="{{url('executive/alumni/timeline')}}">Executive</a></li>
-                                                    <li><a href="{{url('ordinary/alumni/timeline')}}">Ordinary Members</a></li>
+                                                    <li><a href="{{url('webview/executive/alumni/timeline')}}">Executive</a></li>
+                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Ordinary Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -119,7 +119,7 @@
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
-                                    <li><a href="{{url('members/join/form')}}">Join Us</a></li>
+                                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
 
                                     <li><a href="#">Contact Us</a></li>
 
@@ -137,7 +137,7 @@
                                     <h1>Executive</h1>
                                 </div>
                                 <ol class="breadcrumb">
-                                    <li><a href="#">Home</a></li>
+                                    <li><a href="{{url('/')}}">Home</a></li>
                                     <li><a href="#">Alumni</a></li>
                                     <li class="active">Executive</li>
                                 </ol>
