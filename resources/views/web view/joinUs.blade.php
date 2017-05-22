@@ -78,21 +78,23 @@
 										</div>
 										<div class="col-md-6">
 											<div class="input-group">
-												<label class="sr-only" for="role">Role</label>
-												<span class="input-group-addon" id="basic-addon3"><i class="fa fa-tasks"></i></span>
-												<input id="role" name="role" type="text" class="form-control" placeholder="role" required>
+												<label class="sr-only" for="status">Status</label>
+												<span class="input-group-addon" id="basic-addon3"><i class="fa fa-comment"></i></span>
+												<select id="status_id" onchange="dropdowns(this,document.getElementById('position_id'))" class="form-control" name="status_id" required>
+													<option value="">-- select your current member status --</option>
+													@foreach($status as $status_id)
+														<option value="{{$status_id->status_id}}">{{$status_id->status_description}}</option>
+													@endforeach
+												</select>
 											</div>
 										</div>
 
 										<div class="col-md-6">
 											<div class="input-group">
-												<label class="sr-only" for="status">Status</label>
-												<span class="input-group-addon" id="basic-addon3"><i class="fa fa-comment"></i></span>
-												<select id="" class="form-control" name="status_id" required>
-													<option value="">-- select your current member status --</option>
-													@foreach($status as $status_id)
-														<option value="{{$status_id->status_id}}">{{$status_id->status_description}}</option>
-													@endforeach
+												<label class="sr-only" for="position_id">Role</label>
+												<span class="input-group-addon" id="basic-addon3"><i class="fa fa-tasks"></i></span>
+												<select id="position_id" class="form-control" name="position_id">
+													//Content is loaded from an external JavaScript file
 												</select>
 											</div>
 										</div>

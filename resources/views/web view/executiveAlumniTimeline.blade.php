@@ -73,7 +73,7 @@
                                     <span class="icon-bar"></span>
                                 </button>
                                 <!-- offcanvas-trigger-effects -->
-                                <h1 class="logo"><a class="navbar-brand" href="/"><span style="color: #f5f5f5; font-size: xx-large">UNZABECA</span></a></h1>
+                                <h1 class="logo"><a class="navbar-brand" href="{{url('/')}}"><span style="color: #f5f5f5; font-size: xx-large">UNZABECA</span></a></h1>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -113,7 +113,7 @@
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#">Action Plan</a></li>
                                                     <li><a href="#">Research Plan</a></li>
-                                                    <li><a href="#">Articles</a></li>
+                                                    <li><a href="{{url('/webview/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->

@@ -318,5 +318,6 @@
     <script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
     <!-- Custom Script -->
     <script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
+<script src="{{URL::asset('../frontend/js/custom.js')}}"></script>
 </body>
 </html>
