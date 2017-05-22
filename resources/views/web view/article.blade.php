@@ -29,7 +29,7 @@
                             <div class="single-portfolio">
                                 <img src="{{URL::asset('../storage/'.$article->articlePhoto->filename)}}" height="250px"  alt="Article image">
                                 <div class="portfolio-links">
-                                    <a href="{{url('/article/article-single/'.$article->article_id)}}">
+                                    <a href="{{url('webview/article/article-single/'.$article->article_id)}}">
                                         <i class="fa fa-link"></i>
                                     </a>
                                 </div><!-- /.links -->
