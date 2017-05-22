@@ -25,7 +25,9 @@ class WebviewController extends Controller
     public function viewExecutive()
     {
         //View Executive page
-        $executive=Member::where('status_id', 'Executive Member')->get();
+        $executive=Member::where('status_id', '1')
+                            ->with('position', 'status')
+                            ->get();
         return view('web view.executive')->with('executive', $executive);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UserOnDelete extends Migration
+class CreatePositionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class UserOnDelete extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::create('positions', function (Blueprint $table) {
+            $table->integer('position_id')->unique()->primaryKey();
+            $table->string('position_description');
+            $table->timestamps();
         });
     }
 
@@ -25,9 +27,6 @@ class UserOnDelete extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->foreign('email')->references('email')->on('users')->onDelete('cascade');
-        });
+        Schema::dropIfExists('positions');
     }
 }

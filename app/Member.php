@@ -12,7 +12,7 @@ class Member extends Model
 
     // for mass assignment
     protected $fillable = [
-        'member_id', 'first_name', 'middle_name','last_name', 'email', 'year', 'status_id', 'role', 'phone_number','approved'
+        'member_id', 'first_name', 'middle_name','last_name', 'email', 'year', 'status_id', 'position_id', 'phone_number','approved'
     ];
 
     public $incrementing = false;
@@ -29,7 +29,15 @@ class Member extends Model
      * Relation between member and status
      */
     public function status(){
-        return $this->hasOne('App\Status', 'status_id');
+        return $this->hasOne('App\Status', 'status_id', 'status_id');
+    }
+
+    /**
+     * Relationship on member and positions table
+     */
+    public function position()
+    {
+        return $this->hasOne('App\Position', 'position_id', 'position_id');
     }
 
 }

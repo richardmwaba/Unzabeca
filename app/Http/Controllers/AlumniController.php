@@ -17,7 +17,7 @@ class AlumniController extends Controller
             'last_name' => 'required|max:255',
             'email'=> 'required|max:255|email',
             'year' => 'required|max:255',
-            'role' => 'required|max:255',
+            'position_id' => 'required|max:255',
             'phone_number' => 'required|max:255'
         ]);
 
@@ -39,19 +39,20 @@ class AlumniController extends Controller
             'last_name' => 'required|max:255',
             'email'=> 'required|max:255|email|unique:members',
             'year' => 'required|max:255',
-            'role' => 'required|max:255',
+            'position_id' => 'required|max:255',
             'status_id' => 'required|max:255',
             'phone_number' => 'required|max:255',
             'approved' => 'max:255'
             ]);
 
         Member::create([
+            'member_id' => 'MBR'.random_int(100,999),
             'first_name' => $data -> first_name,
             'middle_name' => $data -> middle_name,
             'last_name' => $data -> last_name,
             'email' => $data -> email,
             'year' => $data -> year,
-            'role' => ucwords($data -> role),
+            'position_id' => $data -> position_id,
             'status_id' => $data -> status_id,
             'phone_number' => $data -> phone_number,
             'approved' => $data -> approved
@@ -70,7 +71,8 @@ class AlumniController extends Controller
     //Retrieve and view all executive alumni
     public function viewAlumni()
     {
-        $alumni = Member::where('status_id', 'Executive Alumni')
+        $alumni = Member::where('status_id', '3')
+            ->with('position', 'status')
             ->orderBy('first_name', 'desc')
             ->take(10)
             ->get();

@@ -29,7 +29,7 @@
                 <div class="css-team">
                     <div class="row">
                         @foreach($executive as $exec)
-                            @if($exec -> role == 'President')
+                            @if($exec -> position_id == '1')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -38,11 +38,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>President</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                            @elseif($exec -> role == 'Vice President')
+                            @elseif($exec -> position_id == '2')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -51,11 +51,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Vice President</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                            @elseif($exec -> role == 'Secretary General')
+                            @elseif($exec -> position_id == '3')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -64,11 +64,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Secretary General</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                            @elseif($exec -> role == 'Vice Secretary General')
+                            @elseif($exec -> position_id == '4')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -77,14 +77,14 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Vice Secretary General</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
 
                             <div class="row>">
-                                @elseif($exec -> role == 'Publicity Secretary')
+                                @elseif($exec -> position_id == '5')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -93,11 +93,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Publicity Secretary</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                                @elseif($exec -> role == 'Treasurer')
+                                @elseif($exec -> position_id == '6')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -106,11 +106,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Treasurer</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                                @elseif($exec -> role == 'Projects Coordinator')
+                                @elseif($exec -> position_id == '7')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -119,11 +119,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Projects Coordinator</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                                @elseif($exec -> role == 'First Committee Member')
+                                @elseif($exec -> position_id == '8')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -132,14 +132,14 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Committee Member</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
                             </div><!-- /.row -->
 
                             <div class="row">
-                                @elseif($exec -> role == 'Second Committee Member')
+                                @elseif($exec -> position_id == '9')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -148,11 +148,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Committee Member</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                                @elseif($exec -> role == 'Third Committee Member')
+                                @elseif($exec -> position_id == '10')
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
@@ -161,10 +161,11 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>Committee Member</small></h3>
+                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
+                                @endif
                         @endforeach
                     </div><!-- /.row -->
                 </div><!-- /.css-team -->

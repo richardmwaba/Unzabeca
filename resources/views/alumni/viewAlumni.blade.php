@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading"> <b>All Executive Alumni</b></div>
+                <div class="panel-heading"> <b>All Alumni</b></div>
 
                 <div class="panel-body">
                     <button class="btn btn-link" data-toggle="modal" data-target="#addAlumniModal">Add new Alumni</button>
@@ -22,7 +22,7 @@
                             <th data-field="lastName" data-sortable="true"> Last Name</th>
                             <th data-field="email" data-sortable="true"> Email</th>
                             <th data-field="year" data-sortable="true"> Year Joined</th>
-                            <th data-field="status" data-sortable="true"> Status</th>
+                            <th data-field="status" data-sortable="true"> Membership</th>
                             <th data-field="role" data-sortable="true"> Position</th>
                             <th data-field="phoneNumber" data-sortable="true">Phone Number</th>
                             <th data-field="deleteEdit" data-sortable="true">Delete | Edit</th>
@@ -53,15 +53,13 @@
                                 </td>
                                 <td>
                                     @if(isset($alumni))
-                                        {{$member->status_id}}
+                                        {{$member->status->status_description}}
                                     @endif
-
                                 </td>
                                 <td>
                                     @if(isset($alumni))
-                                        {{$member->role}}
+                                        {{$member->position->position_description}}
                                     @endif
-
                                 </td>
                                 <td>
                                     @if(isset($alumni))
@@ -70,13 +68,12 @@
 
                                 </td>
                                 <td>
-                                    <div class="btn-group">
-                                        <button class="btn btn-default btn-xs btn-danger" type="button" data-toggle="modal" title="Delete" data-target="#deleteModal-{{$member->member_id}}">
-                                            <i class="glyphicon glyphicon glyphicon-trash"></i>
-                                        </button>
 
-                                        <button class="btn btn-default btn-xs btn-success" type="button" title="Edit" data-toggle="modal" data-target="#editAlumniModal-{{$member->member_id}}"><i class="glyphicon glyphicon glyphicon-edit"></i></button>
-                                    </div>
+                                    <button class="btn btn-default btn-xs btn-danger" type="button" data-toggle="modal" title="Delete" data-target="#deleteModal-{{$member->member_id}}">
+                                        <i class="glyphicon glyphicon glyphicon-trash"></i>
+                                    </button>
+
+                                    <button class="btn btn-default btn-xs btn-success" type="button" title="Edit" data-toggle="modal" data-target="#editAlumniModal-{{$member->member_id}}"><i class="glyphicon glyphicon glyphicon-edit"></i></button>
                                     <form role="form" method="post" action="{{url('/alumni/deleteAlumni/'.$member->member_id)}}">
                                     {{csrf_field()}}<!--delete confirmation Modal -->
                                         <div class="modal fade" id="deleteModal-{{$member->member_id}}" role="dialog">
@@ -175,17 +172,35 @@
                                                                     </span>
                                                                 @endif
                                                             </div>
+                                                            <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                                            <div id="approval_status" style="" class="form-group{{ $errors->has('role') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <label>Status</label>
+                                                                <select id="status" onchange="changeField()" class="form-control" name="status_id">
+                                                                    <option name="currentValue" value="{{$member->status->status_description}}">{{$member->status->status_description}}</option>
+                                                                    <option value="">-- select one --</option>
+                                                                    <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
+                                                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
+                                                                </select>
 
-                                                                <label id="role_label">Position</label>
-                                                                <input id="role_field" class="form-control" name="role" type="text" value="{{ $member->role}}">
-                                                                @if ($errors->has('role'))
+                                                                @if ($errors->has('status_id'))
                                                                     <span class="help-block">
-                                                                            <strong>{{ $errors->first('role') }}</strong>
-                                                                        </span>
+                                                                        <strong>{{ $errors->first('status_id') }}</strong>
+                                                                    </span>
                                                                 @endif
                                                             </div>
+
+                                                            @if($member->status_id == '3')
+                                                                <div id="approval_status" style="" class="form-group{{ $errors->has('position_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                                    <label id="role_label">Position</label>
+                                                                    <input id="role_field" class="form-control" name="position_id" type="text" value="{{ $member->position->position_description}}">
+                                                                    @if ($errors->has('position_id'))
+                                                                        <span class="help-block">
+                                                                            <strong>{{ $errors->first('position_id') }}</strong>
+                                                                        </span>
+                                                                    @endif
+                                                                </div>
+                                                            @endif
 
 
                                                             {{--<div class="form-group{{ $errors->has('issuer') ? ' has-error' : '' }}">--}}
@@ -260,7 +275,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">New Executive Alumni</h4>
+                    <h4 class="modal-title">New Alumni</h4>
                 </div>
                 <div class="modal-body" style="max-height: 500px;overflow-y: scroll;">
                     <div class="row">
@@ -314,7 +329,7 @@
                             <div class="form-group{{ $errors->has('year') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                 <label>Year</label>
-                                <input class="form-control" name="year"  placeholder="Enter the year in which Alumni was in Executive" type="text">
+                                <input class="form-control" name="year"  placeholder="Enter the year in which Alumni was part of the association" type="text">
                                 @if ($errors->has('year'))
                                     <span class="help-block">
                                                     <strong>{{ $errors->first('year') }}</strong>
@@ -332,30 +347,35 @@
                                                         </span>
                                 @endif
                             </div>
-                            <div style="display: none" class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                 <label>Status</label>
-                                <input id="role_field" class="form-control" name="status_id" type="text" value="Executive Alumni">
+                                <select id="ddl1" onchange="dropdowns(this,document.getElementById('ddl2'))" class="form-control" name="status_id">
+                                    <option value="">-- select one --</option>
+                                    <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
+                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
+                                </select>
 
                                 @if ($errors->has('status_id'))
                                     <span class="help-block">
-                                                    <strong>{{ $errors->first('status_id') }}</strong>
-                                                </span>
+                                        <strong>{{ $errors->first('status_id') }}</strong>
+                                    </span>
                                 @endif
                             </div>
-                            <div id="approval_status" style="" class="form-group{{ $errors->has('role') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div id="position" class="form-group{{ $errors->has('position_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                <label id="role_label">Position</label>
-                                <input id="role_field" class="form-control" placeholder="Enter the position held the alumni" name="role" type="text"
-                                       value="{{ old('role') }}">
-                                @if ($errors->has('role'))
+                                <label id="position_label">Position</label>
+                                <select id="ddl2" class="form-control" name="position_id">
+                                    //Content is loaded from an external JavaScript file
+                                </select>
+                                @if ($errors->has('position_id'))
                                     <span class="help-block">
-                                                            <strong>{{ $errors->first('role') }}</strong>
-                                                        </span>
+                                        <strong>{{ $errors->first('position_id') }}</strong>
+                                    </span>
                                 @endif
                             </div>
                             <div>
-                                <input class="form-control" style="display: none" value="Approved Alumni" name="approved" type="text">
+                                <input class="form-control" style="display: none" value="1" name="approved" type="text">
                             </div>
                             {{--<div class="form-group{{ $errors->has('issuer') ? ' has-error' : '' }}">--}}
 
@@ -370,6 +390,19 @@
 
                             <button type="submit" class="btn btn-default btn-primary col-lg-offset-9 col-md-offset-9 col-sm-offset-9 col-xs-offset-7">Save</button>
                             <button type="reset" class="btn btn-default btn-danger pull-right" data-dismiss="modal">Cancel</button>
+
+                            <script type="javascript">
+                                function changeField()
+                                {
+                                    if (document.getElementById("status").value == "3") {
+                                        document.getElementById("position_field").disabled = false;
+                                    }else if(document.getElementById("status").value == "4") {
+                                        document.getElementById("position_field").disabled= true;
+                                    }else{
+                                        document.getElementById("position_field").disabled= true;
+                                    }
+                                }
+                            </script>
                         </form>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ class CommitteesTable extends Migration
     public function up()
     {
         Schema::create('committees', function (Blueprint $table) {
-            $table->string('committee_id')->unique();
+            $table->string('committee_id')->unique()->primaryKey();
             $table->longText('committee_description');
             $table->timestamps();
         });
