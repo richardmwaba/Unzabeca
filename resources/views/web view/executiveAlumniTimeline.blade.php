@@ -86,9 +86,9 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#">Committees</a></li>
-                                                    <li><a href="#">Executive</a></li>
-                                                    <li><a href="#">General Information</a></li>
+                                                    <li><a href="{{url('/webview/committees')}}">Committees</a></li>
+                                                    <li><a href="{{url('/webview/executive')}}">Executive</a></li>
+                                                    <li><a href="{{url('/webview/general_about')}}">General Information</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
