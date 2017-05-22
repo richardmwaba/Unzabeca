@@ -158,7 +158,57 @@
                         </div> <!-- /.media -->
                     </div> <!-- /.col-md-6 -->
                 </div> <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg1 flaticon-increasing5"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Global business</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg2 flaticon-syncing"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Fast online support</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg3 flaticon-file24"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Pro Services &amp; Advice</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+
+                    <div class="col-md-6 wow fadeInRight">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <span class="icon bg4 flaticon-royalty"></span>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading"><a href="#">Fresh business ideas</a></h3>
+                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
+                            </div> <!-- /.media-body -->
+                        </div> <!-- /.media -->
+                    </div> <!-- /.col-md-6 -->
+                </div> <!-- /.row -->
             </section>
+
         </div><!-- /.content-wrapper -->
     </div><!-- /.container -->
 
