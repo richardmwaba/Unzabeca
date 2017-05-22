@@ -121,7 +121,7 @@
 
                                     <li><a href="{{url('members/join/form')}}">Join Us</a></li>
 
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{{url('/webview/contactUs')}}">Contact Us</a></li>
 
                                 </ul>
                             </div><!-- /.navbar-collapse -->
@@ -318,5 +318,6 @@
     <script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
     <!-- Custom Script -->
     <script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
+
 </body>
 </html>
