@@ -108,7 +108,7 @@
 
 
             <section class="service-wrapper">
-                <h2 class="section-title wow fadeInDown">Our Services</h2>
+                <h2 class="section-title wow fadeInDown">Upcoming Events</h2>
                 <div class="row">
                     <div class="col-md-6 wow fadeInRight">
                         <div class="media">

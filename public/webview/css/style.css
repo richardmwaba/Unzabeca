@@ -1806,6 +1806,7 @@ PORTFOLIO PAGE
     position: relative;
     overflow: hidden;
 }
+
 .single-portfolio::before {
     content: "";
     width: 100%;
@@ -1814,10 +1815,12 @@ PORTFOLIO PAGE
     left: 0;
     top: 0;
     background: rgba(0,0,0,0.6);
+    /* added this for article page opt
+    background-size: contain;*/
 }
 
 .portfolio-links {
-    width: 84px;
+    width: 84px; /* <-changed from 84px to 100px */
     height: 40px;
     position: absolute;
     top: -100%;
@@ -1842,7 +1845,6 @@ PORTFOLIO PAGE
     opacity: 1;
     filter: alpha(opacity=100);
 }
-
 
 .portfolio-links>a {
     width: 40px;
@@ -1894,7 +1896,8 @@ PORTFOLIO PAGE
 .related-work-carousel .item img{
   display: block;
   width: 100%;
-  height: auto;
+    /* changed height from 'auto' to '250px' */
+  height: 250px;
 }
 
 
