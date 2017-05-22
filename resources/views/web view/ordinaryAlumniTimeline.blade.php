@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -8,17 +8,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <!-- alumni -->
+    <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
 
-    <title>@yield('title')</title>
     <!-- jquerry -->
     <script src="{{URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')}}"></script>
+
+    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"> </script>
+    <script>
+        $(function(){
+            $().timelinr({
+                arrowKeys: 'true'
+            })
+        });
+    </script>
+
+    <!-- jquerry -->
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('../webview/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Web Fonts -->
     <link href='{{URL::asset('http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300')}}' rel='stylesheet' type='text/css'>
     <!-- Flaticon CSS -->
     <link href="{{URL::asset('../webview/fonts/flaticon/flaticon.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
     <!-- font-awesome CSS -->
     <link href="{{URL::asset('../webview/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- owl.carousel CSS -->
@@ -30,7 +41,6 @@
     <link href="{{URL::asset('../webview/css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{URL::asset('../webview/css/style.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('../webview/css/alumni/style.css')}}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{URL::asset('../webview/css/responsive.css')}}" rel="stylesheet">
 
@@ -41,17 +51,6 @@
     <script src="{{URL::asset('../webview/js/vendor/html5shim.js')}}"></script>
     <script src="{{URL::asset('../webview/js/vendor/respond.min.js')}}"></script>
     <!--[endif]-->
-
-    <!-- alumni -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>
-    <script>
-        $(function(){
-            $().timelinr({
-                arrowKeys: 'true'
-            })
-        });
-    </script>
 
 
 
@@ -87,9 +86,9 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="/webview/committees">Committees</a></li>
-                                                    <li><a href="/webview/executive">Executive</a></li>
-                                                    <li><a href="/webview/general_about">General Information</a></li>
+                                                    <li><a href="#">Committees</a></li>
+                                                    <li><a href="#">Executive</a></li>
+                                                    <li><a href="#">General Information</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -129,27 +128,163 @@
                         </div><!-- /.container -->
                     </nav>
                 </header>
-                <div class="row">
-                    <div class="col-lg-12">
-                        {{--<img class="center block  pull-right img-circle img-responsive" src="{{ URL::asset('frontend/img/logo.png') }}">--}}
-                        <h4 class="page-header">
-                            <div class="pull-right"></div>
-                            @if(Session::has('flash_message'))
-                                <div class="alert alert-success {{session()->has('flash_message_important')? session('flash_message') : ''}}">
-                                    {{Session::get('flash_message')}}
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    @if(session()->has('flash_message_important'))
 
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                    @endif
+                <section class="page-header-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="page-header">
+                                    <h1>Ordinary</h1>
                                 </div>
-                            @endif
-                        </h4>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div><!-- /.row -->
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Alumni</a></li>
+                                    <li class="active">Ordinary</li>
+                                </ol>
+                            </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                </section>
 
-                @yield('content')
+                <div class="container">
+                    <div class="content-wrapper">
+                        <section class="about-us-wrapper">
+
+                            <h2>Time Line</h2>
+
+
+                            <div id="timeline">
+                                <ul id="dates">
+                                    <li ><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2016">2016</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2015">2015</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2014">2014</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2013">2013</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2012">2012</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2011">2011</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2010">2010</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2009">2009</a></li>
+                                    <li><a style="text-decoration: none;-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;-ms-transition: 0.5s;transition: 0.5s;" href="#2008">2008</a></li>
+                                </ul>
+                                <ul id="issues">
+                                    <li id="2016">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/2.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2016</h1>
+                                        <p>
+                                            @if($alumni_2016!==[])
+                                                @foreach($alumni_2016 as $alumnus)
+                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                @endforeach
+                                            @endif
+                                        </p>
+                                    </li>
+                                    <li id="2015">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/3.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2015</h1>
+                                        <p>
+                                            @if($alumni_2015!==[])
+                                                @foreach($alumni_2015 as $alumnus)
+                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                @endforeach
+                                            @endif
+                                        </p>
+                                    </li>
+                                    <li id="2014">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/4.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2014</h1>
+                                        <p>
+                                            @if($alumni_2014!==[])
+                                                @foreach($alumni_2014 as $alumnus)
+                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                @endforeach
+                                            @endif
+                                        </p>
+                                    </li>
+                                    <li id="2013">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/5.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2013</h1>
+                                        @if($alumni_2013!==[])
+                                            @foreach($alumni_2013 as $alumnus)
+                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                            @endforeach
+                                        @endif
+                                    </li>
+                                    <li id="2012">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/6.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2012</h1>
+                                        <p>
+                                            @if($alumni_2012!==[])
+                                                @foreach($alumni_2012 as $alumnus)
+                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                @endforeach
+                                            @endif
+                                        </p>
+                                    </li>
+                                    <li id="2011">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/7.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2011</h1>
+                                        @if($alumni_2011!==[])
+                                            @foreach($alumni_2011 as $alumnus)
+                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                            @endforeach
+                                        @endif
+                                    </li>
+                                    <li id="2010">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/8.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2010</h1>
+                                        @if($alumni_2010!==[])
+                                            @foreach($alumni_2010 as $alumnus)
+                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                            @endforeach
+                                        @endif
+                                    </li>
+                                    <li id="2009">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/9.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2009</h1>
+                                        @if($alumni_2009!==[])
+                                            @foreach($alumni_2009 as $alumnus)
+                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                            @endforeach
+                                        @endif
+                                    </li>
+                                    <li id="2008">
+                                        <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/10.png')}}" width="256" height="310" />
+                                        <h1 style="font-size: 48px;">2008</h1>
+                                        @if($alumni_2008!==[])
+                                            @foreach($alumni_2008 as $alumnus)
+                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                            @endforeach
+                                        @endif
+                                    </li>
+                                </ul>
+                                <div id="grad_left"></div>
+                                <div id="grad_right"></div>
+                                <a style="position: absolute;
+            top: 0;
+            font-size: 70px;
+            top: 170px;
+            width: 22px;
+            height: 38px;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+            overflow: hidden;"
+                                   href="#" id="next">+</a>
+                                <a style="position: absolute;
+            top: 0;
+            font-size: 70px;
+            top: 170px;
+            width: 22px;
+            height: 38px;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+            overflow: hidden;"
+                                   href="#" id="prev">-</a>
+                            </div>
+
+                        </section><!-- /.about-us-wrapper -->
+                    </div><!-- /.content-wrapper -->
+                </div><!-- /.container -->
 
                 <section class="footer-widget-wrapper">
                     <div class="container">
@@ -300,36 +435,6 @@
 </div><!-- /st-container -->
 
 
-<!-- Preloader -->
-<div id="preloader">
-    <div id="status">
-        <div class="status-mes"></div>
-    </div>
-</div>
 
-
-@yield('scripts')
-    <!-- jQuery -->
-    <script src="{{URL::asset('../webview/js/jquery.js')}}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{URL::asset('../webview/js/bootstrap.min.js')}}"></script>
-    <!-- wow.min.js -->
-    <script src="{{URL::asset('../webview/js/wow.min.js')}}"></script>
-    <!-- owl-carousel -->
-    <script src="{{URL::asset('../webview/owl-carousel/owl.carousel.min.js')}}"></script>
-    <!-- smoothscroll -->
-    <script src="{{URL::asset('../webview/js/smoothscroll.js')}}"></script>
-    <!-- Offcanvas Menu -->
-    <script src="{{URL::asset('../webview/js/hippo-offcanvas.js')}}"></script>
-    <!-- easypiechart -->
-    <script src="{{URL::asset('../webview/js/jquery.easypiechart.min.js')}}"></script>
-    <!-- Scrolling Nav JavaScript -->
-    <script src="{{URL::asset('../webview/js/jquery.easing.min.js')}}"></script>
-    <!-- Magnific-popup -->
-    <script src="{{URL::asset('../webview/js/jquery.magnific-popup.min.js')}}"></script>
-    <!-- Shuffle.min js -->
-    <script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
-    <!-- Custom Script -->
-    <script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
 </body>
 </html>

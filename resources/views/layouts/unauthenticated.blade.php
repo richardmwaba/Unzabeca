@@ -75,7 +75,7 @@
         </div>
     </nav>
 
-    <div id="page-wrapper">
+    <div id="">
         <div class="row">
             <div class="col-lg-12">
                 {{--<img class="center block  pull-right img-circle img-responsive" src="{{ URL::asset('frontend/img/logo.png') }}">--}}
