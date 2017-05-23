@@ -195,6 +195,7 @@
 
                                                                     <label id="position_label">Position</label>
                                                                     <select id="ddl4" class="form-control" name="position_id">
+                                                                        <option name="currentValue" value="{{$member->position->position_description}}">{{$member->position->position_description}}</option>
                                                                         //Content is loaded from an external JavaScript file
                                                                     </select>
                                                                     @if ($errors->has('position_id'))

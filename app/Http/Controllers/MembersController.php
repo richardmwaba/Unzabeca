@@ -53,7 +53,6 @@ class MembersController extends Controller
     {
         $members = Member::where('approved', '1')
                     ->orderBy('first_name', 'desc')
-                    ->take(10)
                     ->get();
         return view('members.viewMembers')->with('members', $members);
     }
