@@ -204,6 +204,7 @@
                                                                         </span>
                                                                     @endif
                                                                 </div>
+
                                                             @endif
 
                                                             {{--<div class="form-group{{ $errors->has('issuer') ? ' has-error' : '' }}">--}}
@@ -242,8 +243,7 @@
                                 </div>
                                 <div class="modal-body" style="max-height: 500px;overflow-y: scroll;">
                                     <div class="row">
-                                        <form class="" role="form" method="POST"
-                                              action="{{ url('/members/addMember') }}">
+                                        <form class="" role="form" method="POST" action="{{ url('/members/addMember') }}" enctype="multipart/form-data">
                                             {!! csrf_field() !!}
 
                                             <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }} col-md-12 col-sm-12 col-xs-12">
@@ -313,7 +313,7 @@
                                             <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                 <label>Status</label>
-                                                <select id="ddl1" onchange="dropdowns(this,document.getElementById('ddl'))" class="form-control" name="status_id">
+                                                <select id="ddl1" onchange="dropdowns(this,document.getElementById('ddl')); showThis(this)" class="form-control" name="status_id">
                                                     <option value="">-- select one --</option>
                                                     <option name="Executive" value="1"> Executive Member</option>
                                                     <option name="Ordinary" value="2"> Ordinary Member</option>
@@ -337,6 +337,17 @@
                                                     <span class="help-block">
                                                             <strong>{{ $errors->first('position_id') }}</strong>
                                                         </span>
+                                                @endif
+                                            </div>
+                                            <div id="photo_field" style="display: none" class="form-group{{ $errors->has('photo') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                <label>Upload Photo</label>
+                                                <input class="form-control" id="photo"  name="photo" type="file"
+                                                       value="{{ old('photo') }}">
+                                                @if ($errors->has('photo'))
+                                                    <span class="help-block">
+                                                    <strong>{{ $errors->first('photo') }}</strong>
+                                                </span>
                                                 @endif
                                             </div>
                                             <div>
@@ -394,6 +405,17 @@
                         }
                     </script>
                     <!--/. script-->
+
+                    <script>
+                        function showThis(that) {
+                            if (that.value == "1") {
+//                                alert("check");
+                                document.getElementById("photo_field").style.display = "block";
+                            } else {
+                                document.getElementById("photo_field").style.display = "none";
+                            }
+                        }
+                    </script>
 
                 </div>
                 <!-- /.panel-body -->

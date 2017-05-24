@@ -40,4 +40,11 @@ class Member extends Model
         return $this->hasOne('App\Position', 'position_id', 'position_id');
     }
 
+    /**
+     * Relationship on member and executive_photo table
+     */
+    public function executivePhoto()
+    {
+        return $this->hasOne('App\ExecutivePhoto', 'member_id', 'member_id');
+    }
 }
