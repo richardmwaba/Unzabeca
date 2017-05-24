@@ -9,6 +9,10 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('images/favicons/favicon-96x96.png')}}">
     <title>Unzabeca - @yield('title')</title>
 
     <!-- Bootstrap Core CSS -->

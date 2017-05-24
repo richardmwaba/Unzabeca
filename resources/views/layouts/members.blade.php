@@ -101,10 +101,10 @@
             <div class="sidebar-nav navbar-collapse">
 
                 <ul class="nav" id="side-menu">
+                    {{--<li class="active-link">--}}
+                        {{--<a href="{{url('/members/overview')}}"><i class="fa fa-desktop "></i>  Overview</a>--}}
+                  {{--</li>--}}
                     <li class="active-link">
-                        <a href="{{url('/members/overview')}}"><i class="fa fa-desktop "></i>  Overview</a>
-                  </li>
-                    <li>
                         <a href="{{url('/members/articles')}}"><i class="fa fa-file "></i>  Articles</a>
                     </li>
                     <li>
