@@ -119,9 +119,29 @@
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
-                                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+                                    <li class="dropdown"><a href="#" >Events<b class="caret"></b></a>
+                                        <!-- submenu-wrapper -->
+                                        <div class="submenu-wrapper submenu-wrapper-topbottom">
+                                            <div class="submenu-inner  submenu-inner-topbottom">
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{{url('webview/events/view/1')}}">Upcoming</a></li>
+                                                    <li><a href="{{url('webview/events/view/2')}}">today</a></li>
+                                                    <li><a href="{{url('webview/events/view/3')}}">Past</a></li>
+                                                </ul>
+                                            </div><!-- /.submenu-inner -->
+                                        </div> <!-- /.submenu-wrapper -->
+                                    </li>
 
-                                    <li><a href="{{url('/webview/contactUs')}}">Contact Us</a></li>
+                                    <li class="dropdown"><a href="#" >Contact US<b class="caret"></b></a>
+                                        <!-- submenu-wrapper -->
+                                        <div class="submenu-wrapper submenu-wrapper-topbottom">
+                                            <div class="submenu-inner  submenu-inner-topbottom">
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+                                                </ul>
+                                            </div><!-- /.submenu-inner -->
+                                        </div> <!-- /.submenu-wrapper -->
+                                    </li>
 
                                 </ul>
                             </div><!-- /.navbar-collapse -->

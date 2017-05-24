@@ -28,151 +28,162 @@
                 <h2 class="section-title">Our Team</h2>
                 <div class="css-team">
                     <div class="row">
-                        @foreach($executive as $exec)
-                            @if($exec -> position_id == '1')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <figure>
-                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
-                                            <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/president_.jpg')}}" alt="Image">
-                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
-                                        </div>
-                                        <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
-                                        </div>
-                                    </figure>
-                                </div><!-- /.col-md-4 -->
-                            @elseif($exec -> position_id == '2')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <figure>
-                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
-                                            <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/vice_president.jpg')}}" alt="Image">
-                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
-                                        </div>
-                                        <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
-                                        </div>
-                                    </figure>
-                                </div><!-- /.col-md-4 -->
-                            @elseif($exec -> position_id == '3')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <figure>
-                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
-                                            <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/secretary_general.jpg')}}" alt="Image">
-                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
-                                        </div>
-                                        <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
-                                        </div>
-                                    </figure>
-                                </div><!-- /.col-md-4 -->
-                            @elseif($exec -> position_id == '4')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <figure>
-                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
-                                            <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/vice_sg.jpg')}}" alt="Image">
-                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
-                                        </div>
-                                        <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
-                                        </div>
-                                    </figure>
-                                </div><!-- /.col-md-4 -->
-                            </div><!-- /.row -->
+                        <div class="col-md-12 col-sm-12 col-lg-12">
 
-                            <div class="row>">
-                                @elseif($exec -> position_id == '5')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
                                             <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/publicity_sec.jpg')}}" alt="Image">
+                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/president.jpeg')}}" alt="Image" style="border-radius: 50%">
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
+                                            <h3 class="css-team-heading">{{ $executive[0]->first_name}} {{$executive[0]->last_name }}<br> <small>{{$executive[0]->position->position_description }}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                                @elseif($exec -> position_id == '6')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <figure>
-                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
-                                            <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/treasurer.jpg')}}" alt="Image">
-                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
-                                        </div>
-                                        <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
-                                        </div>
-                                    </figure>
-                                </div><!-- /.col-md-4 -->
-                                @elseif($exec -> position_id == '7')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <figure>
-                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
-                                            <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/projects_coordinator.jpg')}}" alt="Image">
-                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
-                                        </div>
-                                        <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
-                                        </div>
-                                    </figure>
-                                </div><!-- /.col-md-4 -->
-                                @elseif($exec -> position_id == '8')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <figure>
-                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
-                                            <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/member_1.jpg')}}" alt="Image">
-                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
-                                        </div>
-                                        <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
-                                        </div>
-                                    </figure>
-                                </div><!-- /.col-md-4 -->
-                            </div><!-- /.row -->
 
-                            <div class="row">
-                                @elseif($exec -> position_id == '9')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
                                             <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/member_2.jpg')}}" alt="Image">
+                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/vice_president.jpg')}}" alt="Image" style="border-radius: 50%">
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
+                                            <h3 class="css-team-heading">{{$executive[1]->first_name}} {{$executive[1]->last_name }}<br> <small>{{ $executive[1]->position->position_description }}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                                @elseif($exec -> position_id == '10')
-                                <div class="col-md-3 col-sm-3 col-xs-12">
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                     <figure>
                                         <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
                                             <div class="css-overlay"></div>
-                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/member_3.jpg')}}" alt="Image">
+                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/secretary_general.jpg')}}" alt="Image" style="border-radius: 50%">
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$exec->first_name}} {{$exec->last_name}}<br> <small>{{$exec->position->position_description}}</small></h3>
+                                            <h3 class="css-team-heading"> {{$executive[2]->first_name}} {{$executive[2]->last_name }}<br> <small>{{ $executive[2]->position->position_description}} </small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
-                                @endif
-                        @endforeach
-                    </div><!-- /.row -->
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <figure>
+                                        <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
+                                            <div class="css-overlay"></div>
+                                            <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/vice_sg.jpg')}}" alt="Image" style="border-radius: 50%">
+                                            <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
+                                        </div>
+                                        <div class="css-team-info">
+                                            <h3 class="css-team-heading"> {{$executive[3]->first_name}} {{$executive[3]->last_name}} <br> <small> {{$executive[3]->position->position_description }}</small></h3>
+                                        </div>
+                                    </figure>
+                                </div><!-- /.col-md-4 -->
+                        </div>
+                        <!-- /.col-md-12 -->
+                    </div>>
+                    <!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <figure>
+                                    <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
+                                        <div class="css-overlay"></div>
+                                        <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/publicity_sec.jpg')}}" alt="Image" style="border-radius: 50%">
+                                        <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
+                                    </div>
+                                    <div class="css-team-info">
+                                        <h3 class="css-team-heading">{{ $executive[4]->first_name}} {{$executive[4]->last_name }}<br> <small>{{$executive[4]->position->position_description }}</small></h3>
+                                    </div>
+                                </figure>
+                            </div><!-- /.col-md-4 -->
+
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <figure>
+                                    <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
+                                        <div class="css-overlay"></div>
+                                        <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/treasurer.jpg')}}" alt="Image" tyle="border-radius: 50%">
+                                        <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
+                                    </div>
+                                    <div class="css-team-info">
+                                        <h3 class="css-team-heading">{{$executive[5]->first_name}} {{$executive[5]->last_name }}<br> <small>{{ $executive[5]->position->position_description }}</small></h3>
+                                    </div>
+                                </figure>
+                            </div><!-- /.col-md-4 -->
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <figure>
+                                    <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
+                                        <div class="css-overlay"></div>
+                                        <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/projects_coordinator.jpg')}}" alt="Image" tyle="border-radius: 50%">
+                                        <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
+                                    </div>
+                                    <div class="css-team-info">
+                                        <h3 class="css-team-heading"> {{$executive[6]->first_name}} {{$executive[6]->last_name }}<br> <small>{{ $executive[6]->position->position_description}} </small></h3>
+                                    </div>
+                                </figure>
+                            </div><!-- /.col-md-4 -->
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <figure>
+                                    <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
+                                        <div class="css-overlay"></div>
+                                        <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/member_1.jpg')}}" alt="Image" tyle="border-radius: 50%">
+                                        <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
+                                    </div>
+                                    <div class="css-team-info">
+                                        <h3 class="css-team-heading"> {{$executive[7]->first_name}} {{$executive[7]->last_name}} <br> <small> {{$executive[7]->position->position_description }}</small></h3>
+                                    </div>
+                                </figure>
+                            </div><!-- /.col-md-4 -->
+                        </div>
+                        <!-- /.col-md-12 -->
+                    </div>>
+                    <!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <figure>
+                                    <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
+                                        <div class="css-overlay"></div>
+                                        <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/member_2.jpg')}}" alt="Image" style="border-radius: 50%">
+                                        <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
+                                    </div>
+                                    <div class="css-team-info">
+                                        <h3 class="css-team-heading">{{ $executive[8]->first_name}} {{$executive[8]->last_name }}<br> <small>{{$executive[8]->position->position_description }}</small></h3>
+                                    </div>
+                                </figure>
+                            </div><!-- /.col-md-4 -->
+
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <figure>
+                                    <div class="css-team-avatar" style="-webkit-border-radius: 300px;-moz-border-radius: 300px;border-radius: 300px">
+                                        <div class="css-overlay"></div>
+                                        <img class="media-object img-responsive" src="{{URL::asset('../webview/img/team/member_3.jpg')}}" alt="Image" style="border-radius: 50%">
+                                        <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
+                                    </div>
+                                    <div class="css-team-info">
+                                        <h3 class="css-team-heading">{{$executive[9]->first_name}} {{$executive[9]->last_name }}<br> <small>{{ $executive[9]->position->position_description }}</small></h3>
+                                    </div>
+                                </figure>
+                            </div><!-- /.col-md-4 -->
+
+                        </div>
+                        <!-- /.col-md-12 -->
+                    </div>>
+                    <!-- /.row -->
                 </div><!-- /.css-team -->
-
             </section>
-
         </div><!-- /.content-wrapper -->
-    </div><!-- /.container -->
+    </div><!-- /.container-fluid -->
 
 @endsection

@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('email')->references('email')
+                ->on('members')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -30,9 +32,5 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
 
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->foreign('email')->references('email')->on('users')->onDelete('cascade');
-        });
     }
 }

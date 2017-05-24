@@ -24,7 +24,6 @@
                             <th data-field="description" data-sortable="true">Description</th>
                             <th data-field="status" data-sortable="true">Status</th>
                             <th data-field="date" data-sortable="true">Date</th>
-                            <th data-field="event" data-sortable="true">event</th>
                             <th data-field="email" data-sortable="true">Email</th>
                             <th data-field="location" data-sortable="true">Location</th>
                             <th data-field="addedBy" data-sortable="true">Added by</th>
@@ -41,7 +40,6 @@
                                     <td>{{$event->event_description}}</td>
                                     <td>{{$event->status}}</td>
                                     <td>{{\Carbon\Carbon::parse($event->date_of_event)->toFormattedDateString()}}</td>
-                                    <td>{{$event->event->event_description}}</td>
                                     <td>{{$event->email}}</td>
                                     <td>{{$event->location}}</td>
                                     <td>@if(isset($event->addedBy)){{$event->addedBy->first_name}} {{$event->addedBy->last_name}}@endif</td>
@@ -96,7 +94,7 @@
 
                                                                 <div class="col-md-6">
                                                                     <input id="event_id" type="text" class="form-control"
-                                                                           name="event_id" value="EVNT-{{random_int(1000,9999)}}"
+                                                                           name="event_id" value="{{$event->event_id}}"
                                                                            required autofocus readonly>
                                                                 </div>
                                                             </div>
@@ -108,8 +106,8 @@
 
                                                        <textarea value="" id="event_description" class="form-control"
                                                                  name="event_description" onkeyup="countChar(this)" rows="3"
-                                                                 cols="20" placeholder="Enter a short description of this event here" required autofocus></textarea>
-                                                                    <div id="charNum">{{$event->event_description}}</div>
+                                                                 cols="20" placeholder="Enter a short description of this event here" required autofocus>{{$event->event_description}}</textarea>
+                                                                    <div id="charNum"></div>
 
                                                                     <!-- script to count number of characters entered in textarea-->
                                                                     <script>
@@ -175,8 +173,14 @@
 
 
 
-                                                            <button type="submit" class="btn btn-default btn-primary col-lg-offset-9 col-md-offset-9 col-sm-offset-9 col-xs-offset-7">Save</button>
-                                                            <button type="reset" class="btn btn-default btn-danger pull-right" data-dismiss="modal">Cancel</button>
+                                                            <div class="modal-footer">
+                                                                <div class="col-md- ">
+
+                                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                                    <button type="reset" class="btn btn-danger">Cancel</button>
+                                                                </div>
+
+                                                            </div>
                                                         </form>
                                                     </div>
                                                     </div>
@@ -283,6 +287,14 @@
                                                     <div class="col-md-6">
                                                         <input id="location" placeholder="location of the event or address" type="text" class="form-control"
                                                                name="location" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="photo" class="control-label">Event image <h6>Optional</h6>
+                                                    </label>
+                                                    <div  class="col-md-6">
+                                                        <input class="control-label" id="photo" type="file" name="photo">
                                                     </div>
                                                 </div>
 

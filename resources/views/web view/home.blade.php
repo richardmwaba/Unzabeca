@@ -19,15 +19,14 @@
 
                 <div class="container">
                     <div class="carousel-caption">
-                        <small class="animated fadeIn">CALL US TODAY</small>
-                        <div class="phone animated lightSpeedIn">1-800-1234-567</div>
-                        <h1 class="animated lightSpeedIn">Title of Your Product <br>Service or Event</h1>
+
+                        <h1 class="animated lightSpeedIn" >The University of Zambia <br>Business and Economics Association</h1>
 
                         <p class="lead animated lightSpeedIn">It's a tag line, where you can write a key point of your idea.
                             It is a long
                             established fact that a reader will be distracted.</p>
 
-                        <a class="btn btn-primary animated lightSpeedIn" href="#">Work With Us Today</a>
+                        <a class="btn btn-primary animated lightSpeedIn" href="{{url('webview/members/join/form')}}">Join Us Today</a>
                     </div>
                     <!--.carousel-caption-->
                 </div>
@@ -42,12 +41,12 @@
                 <div class="container">
                     <div class="carousel-caption">
 
-                        <h1 class="animated bounceIn">Title of Your Product <br>Service or Event</h1>
+                        <h1 class="animated bounceIn">The University of Zambia <br>Business and Economics Association</h1>
 
                         <p class="lead animated bounceIn">It's a tag line, where you can write a key point of your idea. It
                             is a long
                             established fact that a reader will be distracted.</p>
-                        <a class="btn btn-primary animated bounceIn" href="#">Work With Us Today</a>
+                        <a class="btn btn-primary animated bounceIn" href="{{url('webview/members/join/form')}}">Join Us Today</a>
                     </div>
                     <!--.carousel-caption-->
                 </div>
@@ -107,105 +106,27 @@
             </section><!-- /.intro-wrapper -->
 
 
-            <section class="advantages-wrapper">
+            <section class="service-wrapper">
                 <h2 class="section-title wow fadeInDown">Upcoming Events</h2>
                 <div class="row">
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg1 flaticon-increasing5"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Global business</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg2 flaticon-syncing"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Fast online support</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg3 flaticon-file24"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Pro Services &amp; Advice</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg4 flaticon-royalty"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Fresh business ideas</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-                </div> <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg1 flaticon-increasing5"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Global business</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg2 flaticon-syncing"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Fast online support</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg3 flaticon-file24"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Pro Services &amp; Advice</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg4 flaticon-royalty"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Fresh business ideas</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
+                    <div class="related-work-carousel">
+                        @if($events != [])
+                            @foreach($events as $event)
+                                <div class="item">
+                                    <div class="single-portfolio">
+                                        <img src="{{Storage::URL($event->photo->photoPath)}}" alt="">
+                                        <div class="portfolio-links">
+                                            <a class="image-link" href="{{Storage::URL($event->photo->photoPath)}}" ><i class="fa fa-search-plus"></i></a>
+                                            <a href="{{url('webview/events/view/1')}}"><i class="fa fa-link"></i></a>
+                                            <p style="color: goldenrod">{{$event->event_description}}</p>
+                                        </div><!-- /.links -->
+                                    </div><!-- /.single-portfolio -->
+                                </div>
+                            @endforeach
+                        @else
+                            <p>No upcoming events</p>
+                        @endif
+                    </div>
                 </div> <!-- /.row -->
             </section>
 

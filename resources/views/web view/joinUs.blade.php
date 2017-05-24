@@ -1,5 +1,5 @@
 @extends('layouts.webview')
-@section('title', 'Join')
+@section('title', 'Join Us')
 	@section('content')
 
 		<section class="page-header-wrapper">
