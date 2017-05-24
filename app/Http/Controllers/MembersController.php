@@ -102,7 +102,7 @@ class MembersController extends Controller
     {
         $this->validate($data, [
             'first_name' => 'required|max:255',
-            'middle_name' => 'required|max:255',
+            'middle_name' => 'max:255',
             'last_name' => 'required|max:255',
             'email'=> 'required|max:255|email|unique:members',
             'year' => 'required|max:255',

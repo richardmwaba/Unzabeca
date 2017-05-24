@@ -27,7 +27,7 @@
                             It is a long
                             established fact that a reader will be distracted.</p>
 
-                        <a class="btn btn-primary animated lightSpeedIn" href="#">Work With Us Today</a>
+                        <a class="btn btn-primary animated lightSpeedIn" href="{{url('webview/members/join/form')}}">Join Us Today</a>
                     </div>
                     <!--.carousel-caption-->
                 </div>
@@ -47,7 +47,7 @@
                         <p class="lead animated bounceIn">It's a tag line, where you can write a key point of your idea. It
                             is a long
                             established fact that a reader will be distracted.</p>
-                        <a class="btn btn-primary animated bounceIn" href="#">Work With Us Today</a>
+                        <a class="btn btn-primary animated bounceIn" href="{{url('webview/members/join/form')}}">Join Us Today</a>
                     </div>
                     <!--.carousel-caption-->
                 </div>
