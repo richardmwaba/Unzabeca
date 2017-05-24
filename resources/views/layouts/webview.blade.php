@@ -132,12 +132,13 @@
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
-                                    <li class="dropdown"><a href="#" >Contact US<b class="caret"></b></a>
+                                    <li class="dropdown"><a href="#" >Contact Us<b class="caret"></b></a>
                                         <!-- submenu-wrapper -->
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+                                                    <li><a href="{{url('webview/contactUs')}}">Find Us</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -189,7 +190,7 @@
                             <div class="col-md-12">
                                 <div style="text-align: center" class="copyright wow fadeInDown">
 
-                                    <p>Copyright &copy; 2012-{{date('Y')}}  UNZABECA . All Rights Reserved. Designed by <a href="#">Code4cus</a> </p>
+                                    <p>Copyright &copy; 2012-{{date('Y')}}  UNZABECA . All Rights Reserved. Developed by <a href="#">Code4cus</a> </p>
 
                                 </div><!-- /.copyright -->
                             </div>

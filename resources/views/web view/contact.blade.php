@@ -36,7 +36,7 @@
                             <h2>Call us</h2>
                             <p>Call us, if you will, on these numbers.</p>
 
-                            <p>call (260) 976 121 406 or  +260 968 565 876</p>
+                            <p><strong>call (260) 976 121 406 or  +260 968 565 876</strong></p>
                         </div>
                     </div>
                     <div class="col-md-4">
