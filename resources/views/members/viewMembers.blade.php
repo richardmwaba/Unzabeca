@@ -1,5 +1,7 @@
 @extends('layouts.members')
 
+@section('title', 'Manage Your Members')
+
 @section('content')
     {!! method_field('DELETE') !!}
 

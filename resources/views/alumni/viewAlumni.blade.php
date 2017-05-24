@@ -1,5 +1,7 @@
 @extends('layouts.members')
 
+@section('title', 'Manage Your Alumni')
+
 @section('content')
 
 
