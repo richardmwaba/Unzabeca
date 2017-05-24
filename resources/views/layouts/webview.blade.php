@@ -132,6 +132,16 @@
                                         </div> <!-- /.submenu-wrapper -->
                                     </li>
 
+                                    <li class="dropdown"><a href="#" >Contact US<b class="caret"></b></a>
+                                        <!-- submenu-wrapper -->
+                                        <div class="submenu-wrapper submenu-wrapper-topbottom">
+                                            <div class="submenu-inner  submenu-inner-topbottom">
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+                                                </ul>
+                                            </div><!-- /.submenu-inner -->
+                                        </div> <!-- /.submenu-wrapper -->
+                                    </li>
 
                                 </ul>
                             </div><!-- /.navbar-collapse -->
