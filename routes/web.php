@@ -15,7 +15,7 @@
 //Route to add a member
 //Route::post('members/addMember', 'MembersController@addMember');
 Route::get('/', function () {
-    return view('web view/home');
+    return view('web view/home')->with('events',App\Event::where('status', 'Upcoming')->get());
 });
 
 
@@ -34,6 +34,9 @@ Route::group(['prefix' => 'webview'], function (){
     Route::get('/article', 'ArticleController@allArticles');
     Route::get('/article/article-single/{id}', 'ArticleController@articleView');
     /* ========= ./Resource tab routes ======== */
+
+    // events page
+    Route::get('events/view/{id}', 'EventsController@webviewEvents');
 
     /* Routes for everything webview related */
     Route::get('/general_about', 'WebviewController@viewGeneralAboutUs');

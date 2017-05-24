@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeDataTypeOfAprovedAndStatusId extends Migration
+class AddCascadeToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class ChangeDataTypeOfAprovedAndStatusId extends Migration
      */
     public function up()
     {
-        Schema::table('members', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-
-            $table->smallInteger('status_id')->change();
-            $table->smallInteger('approved')->default(0)->change();
+            $table->foreign('email')->references('email')->on('members')->onDelete('cascade');
         });
     }
 
@@ -28,7 +26,7 @@ class ChangeDataTypeOfAprovedAndStatusId extends Migration
      */
     public function down()
     {
-        Schema::table('members', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
