@@ -107,76 +107,27 @@
             </section><!-- /.intro-wrapper -->
 
 
-            <section class="advantages-wrapper">
+            <section class="service-wrapper">
                 <h2 class="section-title wow fadeInDown">Upcoming Events</h2>
                 <div class="row">
                     <div class="related-work-carousel">
-                    @if($events != [])
-                    @foreach($events as $event)
-                            <div class="item">
-                                <div class="single-portfolio">
-                                    <img src="{{Storage::URL($event->photo->photoPath)}}" alt="">
-                                    <div class="portfolio-links">
-                                        <a class="image-link" href="{{Storage::URL($event->photo->photoPath)}}" ><i class="fa fa-search-plus"></i></a>
-                                        <a href="{{url('webview/events/view/1')}}"><i class="fa fa-link"></i></a>
-                                        <p style="color: goldenrod">{{$event->event_description}}</p>
-                                    </div><!-- /.links -->
-                                </div><!-- /.single-portfolio -->
-                            </div>
-@endforeach
+                        @if($events != [])
+                            @foreach($events as $event)
+                                <div class="item">
+                                    <div class="single-portfolio">
+                                        <img src="{{Storage::URL($event->photo->photoPath)}}" alt="">
+                                        <div class="portfolio-links">
+                                            <a class="image-link" href="{{Storage::URL($event->photo->photoPath)}}" ><i class="fa fa-search-plus"></i></a>
+                                            <a href="{{url('webview/events/view/1')}}"><i class="fa fa-link"></i></a>
+                                            <p style="color: goldenrod">{{$event->event_description}}</p>
+                                        </div><!-- /.links -->
+                                    </div><!-- /.single-portfolio -->
+                                </div>
+                            @endforeach
                         @else
-                        <p>No upcoming events</p>
-                    @endif
+                            <p>No upcoming events</p>
+                        @endif
                     </div>
-                </div> <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg1 flaticon-increasing5"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Global business</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg2 flaticon-syncing"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Fast online support</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg3 flaticon-file24"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Pro Services &amp; Advice</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
-
-                    <div class="col-md-6 wow fadeInRight">
-                        <div class="media">
-                            <a class="media-left" href="#">
-                                <span class="icon bg4 flaticon-royalty"></span>
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#">Fresh business ideas</a></h3>
-                                <p>Assertively target turnkey technologies whereas covalent ROI. Distinctively grow viral mindshare rather than collaborative meta-services redibly initiate.</p>
-                            </div> <!-- /.media-body -->
-                        </div> <!-- /.media -->
-                    </div> <!-- /.col-md-6 -->
                 </div> <!-- /.row -->
             </section>
 
