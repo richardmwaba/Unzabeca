@@ -1412,6 +1412,13 @@ BLOG PAGE
     margin: 30px 0 40px;
 }
 
+/*!*custom blog post-thumbnail image*!*/
+/*.blog-post-wrapper .post-thumbnail img {*/
+    /*width: 820px;*/
+    /*height: 312px;*/
+/*}*/
+/*!* end custom css*!*/
+
 
 /*blog-post-carousel*/
 #blog-post-carousel .carousel-control {

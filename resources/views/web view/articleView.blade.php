@@ -95,7 +95,7 @@
                         @foreach($others as $other)
                         <div class="item">
                             <div class="single-portfolio">
-                                <img src="{{URL::asset('../storage/'.$other->articlePhoto->filename)}}" alt="Article image">
+                                <img src="{{URL::asset('../storage/'.$other->articlePhoto['filename'])}}" alt="Article image">
                                 <div class="portfolio-links">
                                     <a href="{{url('webview/article/article-single/'.$article->article_id)}}"><i class="fa fa-link"></i></a>
                                 </div><!-- /.links -->

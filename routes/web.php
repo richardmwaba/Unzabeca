@@ -24,6 +24,12 @@ Route::group(['prefix' => 'webview'], function (){
     Route::get('contactUs', function (){ // for contact us page
         return view('web view.contact');
     });
+    Route::get('actionPlan', function (){ // for action plan page
+        return view('web view.actionPlan');
+    });
+    Route::get('researchPlan', function (){ // for research plan page
+        return view('web view.researchPlan');
+    });
 
     Route::get('executive/alumni/timeline', 'AlumniController@viewExecutives');
     Route::get('ordinary/alumni/timeline', 'AlumniController@viewOrdinaries');

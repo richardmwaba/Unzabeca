@@ -111,8 +111,8 @@
                                         <div class="submenu-wrapper submenu-wrapper-topbottom">
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#">Action Plan</a></li>
-                                                    <li><a href="#">Research Plan</a></li>
+                                                    <li><a href="{{url('/webview/actionPlan')}}">Action Plan</a></li>
+                                                    <li><a href="{{url('/webview/researchPlan')}}">Research Plan</a></li>
                                                     <li><a href="{{url('/webview/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
@@ -207,8 +207,8 @@
 
                     <li><a href="#">Resources</a>
                         <ul>
-                            <li><a href="#"><i class="fa fa-picture-o"></i> Action Plan</a></li>
-                            <li><a href="#"><i class="fa fa-paper-plane-o"></i> Research Plan</a></li>
+                            <li><a href="{{url('/webview/actionPlan')}}"><i class="fa fa-picture-o"></i> Action Plan</a></li>
+                            <li><a href="{{url('/webview/researchPlan')}}"><i class="fa fa-paper-plane-o"></i> Research Plan</a></li>
                             <li><a href="{{url('/webview/article')}}"><i class="fa fa-file-text-o"></i> Articles</a></li>
                         </ul>
                     </li>

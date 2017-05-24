@@ -26,17 +26,17 @@
                     <div class="col-md-4">
                         <div class="mini-contact">
                             <h2>Email us</h2>
-                            <p>If you're encountering an issue or problem when working with primex you can always email us directly or via the form below</p>
+                            <p>Get in touch with us via email, that the email address below.</p>
 
-                            <a href="mailto:#">uicookies@gmail.com</a>
+                            <a href="mailto:unzabeca2@gmail.com">unzabeca2@gmail.com</a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mini-contact">
                             <h2>Call us</h2>
-                            <p>If you're encountering an issue or problem when working with primex you can always email us directly or via the form below</p>
+                            <p>Call us, if you will, on these numbers.</p>
 
-                            <a href="#">call (800) 123 1234</a>
+                            <p>call (260) 976 121 406 or  +260 968 565 876</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -44,7 +44,7 @@
                             <h2>Follow us on Facebook</h2>
                             <p>There is a tone of stuff we post on there, so <em>like</em> our page and be acquainted with us on social media.</p>
 
-                            <a href="https://www.facebook.com/University-of-Zambia-Business-and-Economics-Association-UNZABECA">Follow us →</a>
+                            <a href="#"><i class="fa fa-facebook"></i> Follow us →</a>
                         </div>
                     </div>
                 </div><!-- /.row -->
@@ -89,7 +89,7 @@
                 position: myLatlng,
                 map: map,
                 animation: google.maps.Animation.DROP,
-                title: 'Hello World!'
+                title: 'The University of Zambia Business and Economics Association (UNZABECA)'
             });
 
             var contentString = '' +
