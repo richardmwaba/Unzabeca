@@ -21,6 +21,9 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'webview'], function (){
     // all routes will have prefix *webview/'routeName'*
+    Route::get('contactUs', function (){ // for contact us page
+        return view('web view.contact');
+    });
 
     Route::get('executive/alumni/timeline', 'AlumniController@viewExecutives');
     Route::get('ordinary/alumni/timeline', 'AlumniController@viewOrdinaries');
