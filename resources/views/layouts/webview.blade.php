@@ -246,9 +246,7 @@
                         </ul>
 
                     </li>
-
-                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
-
+                    
                     <li><a href="#">Contact Us</a>
                         <ul>
                             <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
