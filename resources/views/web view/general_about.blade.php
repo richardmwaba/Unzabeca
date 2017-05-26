@@ -38,7 +38,7 @@
                     <h2>Our Mission</h2>
                     <p>Bringing economic issues closer to the university and the wider community.</p>
 
-                    <h2>Oue Vision</h2>
+                    <h2>Our Vision</h2>
                     <p>Nurturing world class business and economic leaders who can confront conventional thinking to deliver solutions to the challenges of the new millennium.</p>
 
                     <h2>Our General Objective</h2>

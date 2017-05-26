@@ -217,16 +217,16 @@
 
                     <li><a href="#">About</a>
                         <ul>
-                            <li><a href="#"><i class="fa fa-life-ring"></i> Committees</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Current Executive</a></li>
-                            <li><a href="#"><i class="fa fa-file-o"></i> General Info</a></li>
+                            <li><a href="{{url('/webview/committees')}}"><i class="fa fa-life-ring"></i> Committees</a></li>
+                            <li><a href="{{url('/webview/executive')}}"><i class="fa fa-user"></i> Current Executive</a></li>
+                            <li><a href="{{url('/webview/general_about')}}"><i class="fa fa-file-o"></i> General Info</a></li>
                         </ul>
                     </li>
 
                     <li><a href="#">Alumni</a>
                         <ul>
-                            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
-                            <li><a href="#"><i class="fa fa-pencil"></i> Ordinary</a></li>
+                            <li><a href="{{url('webview/executive/alumni/timeline')}}"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
+                            <li><a href="{{url('webview/ordinary/alumni/timeline')}}"><i class="fa fa-pencil"></i> Ordinary</a></li>
                         </ul>
                     </li>
 
@@ -238,9 +238,18 @@
                         </ul>
                     </li>
 
-                    <li><a href="#">Join Us</a></li>
+                    <li><a href="#">Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url('webview/events/view/1')}}">Upcoming</a></li>
+                            <li><a href="{{url('webview/events/view/2')}}">today</a></li>
+                            <li><a href="{{url('webview/events/view/3')}}">Past</a></li>
+                        </ul>
 
-                    <li><a href="#">Contact</a>
+                    </li>
+
+                    <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+
+                    <li><a href="#">Contact Us</a>
                         <ul>
                             <li><a href="#"><i class="fa fa-envelope-o"></i> Contact</a></li>
                         </ul>
