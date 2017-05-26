@@ -239,7 +239,7 @@
                     </li>
 
                     <li><a href="#">Events</a>
-                        <ul class="dropdown-menu">
+                        <ul class="">
                             <li><a href="{{url('webview/events/view/1')}}">Upcoming</a></li>
                             <li><a href="{{url('webview/events/view/2')}}">today</a></li>
                             <li><a href="{{url('webview/events/view/3')}}">Past</a></li>
@@ -251,7 +251,8 @@
 
                     <li><a href="#">Contact Us</a>
                         <ul>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i> Contact</a></li>
+                            <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+                            <li><a href="{{url('webview/contactUs')}}">Find Us</a></li>`
                         </ul>
                     </li>
                 </ul>
