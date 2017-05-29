@@ -88,7 +88,7 @@ public function webviewEvents($id){
     {
 
         // validating image
-        $this->validate($request, ['photo' => 'mimes:jpeg,png,bmp,jpg|max:5000']);
+        $this->validate($request, ['photo' => 'mimes:jpeg,png,bmp,jpg|max:15360']);
 
         // stores image using public disk
         $photoPath = $request->file('photo')->store('public/EventImages');

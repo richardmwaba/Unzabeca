@@ -13,13 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('email')->unique()->primaryKey();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-            $table->foreign('email')->references('email')
-                ->on('members')->onDelete('cascade')->onUpdate('cascade');
+            Schema::create('users', function (Blueprint $table) {
+                $table->string('email')->unique()->primaryKey();
+                $table->string('password');
+                $table->rememberToken();
+                $table->timestamps();
+                $table->foreign('email')->references('email')
+                    ->on('members')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -31,6 +31,5 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-
     }
 }
