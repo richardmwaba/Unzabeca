@@ -123,7 +123,7 @@
                 </header>
 
                 <section class="page-header-wrapper">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="page-header">
@@ -139,7 +139,7 @@
                     </div><!-- /.container-fluid -->
                 </section>
 
-                <div class="container">
+                <div class="container-fluid">
                     <div class="content-wrapper">
                         <section class="about-us-wrapper">
 

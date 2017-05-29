@@ -70,7 +70,7 @@
             </button>
             <div>
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{URL::asset('home')}}">
+                <a class="navbar-brand" href="#">
                   UNZABECA
                 </a>
             </div>

@@ -34,7 +34,7 @@ class User extends Authenticatable
      * of the system.
      */
     public function member(){
-        return $this->hasOne('App\Member', 'email', 'email');  // using email as foreign key
+        return $this->belongsTo('App\Member', 'email', 'email');  // using email as foreign key
     }
 
     /**
