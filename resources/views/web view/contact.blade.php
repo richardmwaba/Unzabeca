@@ -44,7 +44,7 @@
                             <h2>Follow us on Facebook</h2>
                             <p>There is a tone of stuff we post on there, so <em>like</em> our page and be acquainted with us on social media.</p>
 
-                            <a href="#"><i class="fa fa-facebook"></i> Follow us →</a>
+                            <a href="{{url('https://www.facebook.com/University-of-Zambia-Business-and-Economics-Association-UNZABECA-437974826272696/')}}" target="_blank"><i class="fa fa-facebook"></i> Follow us →</a>
                         </div>
                     </div>
                 </div><!-- /.row -->
