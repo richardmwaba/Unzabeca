@@ -54,6 +54,7 @@ class MembersController extends Controller
     public function viewMembers()
     {
         $members = Member::where('approved', '1')
+                    ->with('position', 'status')
                     ->orderBy('first_name', 'desc')
                     ->get();
         return view('members.viewMembers')->with('members', $members);

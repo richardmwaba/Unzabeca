@@ -26,6 +26,7 @@
         <div class="content-wrapper">
             <section class="team-wrapper">
                 <h2 class="section-title">Our Team</h2>
+                <p style="font-size: 15px">Meet our great team of warm people ready to help you in anyway.</p>
                 <div class="css-team">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-lg-12">

@@ -50,7 +50,7 @@
                                     <label>Position</label>
 
 
-                                    <input class="form-control" placeholder="address" name="address" value="{{$user->member->position}}" readonly>
+                                    <input class="form-control" placeholder="address" name="address" value="{{$user->member->position->position_description}}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <a href="#" class="btn btn-link" role="button" data-toggle="modal"
@@ -109,12 +109,12 @@
                                             <div class="modal-footer">
                                                 <div class="col-md- ">
 
-                                                    <button onclick="changePassword()" class="btn btn-default">save
+                                                    <button onclick="changePassword()" class="btn btn-default">Save
                                                     </button>
 
                                                     <!--</div>
                                                     <div class="">-->
-                                                    <button type="reset" class="btn btn-default">Cancel</button>
+                                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                 </div>
 
                                                 <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
