@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>Contact Us</h1>
+                        <h1>Research Plan</h1>
                     </div>
                     <ol class="breadcrumb">
                         <li><a href="{{url('/')}}">Home</a></li>
