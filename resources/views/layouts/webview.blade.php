@@ -45,16 +45,16 @@
     <script src="{{URL::asset('../webview/js/vendor/respond.min.js')}}"></script>
     <!--[endif]-->
 
-    <!-- alumni -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>
-    <script>
-        $(function(){
-            $().timelinr({
-                arrowKeys: 'true'
-            })
-        });
-    </script>
+    {{--<!-- alumni -->--}}
+    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>--}}
+    {{--<script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>--}}
+    {{--<script>--}}
+        {{--$(function(){--}}
+            {{--$().timelinr({--}}
+                {{--arrowKeys: 'true'--}}
+            {{--})--}}
+        {{--});--}}
+    {{--</script>--}}
 
 
 
@@ -104,7 +104,7 @@
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{url('webview/executive/alumni/timeline')}}">Executive</a></li>
-                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Ordinary Members</a></li>
+                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -116,7 +116,7 @@
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{url('/webview/actionPlan')}}">Action Plan</a></li>
-                                                    <li><a href="{{url('/webview/researchPlan')}}">Research Plan</a></li>
+                                                    <li><a href="{{url('/webview/researchPlan')}}">Research Work</a></li>
                                                     <li><a href="{{url('/webview/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
@@ -246,7 +246,7 @@
                         </ul>
 
                     </li>
-                    
+
                     <li><a href="#">Contact Us</a>
                         <ul>
                             <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
