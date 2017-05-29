@@ -25,7 +25,7 @@
 
 							<div class="contact-us-form">
 
-								<h2>Fill in you details below</h2>
+								<h2>Fill in your details below</h2>
 
 
 								<form id="" action="{{url('members/join/save')}}" role="form" method="POST">

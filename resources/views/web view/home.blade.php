@@ -78,11 +78,11 @@
                         <h2 class="wow fadeInDown">Welcome to UNZABECA</h2>
                         <p class="wow fadeInDown">
                             Thank you for taking time to visit the <strong>University of Zambia Business and Economics Association</strong> (UNZABECA) website,
-                            they are various advantages of joining the assocaition, amoung them are:
+                            they are various advantages of joining the association, among them are:
                             <ol style="list-style-type: disc">
                                 <li>Getting listed for Internship</li>
                                 <li>Up close representation</li>
-                                <li>Platform for interacting with the Students Union</li>
+                                <li>Platform for business and economic issues</li>
                             </ol>
                         </p>
 
