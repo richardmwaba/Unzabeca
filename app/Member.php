@@ -22,7 +22,7 @@ class Member extends Model
      * a user.
      */
     public function user(){
-        return $this->hasOne('App\User', 'email');
+        return $this->hasOne('App\User', 'email', 'email');
     }
 
     /**

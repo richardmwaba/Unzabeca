@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{$user->first_name}}</div>
+                    <div class="panel-heading">{{$user->member->first_name}}</div>
 
                     <div class="panel-body">
                         <div class="col-md-9">
@@ -44,18 +44,19 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="residential-address"> Position</label>
+                                    <label class="col-sm-3 col-md-3 col-xs-4" for="status_field">Status</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="residential_address_value">{{$user->member->position}}</label>
+                                        <label class="text-primary" for="status_field_label">{{$user->member->status->status_description}}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 col-md-3 col-xs-4" for="phone-number">Comment</label>
+                                    <label class="col-sm-3 col-md-3 col-xs-4" for="residential-address"> Position</label>
                                     <div class="col-sm-6 col-md-6 col-xs-5">
-                                        <label class="text-primary" for="phone_number_value"></label>
+                                        <label class="text-primary" for="residential_address_value">{{$user->member->position->position_description}}</label>
                                     </div>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label class="col-sm-3 col-md-3 col-xs-4" for="contract-expiry-date">Year</label>
