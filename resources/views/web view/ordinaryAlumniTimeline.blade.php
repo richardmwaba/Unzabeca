@@ -12,16 +12,9 @@
     <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
 
     <!-- jquerry -->
-    <script src="{{URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')}}"></script>
+    {{--<script src="{{URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')}}"></script>--}}
 
-    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"> </script>
-    <script>
-        $(function(){
-            $().timelinr({
-                arrowKeys: 'true'
-            })
-        });
-    </script>
+
 
     <!-- jquerry -->
     <!-- Bootstrap Core CSS -->
@@ -100,7 +93,7 @@
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{url('webview/executive/alumni/timeline')}}">Executive</a></li>
-                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Ordinary Members</a></li>
+                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -112,7 +105,7 @@
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#">Action Plan</a></li>
-                                                    <li><a href="#">Research Plan</a></li>
+                                                    <li><a href="#">Research Work</a></li>
                                                     <li><a href="{{url('/webview/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
@@ -130,7 +123,7 @@
                 </header>
 
                 <section class="page-header-wrapper">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="page-header">
@@ -146,7 +139,7 @@
                     </div><!-- /.container-fluid -->
                 </section>
 
-                <div class="container">
+                <div class="container-fluid">
                     <div class="content-wrapper">
                         <section class="about-us-wrapper">
 
@@ -286,89 +279,28 @@
                     </div><!-- /.content-wrapper -->
                 </div><!-- /.container -->
 
-                <section class="footer-widget-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="footer-widget">
-                                    <p class="subcsribe-text wow fadeInDown">Quickly utilize installed base channels before premier expertise. Conveniently extend web-enabled niche markets without 2.0 e-markets. Collaboratively incentivize .</p>
-
-                                    <h3 class="wow fadeInDown">Subscribe to newsletter</h3>
-
-                                    <form class="wow fadeInDown">
-                                        <div class="form-group">
-                                            <label class="sr-only" for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                                    </form>
-
-                                    <div class="social-link wow fadeInDown">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-2 col-sm-4 col-xs-4">
-                                <div class="footer-widget">
-                                    <h3 class="wow fadeInDown">Customer Care</h3>
-                                    <ul class="wow fadeInDown">
-                                        <li><a href="#">Customer Support</a></li>
-                                        <li><a href="#">Platinum Support</a></li>
-                                        <li><a href="#">Gold Support</a></li>
-                                        <li><a href="#">Standard Support</a></li>
-                                        <li><a href="#">Training</a></li>
-                                        <li><a href="#">Online Training</a></li>
-                                        <li><a href="#">Custom Training</a></li>
-                                    </ul>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-2 -->
-                            <div class="col-md-2 col-sm-4 col-xs-4">
-                                <div class="footer-widget">
-                                    <h3 class="wow fadeInDown">Information</h3>
-                                    <ul class="wow fadeInDown">
-                                        <li><a href="#">Press</a></li>
-                                        <li><a href="#">Articles</a></li>
-                                        <li><a href="#">Reviews</a></li>
-                                        <li><a href="#">Testimonials</a></li>
-                                        <li><a href="#">Awards</a></li>
-                                        <li><a href="#">Video Clips</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                    </ul>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-2 -->
-                            <div class="col-md-2 col-sm-4 col-xs-4">
-                                <div class="footer-widget">
-                                    <h3 class="wow fadeInDown">Solutions</h3>
-                                    <ul class="wow fadeInDown">
-                                        <li><a href="#">Contact Center</a></li>
-                                        <li><a href="#">Knowledge</a></li>
-                                        <li><a href="#">Management</a></li>
-                                        <li><a href="#">Web Self-Service</a></li>
-                                        <li><a href="#">Performance Metrics</a></li>
-                                    </ul>
-                                </div><!-- /.footer-widget -->
-                            </div><!-- /.col-md-2 -->
-                        </div><!-- /.row -->
-                    </div><!-- /.container -->
-                </section>
-
-
                 <footer class="footer-wrapper">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="copyright wow fadeInDown">
-                                    <p>Copyright &copy; 2016 primex . All Rights Reserved. Designed by <a href="http://www.uicookies.com/">uicookies.com</a> </p>
+                                <div class="social-link wow fadeInDown pull-right">
+                                    <ul >
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="text-align: center" class="copyright wow fadeInDown">
+
+                                    <p>Copyright &copy; 2012-{{date('Y')}}  UNZABECA . All Rights Reserved. Developed by <a href="#">Code4cus</a> </p>
+
                                 </div><!-- /.copyright -->
-                            </div><!-- /.col-md-12 -->
+                            </div>
                         </div><!-- /.row -->
                     </div><!-- /.container -->
                 </footer>
@@ -384,48 +316,44 @@
         <div>
             <div>
                 <ul>
-                    <li><a href="#">Home</a>
-                        <ul>
-                            <li class="active"><a href="index.html"><i class="fa fa-home"></i> Home Style One</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
 
                     <li><a href="#">About</a>
                         <ul>
-                            <li><a href="about-us.html"><i class="fa fa-life-ring"></i> About Us</a></li>
-                            <li><a href="about-me.html"><i class="fa fa-user"></i> About me</a></li>
+                            <li><a href="{{url('/webview/committees')}}"><i class="fa fa-life-ring"></i> Committees</a></li>
+                            <li><a href="{{url('/webview/executive')}}"><i class="fa fa-user"></i> Current Executive</a></li>
+                            <li><a href="{{url('/webview/general_about')}}"><i class="fa fa-file-o"></i> General Info</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#">Blog</a>
+                    <li><a href="#">Alumni</a>
                         <ul>
-                            <li><a href="blog.html"><i class="fa fa-pencil-square-o"></i> Standard Blog</a></li>
-                            <li><a href="blog-single.html"><i class="fa fa-pencil"></i> Single Article</a></li>
+                            <li><a href="{{url('webview/executive/alumni/timeline')}}"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
+                            <li><a href="{{url('webview/ordinary/alumni/timeline')}}"><i class="fa fa-pencil"></i> Ordinary</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#">Portfolio</a>
+                    <li><a href="#">Resources</a>
                         <ul>
-                            <li><a href="portfolio-four.html"><i class="fa fa-picture-o"></i> Four Column</a></li>
-                            <li><a href="portfolio-three.html"><i class="fa fa-paper-plane-o"></i> Three Column</a></li>
-                            <li><a href="portfolio-two.html"><i class="fa fa-magic"></i> Two Column</a></li>
+                            <li><a href="{{url('/webview/actionPlan')}}"><i class="fa fa-picture-o"></i> Action Plan</a></li>
+                            <li><a href="{{url('/webview/researchPlan')}}"><i class="fa fa-paper-plane-o"></i> Research Plan</a></li>
+                            <li><a href="{{url('/webview/article')}}"><i class="fa fa-file-text-o"></i> Articles</a></li>
                         </ul>
                     </li>
 
-
-                    <li><a href="#">Pages</a>
-                        <ul>
-                            <li><a href="job-page.html"><i class="fa fa-briefcase"></i> Job Page</a></li>
-                            <li><a href="clients-page.html"><i class="fa fa-coffee"></i> Clients Page</a></li>
-                            <li><a href="faq.html"><i class="fa fa-question-circle"></i> FAQ Page</a></li>
-                            <li><a href="typography.html"><i class="fa fa-puzzle-piece"></i> Typography Page</a></li>
+                    <li><a href="#">Events</a>
+                        <ul class="">
+                            <li><a href="{{url('webview/events/view/1')}}">Upcoming</a></li>
+                            <li><a href="{{url('webview/events/view/2')}}">today</a></li>
+                            <li><a href="{{url('webview/events/view/3')}}">Past</a></li>
                         </ul>
+
                     </li>
 
-
-                    <li><a href="#">Contact</a>
+                    <li><a href="#">Contact Us</a>
                         <ul>
-                            <li><a href="contact.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
+                            <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+                            <li><a href="{{url('webview/contactUs')}}">Find Us</a></li>`
                         </ul>
                     </li>
                 </ul>
@@ -434,7 +362,39 @@
     </div><!-- .offcanvas-menu -->
 </div><!-- /st-container -->
 
+<!-- jQuery -->
+<script src="{{URL::asset('../webview/js/jquery.js')}}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{{URL::asset('../webview/js/bootstrap.min.js')}}"></script>
+<!-- wow.min.js -->
+<script src="{{URL::asset('../webview/js/wow.min.js')}}"></script>
+<!-- owl-carousel -->
+<script src="{{URL::asset('../webview/owl-carousel/owl.carousel.min.js')}}"></script>
+<!-- smoothscroll -->
+<script src="{{URL::asset('../webview/js/smoothscroll.js')}}"></script>
+<!-- Offcanvas Menu -->
+<script src="{{URL::asset('../webview/js/hippo-offcanvas.js')}}"></script>
+<!-- easypiechart -->
+<script src="{{URL::asset('../webview/js/jquery.easypiechart.min.js')}}"></script>
+<!-- Scrolling Nav JavaScript -->
+<script src="{{URL::asset('../webview/js/jquery.easing.min.js')}}"></script>
+<!-- Magnific-popup -->
+<script src="{{URL::asset('../webview/js/jquery.magnific-popup.min.js')}}"></script>
+<!-- Shuffle.min js -->
+<script src="{{URL::asset('../webview/js/jquery.shuffle.min.js')}}"></script>
+<!-- Custom Script -->
+<script src="{{URL::asset('../webview/js/scripts.js')}}"></script>
 
+<script src="{{URL::asset('../frontend/js/custom.js')}}"></script>
+
+<script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"> </script>
+<script>
+    $(function(){
+        $().timelinr({
+            arrowKeys: 'true'
+        })
+    });
+</script>
 
 </body>
 </html>

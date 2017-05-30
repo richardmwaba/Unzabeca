@@ -11,7 +11,9 @@ class users_controller extends Controller
     //view current user profile
     public function my_profile()
     {
-        return view('members.profile.my_profile')->with('user', Auth::User());
+        $user = Auth::User();
+        return view('members.profile.my_profile')
+            ->with('user', $user);
 
     }
 

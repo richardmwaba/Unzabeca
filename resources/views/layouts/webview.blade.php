@@ -45,16 +45,16 @@
     <script src="{{URL::asset('../webview/js/vendor/respond.min.js')}}"></script>
     <!--[endif]-->
 
-    <!-- alumni -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>
-    <script>
-        $(function(){
-            $().timelinr({
-                arrowKeys: 'true'
-            })
-        });
-    </script>
+    {{--<!-- alumni -->--}}
+    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>--}}
+    {{--<script src="{{URL::asset('../webview/js/vendor/jquery.timelinr-0.9.6.js')}}"></script>--}}
+    {{--<script>--}}
+        {{--$(function(){--}}
+            {{--$().timelinr({--}}
+                {{--arrowKeys: 'true'--}}
+            {{--})--}}
+        {{--});--}}
+    {{--</script>--}}
 
 
 
@@ -104,7 +104,7 @@
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{url('webview/executive/alumni/timeline')}}">Executive</a></li>
-                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Ordinary Members</a></li>
+                                                    <li><a href="{{url('webview/ordinary/alumni/timeline')}}">Members</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
                                         </div> <!-- /.submenu-wrapper -->
@@ -116,7 +116,7 @@
                                             <div class="submenu-inner  submenu-inner-topbottom">
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{url('/webview/actionPlan')}}">Action Plan</a></li>
-                                                    <li><a href="{{url('/webview/researchPlan')}}">Research Plan</a></li>
+                                                    <li><a href="{{url('/webview/researchPlan')}}">Research Work</a></li>
                                                     <li><a href="{{url('/webview/article')}}">Articles</a></li>
                                                 </ul>
                                             </div><!-- /.submenu-inner -->
@@ -217,16 +217,16 @@
 
                     <li><a href="#">About</a>
                         <ul>
-                            <li><a href="#"><i class="fa fa-life-ring"></i> Committees</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Current Executive</a></li>
-                            <li><a href="#"><i class="fa fa-file-o"></i> General Info</a></li>
+                            <li><a href="{{url('/webview/committees')}}"><i class="fa fa-life-ring"></i> Committees</a></li>
+                            <li><a href="{{url('/webview/executive')}}"><i class="fa fa-user"></i> Current Executive</a></li>
+                            <li><a href="{{url('/webview/general_about')}}"><i class="fa fa-file-o"></i> General Info</a></li>
                         </ul>
                     </li>
 
                     <li><a href="#">Alumni</a>
                         <ul>
-                            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
-                            <li><a href="#"><i class="fa fa-pencil"></i> Ordinary</a></li>
+                            <li><a href="{{url('webview/executive/alumni/timeline')}}"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
+                            <li><a href="{{url('webview/ordinary/alumni/timeline')}}"><i class="fa fa-pencil"></i> Ordinary</a></li>
                         </ul>
                     </li>
 
@@ -238,11 +238,19 @@
                         </ul>
                     </li>
 
-                    <li><a href="#">Join Us</a></li>
+                    <li><a href="#">Events</a>
+                        <ul class="">
+                            <li><a href="{{url('webview/events/view/1')}}">Upcoming</a></li>
+                            <li><a href="{{url('webview/events/view/2')}}">today</a></li>
+                            <li><a href="{{url('webview/events/view/3')}}">Past</a></li>
+                        </ul>
 
-                    <li><a href="#">Contact</a>
+                    </li>
+
+                    <li><a href="#">Contact Us</a>
                         <ul>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i> Contact</a></li>
+                            <li><a href="{{url('webview/members/join/form')}}">Join Us</a></li>
+                            <li><a href="{{url('webview/contactUs')}}">Find Us</a></li>`
                         </ul>
                     </li>
                 </ul>
