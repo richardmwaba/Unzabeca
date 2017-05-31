@@ -108,8 +108,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/members/events/edit/{id}', 'EventsController@editForm');
     Route::post('/members/events/update', 'EventsController@update');
     Route::post('/members/events/delete/{id}', 'EventsController@delete');
-
-//article routes
+    Route::post('/members/events/photos/validate', 'EventsController@validatePhoto');
+////article routes
     /* -- routes for everything article related -- */
 // route to display article section main page
     Route::get('/members/articles', 'ArticleController@index');
