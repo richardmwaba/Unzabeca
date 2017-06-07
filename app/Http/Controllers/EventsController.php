@@ -117,15 +117,10 @@ class EventsController extends Controller
         }
         $data['errors'] = $validator->errors();
 
-<<<<<<< HEAD
         // return the request to an AJAX call
         return response()->json($data);
 
     }
-=======
-        // validating image
-        $this->validate($request, ['photo' => 'mimes:jpeg,png,bmp,jpg|max:15360']);
->>>>>>> a1179bbb5141f60732376b305fbdc232b042ea64
 
     //stores event photos
     public function savePhoto(Request $request)
