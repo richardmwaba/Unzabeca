@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ArticlePhotos extends Model
 {
     protected $fillable = [
-        'article_id', 'imagePath', 'filename'
+        'article_id', 'filename'
     ];
 
     /**
@@ -16,6 +16,6 @@ class ArticlePhotos extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function articles(){
-        return $this->belongsTo('App\Articles', 'article_id'); // foreign key article_id
+        return $this->belongsTo('App\Articles', 'id', 'article_id'); // foreign key article_id
     }
 }

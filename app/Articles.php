@@ -9,7 +9,7 @@ class Articles extends Model
     protected $primaryKey = 'article_id';
 
     protected $fillable = [
-        'articleTitle', 'author', 'articleBody'
+        'article_id', 'articleTitle', 'author', 'articleBody'
     ];
 
 

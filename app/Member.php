@@ -22,7 +22,7 @@ class Member extends Model
      * a user.
      */
     public function user(){
-        return $this->hasOne('App\User', 'email');
+        return $this->hasOne('App\User', 'email', 'email');
     }
 
     /**
@@ -40,4 +40,11 @@ class Member extends Model
         return $this->hasOne('App\Position', 'position_id', 'position_id');
     }
 
+    /**
+     * Relationship on member and executive_photo table
+     */
+    public function executivePhoto()
+    {
+        return $this->hasOne('App\ExecutivePhoto', 'member_id', 'member_id');
+    }
 }

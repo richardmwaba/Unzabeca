@@ -16,7 +16,7 @@ class MembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->string('member_id', 10)->unique()->primaryKey();
             $table->string('first_name');
-            $table->string('middle_name');
+            $table->string('middle_name')->default('N/A');
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('year');

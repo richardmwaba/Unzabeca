@@ -6,7 +6,7 @@
         .banner {
             padding: 180px 0;
             color: #f8f8f8;
-            background: url( {{URL::asset('../storage/'.$article->articlePhoto->filename)}} ) no-repeat center center;
+            background: url( {{URL::asset('../storage/'.$article->articlePhoto['filename'])}} ) no-repeat center center;
             background-size: cover;
         }
     </style>

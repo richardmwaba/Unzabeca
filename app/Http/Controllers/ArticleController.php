@@ -6,6 +6,7 @@ use App\ArticlePhotos;
 use App\Articles;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -41,18 +42,25 @@ class ArticleController extends Controller
 
         // validating image
         $this->validate($request, [
-            'photo' => 'max:5000|mimes:jpeg,png,bmp'
+            'photo' => 'mimes:jpeg,jpg,png,bmp|max:15000'
+        ]);
+        // stores image using public disk
+        $filename = $request->photo->store('photo', 'public');
+
+        $article_id = random_int(1000, 9999);
+
+        // saves image path to db
+        ArticlePhotos::create([
+            'article_id' => $article_id,
+            'filename' => $filename
         ]);
 
         // only stores title, author & body to articles table
-        $article = Articles::create($request->all());
-
-        // stores image using public disk
-        $filename = $request->photo->store('photo', 'public');
-        // saves to db
-        ArticlePhotos::create([
-            'article_id' => $article->article_id,
-            'filename' => $filename
+        Articles::create([
+            'article_id' => $article_id,
+            'articleTitle' => $request->articleTitle,
+            'author' => $request->author,
+            'articleBody' => $request->articleBody
         ]);
 
         // redirects to article page with success msg
@@ -67,10 +75,10 @@ class ArticleController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function view($id){
-        $article = Articles::with('articlePhoto')->find($id);
+        $article = Articles::with('articlePhoto')->where('article_id', $id)->firstOrFail();
 
         // gets other articles
-        $others = Articles::orderBy('created_at')->take(5)->get();
+        $others = Articles::orderBy('created_at', 'desc')->take(5)->get();
 
         return view('members.articles.view', compact('article', 'others'));
     }
@@ -111,12 +119,48 @@ class ArticleController extends Controller
             ->with('status', 'Article has been successfully been updated!!');
     }
 
+    /**
+     * Handles deleting of articles and respective images
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($id){
-        $article = Articles::with('articlePhoto')->findOrFail($id);
+        $article = Articles::with('articlePhoto')->where('article_id', $id);
+        $filePath = $article->articlePhoto->filename;
 
-        $article->delete();
+        $article->delete(); // deletes the stuff in the database
+
+        Storage::delete($filePath); // deletes the image from the storage file.
 
         return redirect()->back()->with('status', 'Article has been deleted successfully!!');
+    }
+
+    /**
+     * Handles the articles in the webview
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function allArticles(){
+        $articles = Articles::with('articlePhoto')->orderBy('created_at', 'desc')->paginate(5); // paginate them
+
+        // trim function
+
+        return view('web view.article')->with('articles', $articles);
+    }
+
+    /**
+     * Handles the viewing of a single image
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function articleView($id){
+        $article = Articles::with('articlePhoto')->find($id);
+
+        // gets other articles
+        $others = Articles::with('articlePhoto')->orderBy('created_at', 'desc')->take(5)->get();
+
+        return view('web view.articleView', compact('article', 'others'));
     }
 
 }

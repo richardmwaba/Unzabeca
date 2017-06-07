@@ -70,7 +70,7 @@
             </button>
             <div>
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{URL::asset('home')}}">
+                <a class="navbar-brand" href="#">
                   UNZABECA
                 </a>
             </div>
@@ -101,10 +101,10 @@
             <div class="sidebar-nav navbar-collapse">
 
                 <ul class="nav" id="side-menu">
+                    {{--<li class="active-link">--}}
+                        {{--<a href="{{url('/members/overview')}}"><i class="fa fa-desktop "></i>  Overview</a>--}}
+                  {{--</li>--}}
                     <li class="active-link">
-                        <a href="{{url('/members/overview')}}"><i class="fa fa-desktop "></i>  Overview</a>
-                  </li>
-                    <li>
                         <a href="{{url('/members/articles')}}"><i class="fa fa-file "></i>  Articles</a>
                     </li>
                     <li>
@@ -114,7 +114,10 @@
                         <a href="{{url('/alumni/viewAlumni')}}"><i class="fa fa-users "></i> Alumni</a>
                     </li>
                     <li>
-                        <a href="{{url('/members/viewMembers')}}"><i class="fa fa-group "></i>  Members</a>
+                        <a href="{{url('/members/viewMembers')}}"><i class="fa fa-user-md "></i>  Members</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/members/committees/viewAll')}}"><i class="fa fa-group"></i> Committees</a>
                     </li>
                     {{--<li>--}}
                         {{--<a href="{{url('/members/reports/auto')}}"><i class="fa fa-qrcode "></i>Auto reports</a>--}}

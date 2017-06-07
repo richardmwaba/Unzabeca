@@ -1,5 +1,7 @@
 @extends('layouts.members')
 
+@section('title', 'Manage Your Alumni')
+
 @section('content')
 
 
@@ -175,7 +177,7 @@
                                                             <div class="form-group{{ $errors->has('status_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                                 <label>Status</label>
-                                                                <select id="status" onchange="changeField()" class="form-control" name="status_id">
+                                                                <select id="ddl" onchange="dropdowns(this,document.getElementById('ddl3'))" class="form-control" name="status_id">
                                                                     <option name="currentValue" value="{{$member->status->status_description}}">{{$member->status->status_description}}</option>
                                                                     <option value="">-- select one --</option>
                                                                     <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
@@ -193,7 +195,9 @@
                                                                 <div id="approval_status" style="" class="form-group{{ $errors->has('position_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                                     <label id="role_label">Position</label>
-                                                                    <input id="role_field" class="form-control" name="position_id" type="text" value="{{ $member->position->position_description}}">
+                                                                    <select id="ddl3" class="form-control" name="position_id">
+                                                                        //Content is loaded from an external JavaScript file
+                                                                    </select>
                                                                     @if ($errors->has('position_id'))
                                                                         <span class="help-block">
                                                                             <strong>{{ $errors->first('position_id') }}</strong>
@@ -390,19 +394,6 @@
 
                             <button type="submit" class="btn btn-default btn-primary col-lg-offset-9 col-md-offset-9 col-sm-offset-9 col-xs-offset-7">Save</button>
                             <button type="reset" class="btn btn-default btn-danger pull-right" data-dismiss="modal">Cancel</button>
-
-                            <script type="javascript">
-                                function changeField()
-                                {
-                                    if (document.getElementById("status").value == "3") {
-                                        document.getElementById("position_field").disabled = false;
-                                    }else if(document.getElementById("status").value == "4") {
-                                        document.getElementById("position_field").disabled= true;
-                                    }else{
-                                        document.getElementById("position_field").disabled= true;
-                                    }
-                                }
-                            </script>
                         </form>
                     </div>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 
 class PasswordController extends Controller
 {
@@ -39,7 +40,7 @@ class PasswordController extends Controller
                 //has wrong current password
                 $validator->errors()->add('current_password', 'Please enter the correct password');
 
-                // show a message of success and provide a true success variable
+                // show a message
                 $data['success'] = false;
             }
 

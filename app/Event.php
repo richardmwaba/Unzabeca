@@ -26,4 +26,9 @@ class Event extends Model
     public function addedBy(){
         return $this->hasOne('App\Member', 'email','added_by');
     }
+
+    //the photo for this event
+    public function photo(){
+        return $this->hasOne('App\EventPhoto', 'event_id', 'event_id');
+    }
 }
