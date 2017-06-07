@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignPhotos extends Migration
+class AddCascadeToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class AddForeignPhotos extends Migration
      */
     public function up()
     {
-        Schema::table('events_photos', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->foreign('event_id')->references('event_id')->on('events')
-                ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('email')->references('email')->on('members')->onDelete('cascade');
         });
     }
 
@@ -27,7 +26,7 @@ class AddForeignPhotos extends Migration
      */
     public function down()
     {
-        Schema::table('events_photos', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

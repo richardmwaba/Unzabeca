@@ -10,45 +10,48 @@ use App\Event;
 use Auth;
 use Redirect;
 use Illuminate\Support\Facades\Storage;
+use Validator;
 
 class EventsController extends Controller
 {
     //view all events to unauthenticated member
-public function webviewEvents($id){
+    public function webviewEvents($id)
+    {
 
-    //check the requested event time and display  the events accordingly
-    switch ($id) {
+        //check the requested event time and display  the events accordingly
+        switch ($id) {
 
-        case 1:
-            return view('web view.events')
-                ->with([
-                    'events'=>Event::where('status', 'Upcoming')->get(),
-                    'time'=> 'Upcoming',
-                    'all'=> Event::all(),
-                ]);
-        case 2:
-            return view('web view.events')
-                ->with([
-                    'events'=>Event::where('status', 'Today')->get(),
-                    'time'=>'Today',
-                    'all'=>Event::all()
-                ]);
-        case 3:
-            return view('web view.events')
-                ->with([
-                    'events'=>Event::where('status', 'Past')->get(),
-                    'time'=>'Past',
-                    'all'=>Event::all()
-                ]);
-        default:
-            return view('web view.events')
-                ->with([
-                    'events'=>Event::all(),
-                    'time'=>'All',
-                    'all'=>Event::all()
-                ]);
+            case 1:
+                return view('web view.events')
+                    ->with([
+                        'events' => Event::where('status', 'Upcoming')->get(),
+                        'time' => 'Upcoming',
+                        'all' => Event::all(),
+                    ]);
+            case 2:
+                return view('web view.events')
+                    ->with([
+                        'events' => Event::where('status', 'Today')->get(),
+                        'time' => 'Today',
+                        'all' => Event::all()
+                    ]);
+            case 3:
+                return view('web view.events')
+                    ->with([
+                        'events' => Event::where('status', 'Past')->get(),
+                        'time' => 'Past',
+                        'all' => Event::all()
+                    ]);
+            default:
+                return view('web view.events')
+                    ->with([
+                        'events' => Event::all(),
+                        'time' => 'All',
+                        'all' => Event::all()
+                    ]);
+        }
     }
-}
+
     //view all events to authenticated member
     public function allEvents()
     {
@@ -73,23 +76,55 @@ public function webviewEvents($id){
             'added_by' => Auth::user()->email,
             'date_of_event' => $request->date_of_event,
             'committee_id' => $request->committee_id]);
-
-        //function for validation and saving the event photo
+//save the image
         $this->savePhoto($request);
-
         session()->flash('flash_message', 'Event has been added');
 
         //return to the previous page
         return redirect()->back();
     }
 
-    //stores event photos
-    public function savePhoto($request)
+    //validate photo
+    public function validatePhoto(Request $request)
     {
+        // validate the variables ======================================================
+        // if any of these variables don't exist, add an error to the $errors array
+        $data = array();
+        $validator = Validator::make($request->all(), [
+            'photo' => 'mimes:jpeg,png,bmp,jpg|max:15360',
 
-        // validating image
-        $this->validate($request, ['photo' => 'mimes:jpeg,png,bmp,jpg|max:15360']);
+        ]);
+        // return a response ===========================================================
+        // if there are any errors in the errors array, return a success boolean of false
+        if ($validator->fails()) {
 
+            //send response to json
+            $data['success'] = true;
+            //save the rest of the fields
+            $this->create($request);
+            //return $request->all();
+            //function for validation and saving the event photo
+            $this->savePhoto($request);
+            session()->flash('flash_message', 'Event has been added');
+
+        } else {
+
+            //has wrong photo requirements
+            $validator->errors()
+                ->add('photo', 'and less than 15 MB');
+            // show a message of success and provide a false success variable
+            $data['success'] = false;
+        }
+        $data['errors'] = $validator->errors();
+
+        // return the request to an AJAX call
+        return response()->json($data);
+
+    }
+
+    //stores event photos
+    public function savePhoto(Request $request)
+    {
         // stores image using public disk
         $photoPath = $request->file('photo')->store('public/EventImages');
         // saves to db
@@ -123,8 +158,7 @@ public function webviewEvents($id){
     {
 
         $event = Event::findOrFail($request->event_id);
-        $event->fill(['event_id' => $request->event_id,
-            'status' => $this->getStatus($request),
+        $event->fill(['status' => $this->getStatus($request),
             'event_description' => $request->event_description,
             'email' => $request->email,
             'location' => $request->location,
@@ -143,8 +177,10 @@ public function webviewEvents($id){
     public function delete($id)
     {
         $event = Event::findOrFail($id);
-        if($event->photo != null){Storage::delete($event->photo->photoPath);}
-        session()->flash('flash_message', $event->event_description.'has successfully been deleted');
+        if ($event->photo != null) {
+            Storage::delete($event->photo->photoPath);
+        }
+        session()->flash('flash_message', $event->event_description . 'has successfully been deleted');
         $event->delete();
         return redirect()->back();
     }

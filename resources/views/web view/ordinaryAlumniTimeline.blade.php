@@ -132,7 +132,7 @@
                                 <ol class="breadcrumb">
                                     <li><a href="#">Home</a></li>
                                     <li><a href="#">Alumni</a></li>
-                                    <li class="active">Ordinary</li>
+                                    <li class="active">Ordinary</li>z
                                 </ol>
                             </div>
                         </div><!-- /.row -->
