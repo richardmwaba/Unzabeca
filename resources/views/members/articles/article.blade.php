@@ -3,11 +3,6 @@
 @section('content')
 
     <div class="row">
-        <div class="page-header">
-            <h3>Article Page</h3>
-        </div>
-
-        <br>
         <!-- table show all articles -->
         <div class="col-md-12">
             @if(count($articles) > 0)
