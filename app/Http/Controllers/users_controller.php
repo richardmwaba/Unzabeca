@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Mail;
 
 class users_controller extends Controller
 {
@@ -46,7 +47,20 @@ class users_controller extends Controller
             'email' => $request->email,
             'user_id' => $request->user_id,
             'password' => bcrypt($request->password)]);
+        //Send mail to new user
+        $this->sendMail($request);
         return Redirect::action('users_controller@view_users');
+    }
+
+    //send password to new user
+    public function sendMail($data){
+        Mail::send('Mails.new_user',
+            ['password' => $data->password],
+            function ($m) use ($data) {
+
+            $m->to($data->email, 'Me')
+                ->subject('You have been added to unzabeca');
+        });
     }
 
     //stores profile changes to database
