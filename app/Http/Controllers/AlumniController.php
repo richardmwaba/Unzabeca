@@ -73,7 +73,7 @@ class AlumniController extends Controller
     {
         $alumni = Member::where('status_id', '3')
             ->with('position', 'status')
-            ->orderBy('first_name', 'desc')
+            ->orderBy('created_at', 'desc')
             ->get();
         return view('alumni.viewAlumni')->with('alumni', $alumni);
     }
