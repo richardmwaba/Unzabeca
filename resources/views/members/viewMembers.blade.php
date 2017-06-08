@@ -167,7 +167,7 @@
                                                             <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                                 <label>Phone Number</label>
-                                                                <input class="form-control" name="phone_number" type="text" value="{{$member->phone_number }}">
+                                                                <input class="form-control" name="phone_number" type="tel" value="{{$member->phone_number }}">
                                                                 @if ($errors->has('phone_number'))
                                                                     <span class="help-block">
                                                                         <strong>{{ $errors->first('phone_number') }}</strong>
@@ -178,7 +178,7 @@
 
                                                                 <label>Status</label>
                                                                 <select id="ddl3" onchange="dropdowns(this,document.getElementById('ddl4'))" class="form-control" name="status_id">
-                                                                    <option name="currentValue" value="{{$member->status->status_description}}">{{$member->status->status_description}}</option>
+                                                                    <option name="currentValue" value="{{$member->status_id}}">{{$member->status->status_description}}</option>
                                                                     <option value="">-- select one --</option>
                                                                     <option name="Executive" value="1"> Executive Member</option>
                                                                     <option name="Ordinary" value="2"> Ordinary Member</option>
@@ -304,7 +304,7 @@
                                             <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                                                 <label>Phone Number</label>
-                                                <input class="form-control" placeholder="Enter the phone number" name="phone_number" type="text"
+                                                <input class="form-control" placeholder="Enter the phone number" name="phone_number" type="tel"
                                                        value="{{ old('phone_number') }}">
                                                 @if ($errors->has('phone_number'))
                                                     <span class="help-block">

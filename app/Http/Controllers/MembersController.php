@@ -55,7 +55,7 @@ class MembersController extends Controller
     {
         $members = Member::where('approved', '1')
                     ->with('position', 'status')
-                    ->orderBy('first_name', 'desc')
+                    ->orderBy('created_at', 'desc')
                     ->get();
         return view('members.viewMembers')->with('members', $members);
     }
@@ -114,28 +114,52 @@ class MembersController extends Controller
            'approved' => 'max:255'
         ]);
 
-        // stores image using public disk
-        $filename = $data->photo->store('photo', 'public');
-        $member_id = 'MBR-'.random_int(1000,9999);
+        if($data->position_id == 1)
+        {
+            // stores image using public disk
+            $filename = $data->photo->store('photo', 'public');
+            $member_id = 'MBR-'.random_int(1000,9999);
 
-        ExecutivePhoto::create([
-            'member_id' => $member_id,
-            'filename' => $filename
-        ]);
+            //Store member photo
+            ExecutivePhoto::create([
+                'member_id' => $member_id,
+                'filename' => $filename
+            ]);
 
-        Member::create([
-            'member_id'=> $member_id,
-            'first_name' => $data -> first_name,
-            'middle_name' => $data -> middle_name,
-            'last_name' => $data -> last_name,
-            'email' => $data -> email,
-            'year' => $data -> year,
-            'position_id' => $data -> position_id,
-            'status_id' => $data -> status_id,
-            'phone_number' => $data -> phone_number,
-            'approved' => $data -> approved
-        ]);
+            //Create new member
+            Member::create([
+                'member_id'=> $member_id,
+                'first_name' => $data -> first_name,
+                'middle_name' => $data -> middle_name,
+                'last_name' => $data -> last_name,
+                'email' => $data -> email,
+                'year' => $data -> year,
+                'position_id' => $data -> position_id,
+                'status_id' => $data -> status_id,
+                'phone_number' => $data -> phone_number,
+                'approved' => $data -> approved
+            ]);
 
+        }else{
+
+            //Generate member id
+            $member_id = 'MBR-'.random_int(1000,9999);
+
+            Member::create([
+                'member_id'=> $member_id,
+                'first_name' => $data -> first_name,
+                'middle_name' => $data -> middle_name,
+                'last_name' => $data -> last_name,
+                'email' => $data -> email,
+                'year' => $data -> year,
+                'position_id' => $data -> position_id,
+                'status_id' => $data -> status_id,
+                'phone_number' => $data -> phone_number,
+                'approved' => $data -> approved
+            ]);
+
+            //return redirect()->back()->with('status', 'Member has been added successfully!!');
+        }
 
         return redirect()->back()->with('status', 'Member has been added successfully!!');
     }
