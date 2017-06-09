@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Redirect;
 use App\Member;
@@ -57,6 +58,26 @@ class MembersController extends Controller
                     ->with('position', 'status')
                     ->orderBy('created_at', 'desc')
                     ->get();
+//        //Calculate number of days to automatically set status value to alumni
+//        $today = Carbon::today();
+//        $joined = Carbon::parse($members->created_at);
+//        $difference = $today->diffInMonths($joined, false);
+//
+//        //Check the difference
+//        if($difference >= 7 AND $members->status_id == 2)
+//        {
+//            $members->fill([
+//                'status_id' => '4'
+//            ]);
+//            $members->save();
+//        }elseif ($difference >= 7 AND $members->status_id == 1)
+//        {
+//            $members->fill([
+//                'status_id' => '3'
+//            ]);
+//            $members->save();
+//        }
+        //Return members view
         return view('members.viewMembers')->with('members', $members);
     }
 
@@ -169,5 +190,10 @@ class MembersController extends Controller
         $user = Member::findOrFail($member_id);
         $user->delete();
         return redirect()->back()->with('status', 'Member has been deleted successfully!!');
+    }
+
+    public function changeState()
+    {
+
     }
 }
