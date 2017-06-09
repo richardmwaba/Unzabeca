@@ -181,7 +181,7 @@
                                                                     <option name="currentValue" value="{{$member->status->status_description}}">{{$member->status->status_description}}</option>
                                                                     <option value="">-- select one --</option>
                                                                     <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
-                                                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
+                                                                    <option name="Ordinary Alumni" value="4"> Alumni Member</option>
                                                                 </select>
 
                                                                 @if ($errors->has('status_id'))
@@ -357,7 +357,7 @@
                                 <select id="ddl1" onchange="dropdowns(this,document.getElementById('ddl2'))" class="form-control" name="status_id">
                                     <option value="">-- select one --</option>
                                     <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
-                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
+                                    <option name="Ordinary Alumni" value="4"> Alumni Member</option>
                                 </select>
 
                                 @if ($errors->has('status_id'))
