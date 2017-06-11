@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Redirect;
 use App\Member;
@@ -23,14 +24,14 @@ class MembersController extends Controller
     public function joinSave(Request $request)
     {
         $this->validate($request, [
-            'first_name' => 'required|max:255',
-            'middle_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email'=> 'required|max:255|email|unique:members',
-            'year' => 'required|max:255',
-            'position_id' => 'max:255',
-            'status_id' => 'required|max:255',
-            'phone_number' => 'required|max:255',
+            'first_name' => 'required|max:60',
+            'middle_name' => 'max:60',
+            'last_name' => 'required|max:60',
+            'email'=> 'required|max:60|email|unique:members',
+            'year' => 'required|max:60',
+            'position_id' => 'max:60',
+            'status_id' => 'required|max:60',
+            'phone_number' => 'required|max:60',
         ]);
 
         Member::create([
@@ -54,9 +55,37 @@ class MembersController extends Controller
     public function viewMembers()
     {
         $members = Member::where('approved', '1')
-                    ->with('position', 'status')
-                    ->orderBy('created_at', 'desc')
-                    ->get();
+                        ->with('position', 'status')
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+        //Calculate number of days to automatically set status value to alumni
+        $today = Carbon::today();
+        foreach($members as $member)
+        {
+            $joined = Carbon::parse($member->created_at);
+            $difference = $joined->diffInMonths($today, false);
+
+            //Check the difference
+            if($difference >= 7 AND $member->status_id == '2')
+            {
+                $member->fill([
+                    'status_id' => '4'
+                ]);
+                $member->save();
+
+                $member->status_id;
+            }elseif ($difference >= 7 AND $member->status_id == '1')
+            {
+                $member->fill([
+                    'status_id' => '3'
+                ]);
+                $member->save();
+
+                $member->status_id;
+            }
+        }
+
+        //Return members view
         return view('members.viewMembers')->with('members', $members);
     }
 
@@ -79,14 +108,14 @@ class MembersController extends Controller
         // validation
         $this->validate($data, [
             'member_id'=>'MBR-'.random_int(100,999),
-            'first_name' => 'required|max:255',
-            'middle_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email'=> 'required|max:255|email',
-            'year' => 'required|max:255',
-            'position_id' => 'max:255',
-            'status_id' => 'required|max:255',
-            'phone_number' => 'required|max:255'
+            'first_name' => 'required|max:60',
+            'middle_name' => 'max:60',
+            'last_name' => 'required|max:60',
+            'email'=> 'required|max:60|email',
+            'year' => 'required|max:60',
+            'position_id' => 'max:60',
+            'status_id' => 'required|max:60',
+            'phone_number' => 'required|max:60'
         ]);
 
         $members = Member::findOrFail($member_id);
@@ -102,16 +131,16 @@ class MembersController extends Controller
     public function addMember(Request $data)
     {
         $this->validate($data, [
-            'first_name' => 'required|max:255',
-            'middle_name' => 'max:255',
-            'last_name' => 'required|max:255',
-            'email'=> 'required|max:255|email|unique:members',
-            'year' => 'required|max:255',
-            'position_id' => 'max:255',
-            'status_id' => 'required|max:255',
-            'phone_number' => 'required|max:255',
+            'first_name' => 'required|max:60',
+            'middle_name' => 'max:60',
+            'last_name' => 'required|max:60',
+            'email'=> 'required|max:60|email|unique:members',
+            'year' => 'required|max:60',
+            'position_id' => 'max:60',
+            'status_id' => 'required|max:60',
+            'phone_number' => 'required|max:60',
             'photo' => 'mimes:jpg,jpeg,png,bmp|max:15360',
-           'approved' => 'max:255'
+           'approved' => 'max:60'
         ]);
 
         if($data->position_id == 1)
@@ -169,5 +198,10 @@ class MembersController extends Controller
         $user = Member::findOrFail($member_id);
         $user->delete();
         return redirect()->back()->with('status', 'Member has been deleted successfully!!');
+    }
+
+    public function changeState()
+    {
+
     }
 }

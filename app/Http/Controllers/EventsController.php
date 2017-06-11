@@ -117,8 +117,6 @@ class EventsController extends Controller
         }
         $data['errors'] = $validator->errors();
 
-        // return the request to an AJAX call
-        return response()->json($data);
 
     }
 

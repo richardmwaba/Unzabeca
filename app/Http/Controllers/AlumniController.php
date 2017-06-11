@@ -12,13 +12,13 @@ class AlumniController extends Controller
     {
         //Validate
         $this->validate($data, [
-            'first_name' => 'required|max:255',
-            'middle_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email'=> 'required|max:255|email',
-            'year' => 'required|max:255',
-            'position_id' => 'required|max:255',
-            'phone_number' => 'required|max:255'
+            'first_name' => 'required|max:60',
+            'middle_name' => 'max:60',
+            'last_name' => 'required|max:60',
+            'email'=> 'required|max:60|email',
+            'year' => 'required|max:60',
+            'position_id' => 'required|max:60',
+            'phone_number' => 'required|max:60'
         ]);
 
         $members = Member::findOrFail($member_id);
@@ -34,15 +34,15 @@ class AlumniController extends Controller
     public function addAlumni(Request $data)
     {
         $this->validate($data, [
-            'first_name' => 'required|max:255',
-            'middle_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email'=> 'required|max:255|email|unique:members',
-            'year' => 'required|max:255',
-            'position_id' => 'required|max:255',
-            'status_id' => 'required|max:255',
-            'phone_number' => 'required|max:255',
-            'approved' => 'max:255'
+            'first_name' => 'required|max:60',
+            'middle_name' => 'max:60',
+            'last_name' => 'required|max:60',
+            'email'=> 'required|max:60|email|unique:members',
+            'year' => 'required|max:60',
+            'position_id' => 'required|max:60',
+            'status_id' => 'required|max:60',
+            'phone_number' => 'required|max:60',
+            'approved' => 'max:60'
             ]);
 
         Member::create([
