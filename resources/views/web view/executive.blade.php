@@ -39,7 +39,7 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{ $executive[0]->first_name}} {{$executive[0]->last_name }}<br> <small>{{$executive[0]->position->position_description }}</small></h3>
+                                            <h3 class="css-team-heading">{{ $executive[0]->first_name}} {{$executive[0]->middle_name }} {{$executive[0]->last_name }}<br> <small>{{$executive[0]->position->position_description }}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
@@ -53,7 +53,7 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading">{{$executive[1]->first_name}} {{$executive[1]->last_name }}<br> <small>{{ $executive[1]->position->position_description }}</small></h3>
+                                            <h3 class="css-team-heading">{{$executive[1]->first_name}} {{$executive[1]->middle_name }} {{$executive[1]->last_name }}<br> <small>{{ $executive[1]->position->position_description }}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
@@ -66,7 +66,7 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading"> {{$executive[2]->first_name}} {{$executive[2]->last_name }}<br> <small>{{ $executive[2]->position->position_description}} </small></h3>
+                                            <h3 class="css-team-heading"> {{$executive[2]->first_name}} {{$executive[2]->middle_name }} {{$executive[2]->last_name }}<br> <small>{{ $executive[2]->position->position_description}} </small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
@@ -79,7 +79,7 @@
                                             <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                         </div>
                                         <div class="css-team-info">
-                                            <h3 class="css-team-heading"> {{$executive[3]->first_name}} {{$executive[3]->last_name}} <br> <small> {{$executive[3]->position->position_description }}</small></h3>
+                                            <h3 class="css-team-heading"> {{$executive[3]->first_name}} {{$executive[3]->middle_name }} {{$executive[3]->last_name}} <br> <small> {{$executive[3]->position->position_description }}</small></h3>
                                         </div>
                                     </figure>
                                 </div><!-- /.col-md-4 -->
@@ -99,7 +99,7 @@
                                         <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                     </div>
                                     <div class="css-team-info">
-                                        <h3 class="css-team-heading">{{ $executive[4]->first_name}} {{$executive[4]->last_name }}<br> <small>{{$executive[4]->position->position_description }}</small></h3>
+                                        <h3 class="css-team-heading">{{ $executive[4]->first_name}} {{$executive[4]->middle_name }} {{$executive[4]->last_name }}<br> <small>{{$executive[4]->position->position_description }}</small></h3>
                                     </div>
                                 </figure>
                             </div><!-- /.col-md-4 -->
@@ -113,7 +113,7 @@
                                         <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                     </div>
                                     <div class="css-team-info">
-                                        <h3 class="css-team-heading">{{$executive[5]->first_name}} {{$executive[5]->last_name }}<br> <small>{{ $executive[5]->position->position_description }}</small></h3>
+                                        <h3 class="css-team-heading">{{$executive[5]->first_name}} {{$executive[5]->middle_name }} {{$executive[5]->last_name }}<br> <small>{{ $executive[5]->position->position_description }}</small></h3>
                                     </div>
                                 </figure>
                             </div><!-- /.col-md-4 -->
@@ -126,7 +126,7 @@
                                         <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                     </div>
                                     <div class="css-team-info">
-                                        <h3 class="css-team-heading"> {{$executive[6]->first_name}} {{$executive[6]->last_name }}<br> <small>{{ $executive[6]->position->position_description}} </small></h3>
+                                        <h3 class="css-team-heading"> {{$executive[6]->first_name}} {{$executive[6]->middle_name }} {{$executive[6]->last_name }}<br> <small>{{ $executive[6]->position->position_description}} </small></h3>
                                     </div>
                                 </figure>
                             </div><!-- /.col-md-4 -->
@@ -139,7 +139,7 @@
                                         <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                     </div>
                                     <div class="css-team-info">
-                                        <h3 class="css-team-heading"> {{$executive[7]->first_name}} {{$executive[7]->last_name}} <br> <small> {{$executive[7]->position->position_description }}</small></h3>
+                                        <h3 class="css-team-heading"> {{$executive[7]->first_name}} {{$executive[7]->middle_name }} {{$executive[7]->last_name}} <br> <small> {{$executive[7]->position->position_description }}</small></h3>
                                     </div>
                                 </figure>
                             </div><!-- /.col-md-4 -->
@@ -159,7 +159,7 @@
                                         <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                     </div>
                                     <div class="css-team-info">
-                                        <h3 class="css-team-heading">{{ $executive[8]->first_name}} {{$executive[8]->last_name }}<br> <small>{{$executive[8]->position->position_description }}</small></h3>
+                                        <h3 class="css-team-heading">{{ $executive[8]->first_name}} {{$executive[8]->middle_name }} {{$executive[8]->last_name }}<br> <small>{{$executive[8]->position->position_description }}</small></h3>
                                     </div>
                                 </figure>
                             </div><!-- /.col-md-4 -->
@@ -173,7 +173,7 @@
                                         <a class="readmore" href="about-me.html"><i class="flaticon-square57"></i></a>
                                     </div>
                                     <div class="css-team-info">
-                                        <h3 class="css-team-heading">{{$executive[9]->first_name}} {{$executive[9]->last_name }}<br> <small>{{ $executive[9]->position->position_description }}</small></h3>
+                                        <h3 class="css-team-heading">{{$executive[9]->first_name}} {{$executive[9]->middle_name }} {{$executive[9]->last_name }}<br> <small>{{ $executive[9]->position->position_description }}</small></h3>
                                     </div>
                                 </figure>
                             </div><!-- /.col-md-4 -->

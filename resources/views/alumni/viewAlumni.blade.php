@@ -178,7 +178,7 @@
 
                                                                 <label>Status</label>
                                                                 <select id="ddl" onchange="dropdowns(this,document.getElementById('ddl3'))" class="form-control" name="status_id">
-                                                                    <option name="currentValue" value="{{$member->status->status_description}}">{{$member->status->status_description}}</option>
+                                                                    <option name="currentValue" value="{{$member->status->status_id}}">{{$member->status->status_description}}</option>
                                                                     <option value="">-- select one --</option>
                                                                     <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
                                                                     <option name="Ordinary Alumni" value="4"> Alumni Member</option>
@@ -196,6 +196,7 @@
 
                                                                     <label id="role_label">Position</label>
                                                                     <select id="ddl3" class="form-control" name="position_id">
+                                                                        <option name="currentValue" value="{{$member->position_id}}">{{$member->position->position_description}}</option>
                                                                         //Content is loaded from an external JavaScript file
                                                                     </select>
                                                                     @if ($errors->has('position_id'))

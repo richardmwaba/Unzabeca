@@ -22,7 +22,7 @@
                         <tr>
                             {{--<th data-field="state" data-checkbox="true">Count</th>--}}
                             <th data-field="firstName" data-sortable="true"> First Name</th>
-                            <th data-field="midleName" data-sortable="true"> Middle Name</th>
+                            <th data-field="middleName" data-sortable="true"> Middle Name</th>
                             <th data-field="lastName" data-sortable="true"> Last Name</th>
                             <th data-field="email" data-sortable="true"> Email</th>
                             <th data-field="year" data-sortable="true"> Year Joined</th>
@@ -205,7 +205,7 @@
 
                                                                     <label id="position_label">Position</label>
                                                                     <select id="ddl4" class="form-control" name="position_id">
-                                                                        <option name="currentValue" value="{{$member->position->position_description}}">{{$member->position->position_description}}</option>
+                                                                        <option name="currentValue" value="{{$member->position_id}}">{{$member->position->position_description}}</option>
                                                                         //Content is loaded from an external JavaScript file
                                                                     </select>
                                                                     @if ($errors->has('position_id'))
