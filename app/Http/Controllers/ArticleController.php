@@ -126,12 +126,19 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function delete($id){
-        $article = Articles::with('articlePhoto')->where('article_id', $id);
-        $filePath = $article->articlePhoto->filename;
+        $article = Articles::where('article_id', $id)->first();
+        $articlePhoto = ArticlePhotos::where('article_id', $id)->first();
 
-        $article->delete(); // deletes the stuff in the database
+        $filePath = $articlePhoto->filename; // store photo path
 
-        Storage::delete($filePath); // deletes the image from the storage file.
+        $article->delete(); // deletes the article in the database
+        $articlePhoto->delete(); // deletes article photo info from database
+
+        if ($filePath !== null){
+            // getting the actual photo name by trimming
+            $trimmed = trim($filePath, 'photo/');
+            Storage::delete($trimmed); // deletes the image from the storage folder.
+        }
 
         return redirect()->back()->with('status', 'Article has been deleted successfully!!');
     }
