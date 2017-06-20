@@ -22,7 +22,7 @@
         <div class="content-wrapper">
             <section class="about-us-wrapper">
                 <h1 style="text-align: center">Watch this space.<br>
-                    <small>Our awesome research paln will be coming soon... :)</small>
+                    <small>Our awesome research plan will be coming soon... :)</small>
                 </h1>
             </section>
         </div>
