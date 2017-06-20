@@ -189,7 +189,7 @@
                                             @if($alumni_2016!==[])
                                                 @foreach($alumni_2016 as $alumnus)
                                                     <dt>
-                                                        {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                       * {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
                                                     </dt>
                                                 @endforeach
                                             @endif
@@ -202,7 +202,7 @@
                                             @if($alumni_2015!==[])
                                                 @foreach($alumni_2015 as $alumnus)
                                                     <dt>
-                                                        {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                        * {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
                                                     </dt>
                                                 @endforeach
                                             @endif
@@ -214,7 +214,7 @@
                                         <dl>
                                             @if($alumni_2014!==[])
                                                 @foreach($alumni_2014 as $alumnus)
-                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                    <dt>* {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
                                         </dl>
@@ -225,7 +225,7 @@
                                         <dl>
                                             @if($alumni_2013!==[])
                                                 @foreach($alumni_2013 as $alumnus)
-                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                    <dt>* {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
                                         </dl>
@@ -236,7 +236,7 @@
                                         <dl>
                                             @if($alumni_2012!==[])
                                                 @foreach($alumni_2012 as $alumnus)
-                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                    <dt>* {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
                                         </dl>
@@ -247,7 +247,7 @@
                                         <dl>
                                             @if($alumni_2011!==[])
                                                 @foreach($alumni_2011 as $alumnus)
-                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                    <dt>* {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
                                         </dl>
@@ -259,7 +259,7 @@
                                         <dl>
                                             @if($alumni_2010!==[])
                                                 @foreach($alumni_2010 as $alumnus)
-                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                    <dt>* {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
                                         </dl>
@@ -271,7 +271,7 @@
                                         <dl>
                                             @if($alumni_2009!==[])
                                                 @foreach($alumni_2009 as $alumnus)
-                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                    <dt>* {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
                                         </dl>
@@ -325,7 +325,11 @@
                             <div class="col-md-12">
                                 <div class="social-link wow fadeInDown pull-right">
                                     <ul >
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li>
+                                            <a href="{{url('https://www.facebook.com/University-of-Zambia-Business-and-Economics-Association-UNZABECA-437974826272696/')}}">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
                                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
