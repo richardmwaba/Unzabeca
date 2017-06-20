@@ -26,9 +26,9 @@ class WebviewController extends Controller
     {
         //View Executive page
         $executive=Member::where('status_id', '1')
-                            ->with('position', 'status', 'executivePhoto')
-                            ->orderby('position_id')
-                            ->get();
+                    ->with('position', 'status', 'executivePhoto')
+                    ->orderby('position_id')
+                    ->get();
         return view('web view.executive')->with('executive', $executive);
     }
 }
