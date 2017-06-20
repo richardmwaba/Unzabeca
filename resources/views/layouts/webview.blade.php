@@ -226,7 +226,7 @@
                     <li><a href="#">Alumni</a>
                         <ul>
                             <li><a href="{{url('webview/executive/alumni/timeline')}}"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
-                            <li><a href="{{url('webview/ordinary/alumni/timeline')}}"><i class="fa fa-pencil"></i> Ordinary</a></li>
+                            <li><a href="{{url('webview/ordinary/alumni/timeline')}}"><i class="fa fa-pencil"></i> Members</a></li>
                         </ul>
                     </li>
 

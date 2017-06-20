@@ -8,6 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('images/favicons/favicon-96x96.png')}}">
+    <title>Unzabeca - Executive Alumni</title>
     <!-- alumni -->
     <link rel="stylesheet" href="{{URL::asset('../webview/css/alumni/style.css')}}" media="screen" />
 
@@ -144,7 +150,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="page-header">
-                                    <h1>Executive</h1>
+                                    <h1>Alumni Executive</h1>
                                 </div>
                                 <ol class="breadcrumb">
                                     <li><a href="{{url('/')}}">Home</a></li>
@@ -179,91 +185,108 @@
                                     <li id="2016">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/2.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2016</h1>
-                                        <p>
+                                        <dl>
                                             @if($alumni_2016!==[])
                                                 @foreach($alumni_2016 as $alumnus)
-                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                    <dt>
+                                                        {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                    </dt>
                                                 @endforeach
                                             @endif
-                                        </p>
+                                        </dl>
                                     </li>
                                     <li id="2015">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/3.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2015</h1>
-                                        <p>
+                                        <dl>
                                             @if($alumni_2015!==[])
                                                 @foreach($alumni_2015 as $alumnus)
-                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                    <dt>
+                                                        {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                    </dt>
                                                 @endforeach
                                             @endif
-                                        </p>
+                                        </dl>
                                     </li>
                                     <li id="2014">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/4.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2014</h1>
-                                        <p>
+                                        <dl>
                                             @if($alumni_2014!==[])
                                                 @foreach($alumni_2014 as $alumnus)
-                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
-                                        </p>
+                                        </dl>
                                     </li>
                                     <li id="2013">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/5.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2013</h1>
-                                        @if($alumni_2013!==[])
-                                            @foreach($alumni_2013 as $alumnus)
-                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
-                                            @endforeach
-                                        @endif
+                                        <dl>
+                                            @if($alumni_2013!==[])
+                                                @foreach($alumni_2013 as $alumnus)
+                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                @endforeach
+                                            @endif
+                                        </dl>
                                     </li>
                                     <li id="2012">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/6.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2012</h1>
-                                        <p>
+                                        <dl>
                                             @if($alumni_2012!==[])
                                                 @foreach($alumni_2012 as $alumnus)
-                                                    {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
+                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
                                                 @endforeach
                                             @endif
-                                        </p>
+                                        </dl>
                                     </li>
                                     <li id="2011">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/7.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2011</h1>
-                                        @if($alumni_2011!==[])
-                                            @foreach($alumni_2011 as $alumnus)
-                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
-                                            @endforeach
-                                        @endif
+                                        <dl>
+                                            @if($alumni_2011!==[])
+                                                @foreach($alumni_2011 as $alumnus)
+                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                @endforeach
+                                            @endif
+                                        </dl>
+
                                     </li>
                                     <li id="2010">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/8.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2010</h1>
-                                        @if($alumni_2010!==[])
-                                            @foreach($alumni_2010 as $alumnus)
-                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
-                                            @endforeach
-                                        @endif
+                                        <dl>
+                                            @if($alumni_2010!==[])
+                                                @foreach($alumni_2010 as $alumnus)
+                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                @endforeach
+                                            @endif
+                                        </dl>
+
                                     </li>
                                     <li id="2009">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/9.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2009</h1>
-                                        @if($alumni_2009!==[])
-                                            @foreach($alumni_2009 as $alumnus)
-                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
-                                            @endforeach
-                                        @endif
+                                        <dl>
+                                            @if($alumni_2009!==[])
+                                                @foreach($alumni_2009 as $alumnus)
+                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                @endforeach
+                                            @endif
+                                        </dl>
+
                                     </li>
                                     <li id="2008">
                                         <img style="width: 50%;float: left;margin: 10px 30px 10px 50px;background: transparent;zoom: 1;-webkit-transition: all 2s ease-in-out;-moz-transition: all 2s ease-in-out;-o-transition: all 2s ease-in-out;-ms-transition: all 2s ease-in-out;transition: all 2s ease-in-out;-webkit-transform: scale(0.7,0.7);-moz-transform: scale(0.7,0.7);-o-transform: scale(0.7,0.7);-ms-transform: scale(0.7,0.7);transform: scale(0.7,0.7);" src="{{URL::asset('../images/10.png')}}" width="256" height="310" />
                                         <h1 style="font-size: 48px;">2008</h1>
-                                        @if($alumni_2008!==[])
-                                            @foreach($alumni_2008 as $alumnus)
-                                                {{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}
-                                            @endforeach
-                                        @endif
+                                        <dl>
+                                            @if($alumni_2008!==[])
+                                                @foreach($alumni_2008 as $alumnus)
+                                                    <dt>{{$alumnus->first_name}} {{$alumnus->middle_name}} {{$alumnus->last_name}}</dt>
+                                                @endforeach
+                                            @endif
+                                        </dl>
                                     </li>
                                 </ul>
                                 <div id="grad_left"></div>
