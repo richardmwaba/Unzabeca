@@ -23,6 +23,7 @@
                         <tr>
                             {{--<th data-field="state" data-checkbox="true">Count</th>--}}
                             <th data-field="firstName" data-sortable="true"> First Name</th>
+                            <th data-field="middleName" data-sortable="true"> Middle Name</th>
                             <th data-field="lastName" data-sortable="true"> Last Name</th>
                             <th data-field="email" data-sortable="true"> Email</th>
                             <th data-field="year" data-sortable="true"> Year Joined</th>
@@ -37,6 +38,13 @@
                                 <td>
                                     @if(isset($members))
                                         {{$member->first_name}}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if(isset($members))
+                                        {{$member->middle_name}}
+                                    @else
+                                        <?php echo 'N/A';?>
                                     @endif
                                 </td>
                                 <td>
@@ -182,9 +190,9 @@
                                                                     <option name="currentValue" value="{{$member->status_id}}">{{$member->status->status_description}}</option>
                                                                     <option value="">-- select one --</option>
                                                                     <option name="Executive" value="1"> Executive Member</option>
-                                                                    <option name="Ordinary" value="2"> Ordinary Member</option>
+                                                                    <option name="Ordinary" value="2"> Member</option>
                                                                     <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
-                                                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
+                                                                    <option name="Ordinary Alumni" value="4"> Alumni Member</option>
                                                                 </select>
 
                                                                 @if ($errors->has('status_id'))
@@ -198,7 +206,7 @@
 
                                                                     <label id="position_label">Position</label>
                                                                     <select id="ddl4" class="form-control" name="position_id">
-                                                                        <option name="currentValue" value="{{$member->position->position_description}}">{{$member->position->position_description}}</option>
+                                                                        <option name="currentValue" value="{{$member->position_id}}">{{$member->position->position_description}}</option>
                                                                         //Content is loaded from an external JavaScript file
                                                                     </select>
                                                                     @if ($errors->has('position_id'))
@@ -308,9 +316,9 @@
                                                 <select id="ddl1" onchange="dropdowns(this,document.getElementById('ddl')); showThis(this)" class="form-control" name="status_id">
                                                     <option value="">-- select one --</option>
                                                     <option name="Executive" value="1"> Executive Member</option>
-                                                    <option name="Ordinary" value="2"> Ordinary Member</option>
+                                                    <option name="Ordinary" value="2"> Member</option>
                                                     <option name="Exec Alumni" value="3"> Executive Alumni Member</option>
-                                                    <option name="Ordinary Alumni" value="4"> Ordinary Alumni Member</option>
+                                                    <option name="Ordinary Alumni" value="4"> Alumni Member</option>
                                                 </select>
 
                                                 @if ($errors->has('status_id'))

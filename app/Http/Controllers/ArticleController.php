@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
+    // ****** These functions handle actions on the members (Admin) view of the site ****** \\
     /**
      * Displays the article managing page and also retrieves all the
      * articles currently in the db
@@ -126,18 +127,27 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function delete($id){
-        $article = Articles::with('articlePhoto')->where('article_id', $id);
-        $filePath = $article->articlePhoto->filename;
+        // this gets the records from the db
+        $article = Articles::where('article_id', $id)->first();
+        $articlePhoto = ArticlePhotos::where('article_id', $id)->first();
 
-        $article->delete(); // deletes the stuff in the database
+        $filePath = $articlePhoto->filename; // store photo path
 
-        Storage::delete($filePath); // deletes the image from the storage file.
+        $article->delete(); // deletes the article in the database
+        $articlePhoto->delete(); // deletes article photo info from database
+
+        if ($filePath !== null){
+            // Pass the path to the file you want to delete in the unlink()
+            unlink("../public/storage/".$filePath); // deletes the image from the storage folder.
+        }
 
         return redirect()->back()->with('status', 'Article has been deleted successfully!!');
     }
 
+    // ****** The following methods handle actions for the web view ****** \\
+
     /**
-     * Handles the articles in the webview
+     * Handles the displaying of all articles in the webview
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -150,7 +160,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Handles the viewing of a single image
+     * Handles the viewing of a single article in the webview
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

@@ -24,6 +24,8 @@ class MembersController extends Controller
     //save joining member
     public function joinSave(Request $request)
     {
+<<<<<<< HEAD
+=======
         $this->validate($request, [
             'first_name' => 'required|max:60',
             'middle_name' => 'max:60',
@@ -34,6 +36,8 @@ class MembersController extends Controller
             'status_id' => 'required|max:60',
             'phone_number' => 'required|max:60',
         ]);
+
+>>>>>>> 76912c89acc74c09cacb7e9cc2e842a7bc956196
         Member::create([
             'member_id' => 'MBR-'.random_int(100,999),
             'first_name' => $request -> first_name,
@@ -77,13 +81,16 @@ class MembersController extends Controller
 
         //get approved members
         $members = Member::where('approved', '1')
+<<<<<<< HEAD
                     ->with('position', 'status')
                     ->orderBy('created_at', 'desc')
                     ->get();
 
         //get pending members
         $Pmembers = Member::where('approved', '0')->orderBy('created_at', 'desc')->get();
-
+        return view('members.viewMembers')
+            ->with(['members' => $members, 'Pmembers' => $Pmembers]);
+=======
                         ->with('position', 'status')
                         ->orderBy('created_at', 'desc')
                         ->get();
@@ -115,8 +122,8 @@ class MembersController extends Controller
         }
 
         //Return members view
-        return view('members.viewMembers')
-            ->with(['members' => $members, 'Pmembers' => $Pmembers]);
+        return view('members.viewMembers')->with('members', $members);
+>>>>>>> 76912c89acc74c09cacb7e9cc2e842a7bc956196
     }
 
     //Display view for adding a new member

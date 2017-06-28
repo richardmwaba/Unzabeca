@@ -77,7 +77,7 @@
                                     <span class="icon-bar"></span>
                                 </button>
                                 <!-- offcanvas-trigger-effects -->
-                                <h1 class="logo"><a class="navbar-brand" href="/"><span style="color: #f5f5f5; font-size: xx-large">UNZABECA</span></a></h1>
+                                <h1 class="logo"><a class="navbar-brand" href="/"><span style="color: #f5f5f5; font-size: xx-large"> UNZABECA</span></a></h1>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -182,7 +182,11 @@
                             <div class="col-md-12">
                                 <div class="social-link wow fadeInDown pull-right">
                                     <ul >
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li>
+                                            <a href="{{url('https://www.facebook.com/University-of-Zambia-Business-and-Economics-Association-UNZABECA-437974826272696/')}}">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
                                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -226,7 +230,7 @@
                     <li><a href="#">Alumni</a>
                         <ul>
                             <li><a href="{{url('webview/executive/alumni/timeline')}}"><i class="fa fa-pencil-square-o"></i> Executive</a></li>
-                            <li><a href="{{url('webview/ordinary/alumni/timeline')}}"><i class="fa fa-pencil"></i> Ordinary</a></li>
+                            <li><a href="{{url('webview/ordinary/alumni/timeline')}}"><i class="fa fa-pencil"></i> Members</a></li>
                         </ul>
                     </li>
 

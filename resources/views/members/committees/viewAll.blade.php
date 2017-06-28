@@ -167,7 +167,7 @@
                                             <div class="col-md- ">
 
                                                 <button type="submit" class="btn btn-primary">Save</button>
-                                                <button type="reset" class="btn btn-danger">Cancel</button>
+                                                <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                             </div>
 
                                         </div>

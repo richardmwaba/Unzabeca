@@ -53,7 +53,7 @@
                                                         <h4 class="modal-title">Confirmation</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>Are you sure you want to <strong>delete
+                                                        <p>Are you sure you want to <strong>delete article ->
                                                                 '{{$article->articleTitle}}'</strong> from the system?</p>
                                                     </div>
                                                     <div class="modal-footer">
