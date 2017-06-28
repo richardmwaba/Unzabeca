@@ -28,7 +28,7 @@
 								<h2>Fill in your details below</h2>
 
 
-								<form id="" action="{{url('members/join/save')}}" role="form" method="POST">
+								<form id="" action="{{url('webview/members/join/save')}}" role="form" method="POST">
 									{!! csrf_field() !!}
 
 									<div class="row">

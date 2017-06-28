@@ -61,10 +61,13 @@ Route::group(['middleware' => 'auth'], function () {
     //user routes
     Route::get('/members/my_profile', 'users_controller@my_profile');
     Route::get('/members/profile/{id}', 'users_controller@profile');
+//    Route::get('/members/register/view', 'users_controller@profile');
 
 /*Routes related to members and alumni*/
     //Route to view members
     Route::get('/members/viewMembers', 'MembersController@viewMembers');
+    //approve new member
+    Route::get('/members/approval/{id}', 'MembersController@approve');
     //Route to view alumni
     Route::get('/alumni/viewAlumni', 'AlumniController@viewAlumni');
     //Route to view add member form

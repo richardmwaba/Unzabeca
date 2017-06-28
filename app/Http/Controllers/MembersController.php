@@ -8,6 +8,7 @@ use Redirect;
 use App\Member;
 use App\Status;
 use App\ExecutivePhoto;
+use Mail;
 
 
 class MembersController extends Controller
@@ -22,17 +23,6 @@ class MembersController extends Controller
     //save joining member
     public function joinSave(Request $request)
     {
-        $this->validate($request, [
-            'first_name' => 'required|max:255',
-            'middle_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email'=> 'required|max:255|email|unique:members',
-            'year' => 'required|max:255',
-            'position_id' => 'max:255',
-            'status_id' => 'required|max:255',
-            'phone_number' => 'required|max:255',
-        ]);
-
         Member::create([
             'member_id' => 'MBR-'.random_int(100,999),
             'first_name' => $request -> first_name,
@@ -43,21 +33,47 @@ class MembersController extends Controller
             'position_id' => $request -> position_id,
             'status_id' => $request -> status_id,
             'phone_number' => $request -> phone_number,
+            'approved' => 0,
         ]);
+        //send mail notification
+        $this->sendMail($request);
 
+        //redirect back to same page
+        return redirect()->back()->with('status',
+            'Your join request has ben sent. Please wait for a confirmation email!');
+    }
 
-        return redirect()->back()->with('status', 'Your join request has ben sent. Please wait for a confirmation email!');
+    //send password to notify the admin
+    public function sendMail(Request $data){
+        Mail::send('Mail.newMember',
+            ['member' => $data],
+            function ($m) use ($data) {
+                $m->to($data['email'], 'Me')
+                    ->subject('New member has joined unzabeca');
+            });
+    }
+
+    //changed the approval state of a members who has joined via the web portal
+    public function approve($id){
+
+        return 'hi';
     }
 
 
-    //Retrieve users and view them
+    //Retrieve members and view them
     public function viewMembers()
     {
+
+        //get approved members
         $members = Member::where('approved', '1')
                     ->with('position', 'status')
                     ->orderBy('created_at', 'desc')
                     ->get();
-        return view('members.viewMembers')->with('members', $members);
+
+        //get pending members
+        $Pmembers = Member::where('approved', '0')->orderBy('created_at', 'desc')->get();
+        return view('members.viewMembers')
+            ->with(['members' => $members, 'Pmembers' => $Pmembers]);
     }
 
     //Display view for adding a new member

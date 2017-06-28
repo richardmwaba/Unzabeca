@@ -22,7 +22,8 @@ class users_controller extends Controller
     //load the edit form with data
     public function edit_form()
     {
-        return view('members.profile.edit_profile')->with('user', Auth::user());
+        return view('members.profile.edit_profile')
+            ->with('user', Auth::user());
 
 
     }
@@ -30,7 +31,8 @@ class users_controller extends Controller
     //load the edit form with data for user
     public function form($id)
     {
-        return view('members.profile.edit_profile')->with('user',  User::findOrFail($id));
+        return view('members.profile.edit_profile')
+            ->with('user',  User::findOrFail($id));
 
 
     }
@@ -54,7 +56,7 @@ class users_controller extends Controller
 
     //send password to new user
     public function sendMail($data){
-        Mail::send('Mails.new_user',
+        Mail::send('Mail.newUser',
             ['password' => $data->password],
             function ($m) use ($data) {
 
