@@ -64,8 +64,7 @@ class EventsController extends Controller
     //create new event
     public function create(Request $request)
     {
-        //return 'has photo';
-
+        //validate photo
         //crete the record
         Event::create([
             'event_id' => $request->event_id,
