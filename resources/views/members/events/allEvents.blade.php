@@ -290,7 +290,7 @@
                                                     <label for="photo1" class="control-label">Event image <h6>Optional</h6>
                                                     </label>
                                                     <div  class="col-md-6">
-                                                        <input class="control-label" id="photo1" type="file" name="photo">
+                                                        <input class="control-label" id="photo1" type="file" name="photo" required>
                                                     </div>
                                                 </div>
 

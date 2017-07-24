@@ -86,7 +86,10 @@
                      <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="{{url('/members/my_profile')}}"><i class="fa fa-user fa-fw"></i>Profile</a>
+                    <li><a href="{{url('/members/my_profile')}}"><i class="fa fa-user fa-fw"></i>My Profile</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="{{url('register')}}"><i class="fa fa-edit fa-fw"></i>Register New User</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="{{ url('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

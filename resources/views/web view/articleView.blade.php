@@ -50,7 +50,7 @@
                             <div class="banner">
                                 {{--<img src="{{URL::asset('../storage/'.$article->articlePhoto->filename)}}" class="img-responsive " alt="">--}}
                             </div><!-- /.post-thumbnail -->
-
+                            <br>
                             <!-- Article body -->
                             <div class="entry-content">
                                 <br>

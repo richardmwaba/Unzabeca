@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
+use App\Member;
 
 class RegisterController extends Controller
 {
@@ -20,7 +24,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+//    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -36,7 +40,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('auth');
     }
 
     /**
@@ -54,16 +58,46 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+            return view('auth.register')->with('members', Member::all());
+    }
+    /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    protected function register(Request $data)
     {
-        return User::create([
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        $this->validate($data, [
+            'email'=> 'unique:users|email',
+            'password'=> 'required',
         ]);
+        User::create([
+            'email' => $data->email,
+            'password' => bcrypt($data->password),
+        ]);
+
+        $this->sendMail($data);
+        session()->flash('flash_message',
+            $data->email.' has been promoted to user');
+        return redirect()->back();
     }
+
+    //send password to new user
+    public function sendMail(Request $data){
+        Mail::send('Mail.newUser',
+            ['password' => $data['password']],
+            function ($m) use ($data) {
+
+                $m->to($data['email'], 'Me')
+                    ->subject('You have been added to unzabeca');
+            });
+    }
+
 }

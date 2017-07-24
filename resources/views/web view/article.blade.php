@@ -29,7 +29,7 @@
         </div><!-- /.container-fluid -->
     </section>
     <div class="container-fluid">
-        <div class="content-wrapper">
+        <div class="content-wrapper col-md-10 col-md-offset-1">
             <div class="inner-content">
                 <div class="row">
                     <div class="col-xs-12 col-sm-8 col-md-10">

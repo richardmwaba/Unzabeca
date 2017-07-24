@@ -13,6 +13,7 @@
                 <div class="panel-body">
 
                     <button class="btn btn-link" data-toggle="modal" data-target="#addMemberModal">Add new member</button>
+                    <button class="btn btn-link" data-toggle="modal" data-target="#pendingMembers">Pending members</button>
 
                     <table class="table-striped responsive-utilities" data-toggle="table" data-show-refresh="false"
                            data-show-toggle="true" data-show-columns="true" data-search="true"
@@ -217,17 +218,6 @@
 
                                                             @endif
 
-                                                            {{--<div class="form-group{{ $errors->has('issuer') ? ' has-error' : '' }}">--}}
-
-                                                            {{--<label>Added by</label>--}}
-                                                            {{--<input class="form-control" placeholder="" name="issuer" value="{{$user->member->first_name}} {{$user->member->last_name}}" type="text">--}}
-                                                            {{--@if ($errors->has('issuer'))--}}
-                                                            {{--<span class="help-block">--}}
-                                                            {{--<strong>{{ $errors->first('issuer') }}</strong>--}}
-                                                            {{--</span>--}}
-                                                            {{--@endif--}}
-                                                            {{--</div>--}}
-
                                                             <button type="submit" class="btn btn-default btn-primary col-lg-offset-9 col-md-offset-9 col-sm-offset-9 col-xs-offset-7">Save</button>
                                                             <button type="reset" class="btn btn-default btn-danger pull-right" data-dismiss="modal">Cancel</button>
                                                         </form>
@@ -383,6 +373,114 @@
                         </div>
 
                     </div> <!-- end modal -->
+
+                    <!-- Modal for adding new member-->
+                    <div class="row">
+                    <div class="modal fade" id="pendingMembers" role="dialog">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" id="closeA" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Pending Members</h4>
+                                </div>
+                                <div class="modal-body" style="max-height: 500px;overflow-y: scroll;">
+                                    <div class="row">
+                                        <form role="form" id="approvalFm" action="{{url('/members/approval')}}" method="POST" enctype="multipart/form-data">
+                                            {!! csrf_field() !!}
+                                <table class="table-striped responsive-utilities" data-toggle="table" data-show-refresh="false"
+                                       data-show-toggle="true" data-show-columns="true" data-search="true"
+                                       data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name"
+                                       data-sort-order="desc" style="font-size: small">
+                                    <thead>
+                                    <tr>
+                                        {{--<th data-field="state" data-checkbox="true">Count</th>--}}
+                                        <th data-field="firstName" data-sortable="true"> First Name</th>
+                                        <th data-field="lastName" data-sortable="true"> Last Name</th>
+                                        <th data-field="status" data-sortable="true"> Membership</th>
+                                        <th data-field="role" data-sortable="true"> Position</th>
+                                        <th data-field="phoneNumber" data-sortable="true">Phone Number</th>
+                                        <th data-field="deleteEdit" data-sortable="true">Approve</th>
+                                    </tr>
+                                    </thead>
+                                @foreach( $Pmembers as $Pmember)
+                                    <tr>
+                                        <td>
+                                            @if(isset($members))
+                                                {{$Pmember->first_name}}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if(isset($Pmembers))
+                                                {{$Pmember->last_name}}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if(isset($Pmembers))
+                                                {{$Pmember->status->status_description}}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if(isset($Pmembers))
+                                                {{$Pmember->position->position_description}}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if(isset($Pmembers))
+                                                {{$Pmember->phone_number}}
+                                            @endif
+                                        </td>
+                                        <td>
+
+                                            <input type="checkbox" class="checkbox" id="checkbox" value="1" name="{{$Pmember->member_id}}" onchange="approvalUpdate('{{$Pmember->member_id}}')">
+                                                <input type="hidden" value="{{$Pmember->member_id}}" name="{{$Pmember->member_id}}">
+                                    </tr>
+                                        {{--@endfor--}}
+                                    @endforeach
+                                </table>
+                                            <div class="modal-footer">
+                                                <div class="col-md- ">
+
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- end modal -->
+                        </div>
+
+                    <script>
+                        function approvalUpdate(boxName) {
+
+                            //var x;
+                            var xhttp;
+                            if (window.XMLHttpRequest) {
+                                xhttp = new XMLHttpRequest();
+                            } else {
+                                // code for IE6, IE5
+                                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                            }
+
+                            if(confirm("Are you sure?")) {
+
+                                if(cb.checked) {
+                                    var link = "{{url('/members/approval/')}}";
+                                    xhttp.open("GET", link+boxName, true);
+                                    xhttp.send();
+                                    document.getElementById('contract_tracking').innerHTML = "Pending";
+                                }else {
+                                }
+
+                            } else {
+                            }
+                        }
+                    </script>
 
                     <script>
                         $(function () {
