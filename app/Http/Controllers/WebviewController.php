@@ -31,4 +31,12 @@ class WebviewController extends Controller
                     ->get();
         return view('web view.executive')->with('executive', $executive);
     }
+
+    //Download Constitution
+    public function downloadConstitution()
+    {
+        $file = public_path()."/pdf/constitution.pdf";
+        $headers = array('Content-Type: application/pdf',);
+        return response()->download($file, 'Unzabeca Constitution.pdf', $headers);
+    }
 }

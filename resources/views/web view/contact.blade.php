@@ -26,7 +26,7 @@
                     <div class="col-md-4">
                         <div class="mini-contact">
                             <h2>Email us</h2>
-                            <p>Get in touch with us via email, that the email address below.</p>
+                            <p>Get in touch with us via email.</p>
 
                             <a href="mailto:unzabeca2@gmail.com">unzabeca2@gmail.com</a>
                         </div>

@@ -200,8 +200,8 @@ class MembersController extends Controller
         return redirect()->back()->with('status', 'Member has been deleted successfully!!');
     }
 
-    public function changeState()
-    {
-
-    }
+//    public function changeState()
+//    {
+//
+//    }
 }

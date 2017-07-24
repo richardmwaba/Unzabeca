@@ -51,6 +51,7 @@ Route::group(['prefix' => 'webview'], function (){
     Route::get('/general_about', 'WebviewController@viewGeneralAboutUs');
     Route::get('/committees', 'WebviewController@viewCommittees');
     Route::get('/executive', 'WebviewController@viewExecutive');
+    Route::get('/constitution', 'WebviewController@downloadConstitution');
 });
 
 
