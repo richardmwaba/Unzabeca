@@ -76,6 +76,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
+
                                 <!-- offcanvas-trigger-effects -->
                                 <h1 class="logo"><a class="navbar-brand" href="/"><span style="color: #f5f5f5; font-size: xx-large"> UNZABECA</span></a></h1>
                             </div>

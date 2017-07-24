@@ -8,6 +8,8 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('images/favicons/favicon-96x96.png')}}">
     <title>@yield('title')</title>
 
     <!-- Bootstrap Core CSS -->
@@ -68,12 +70,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div>
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="#">
-                  UNZABECA
-                </a>
-            </div>
+
+            <!-- Branding Image -->
+            <a class="navbar-brand" href="{{URL::asset('home')}}">
+                    <span>
+                        <img src="{{url('../webview/img/unzabeca.jpg')}}" height="35px" width="30px" style="padding-bottom:5px">
+                    </span>
+                UNZABECA
+            </a>
+
         </div>
         <!-- /.navbar-header -->
 

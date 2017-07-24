@@ -39,4 +39,15 @@ class WebviewController extends Controller
         $headers = array('Content-Type: application/pdf',);
         return response()->download($file, 'Unzabeca Constitution.pdf', $headers);
     }
+
+    public function viewConstitution()
+    {
+        $filename = 'Unzabeca Constitution.pdf';
+        $path = public_path()."/pdf/constitution.pdf";
+
+        return response()->make(file_get_contents($path), 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; filename="'.$filename.'"'
+        ]);
+    }
 }

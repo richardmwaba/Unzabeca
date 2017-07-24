@@ -45,7 +45,7 @@
                     <p>Bridging the gap between theory and practice.</p>
 
                     <h2>Our Constitution</h2>
-                    <p>Our <a target="_blank" href="{{asset('../pdf/constitution.pdf')}}">constitution</a> is available in portable file format and can be <a href="{{url('/webview/constitution')}}">downloaded here</a></p>
+                    <p>Our <a target="_blank" href="{{url('/webview/viewConstitution')}}">constitution</a> is available in portable file format and can be <a href="{{url('/webview/constitution')}}">downloaded here</a></p>
                 </div><!-- /.row -->
 
             </section><!-- /.about-us-wrapper -->
