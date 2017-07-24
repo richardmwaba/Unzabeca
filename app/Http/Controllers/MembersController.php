@@ -82,10 +82,9 @@ class MembersController extends Controller
                     ->get();
 
         //get pending members
-        $Pmembers = Member::where('approved', '0')->orderBy('created_at', 'desc')->get();
-
-                        ->with('position', 'status')
+        $Pmembers = Member::where('approved', '0')
                         ->orderBy('created_at', 'desc')
+                        ->with('position', 'status')
                         ->get();
         //Calculate number of days to automatically set status value to alumni
         $today = Carbon::today();
