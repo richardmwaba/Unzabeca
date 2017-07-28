@@ -122,8 +122,11 @@
                     <li>
                         <a href="{{url('/members/committees/viewAll')}}"><i class="fa fa-group"></i> Committees</a>
                     </li>
+                    <li>
+                        <a href="{{url('/members/resources')}}"><i class="fa fa-folder-open "></i>  Resources </a>
+                    </li>
                     {{--<li>--}}
-                        {{--<a href="{{url('/members/reports/auto')}}"><i class="fa fa-qrcode "></i>Auto reports</a>--}}
+                        {{--  <a href="{{url('/members/reports/auto')}}"><i class="fa fa-qrcode "></i>Auto reports</a>--}}
                     {{--</li>--}}
                 <!-- /.nav-second-level -->
                     <!--future menus for other users can be included here-->

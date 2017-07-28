@@ -24,12 +24,6 @@ Route::group(['prefix' => 'webview'], function (){
     Route::get('contactUs', function (){ // for contact us page
         return view('web view.contact');
     });
-    Route::get('actionPlan', function (){ // for action plan page
-        return view('web view.actionPlan');
-    });
-    Route::get('researchPlan', function (){ // for research plan page
-        return view('web view.researchPlan');
-    });
 
     Route::get('executive/alumni/timeline', 'AlumniController@viewExecutives');
     Route::get('ordinary/alumni/timeline', 'AlumniController@viewOrdinaries');
@@ -42,6 +36,11 @@ Route::group(['prefix' => 'webview'], function (){
     // to article page
     Route::get('/article', 'ArticleController@allArticles');
     Route::get('/article/article-single/{id}', 'ArticleController@articleView');
+
+    // for research work and action plan
+    Route::get('actionPlan', 'ResourcesController@displayActionPlan');
+    Route::get('researchPlan', 'ResourcesController@displayResearchWork');
+
     /* ========= ./Resource tab routes ======== */
 
     // events page
@@ -128,6 +127,23 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/members/article/update/{id}', 'ArticleController@update');
 // detele route
     Route::post('/members/article/delete/{id}', 'ArticleController@delete');
+
+    /*-- Routes for the resources pages --*/
+    Route::get('/members/resources', 'ResourcesController@index');
+    // gets the resource form
+    Route::get('/members/resource/create-resource', 'ResourcesController@create');
+    // posts resource form data to db
+    Route::post('/members/resource/create-resource', 'ResourcesController@store');
+    // route to view particular resource
+    Route::get('/members/resource/view/{id}', 'ResourcesController@view');
+    // Gets the edit page for selected resource
+    Route::get('/members/resource/edit/{id}', 'ResourcesController@edit');
+    // update route
+    Route::post('/members/resource/update/{id}', 'ResourcesController@update');
+    // detele route
+    Route::post('/members/resource/delete/{id}', 'ResourcesController@delete');
+
+
 });
 
 Auth::routes();
