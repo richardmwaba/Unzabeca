@@ -21,9 +21,19 @@
     <div class="container-fluid">
         <div class="content-wrapper">
             <section class="about-us-wrapper">
+                @if(count($actionPlan) > 0)
+                    <h3 class="heading">
+                        {{ $actionPlan->resourceTitle }} <br>
+                        <small>Resource type - {{$actionPlan->resourceType}} . {{ \Carbon\Carbon::parse($actionPlan->created_at )->diffForHumans() }}</small>
+                    </h3>
+                    <div>
+                    {!! $actionPlan->resourceBody !!}  <!-- decodes the html entities -->
+                    </div>
+                @else
                 <h1 style="text-align: center">Watch this space.<br>
                     <small>Our awesome action plan will be coming soon... :)</small>
                 </h1>
+                @endif
             </section>
         </div>
     </div>
